@@ -1,0 +1,14 @@
+/*
+ * GPS_Cnfg.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+
+GPS_t  GPS=
+{
+		.GPS_SATE_t  =  gps_on  ,
+		.GPS_VCC_PIN =  DIO_PIN0 ,
+        .GPS_GND_PIN =  DIO_PIN1 ,
+};

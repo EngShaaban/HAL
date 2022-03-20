@@ -1,0 +1,23 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+#include "LIB/STD_TYPES.h"
+#include "LIB/errorStates.h"
+
+#include "MCAL/DIO/DIO_interface.h"
+#include "E:\Data\EmbeddedSystem\Drivers\Atmega32\MCAL\UART\UART_Interface.h"
+
+
+
+int main(void)
+{
+
+
+
+
+	return 0 ;
+}

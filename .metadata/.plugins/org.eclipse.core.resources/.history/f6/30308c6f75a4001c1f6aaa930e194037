@@ -1,0 +1,45 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+#include "LIB/STD_TYPES.h"
+#include "LIB/errorStates.h"
+
+#include "MCAL/DIO/DIO_interface.h"
+#include "E:\Data\EmbeddedSystem\Drivers\Atmega32\MCAL\UART\UART_Interface.h"
+
+void gps_init(void);
+void gps_start(void);
+
+int main(void)
+{
+	//1. Specify pin for gps vcc--> PD5
+	//2. Specify pin for gps GND--> PD6
+
+	return 0 ;
+}
+void gps_init(void)
+{
+	//1. Specify pin for gps vcc--> PD5
+	//2. Specify pin for gps GND--> PD6
+
+	DIO_enuSetPinDirection(DIO_PORTD , DIO_PIN5 , DIO_OUTPUT_PIN);
+	DIO_enuSetPinDirection(DIO_PORTD , DIO_PIN6 , DIO_OUTPUT_PIN);
+
+	DIO_enuSetPinValue(DIO_PORTD , DIO_PIN5 , DIO_HIGH);
+	DIO_enuSetPinValue(DIO_PORTD , DIO_PIN6 , DIO_LOW );
+
+
+
+}//gps_init(void).
+
+void gps_start(void)
+{
+
+}//gps_start(void).
+
+
+

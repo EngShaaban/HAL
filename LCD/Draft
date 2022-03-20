@@ -1,0 +1,377 @@
+/*
+ * LCD_prog.c
+ *
+ *  Created on: Oct 6, 2021
+ *      Author: Shaban
+ */
+
+/****************************************************************************/
+/******************************  INCLUDES  **********************************/
+
+#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\STD_TYPES.h"
+#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\errorStates.h"
+
+#include "E:\NTI\AVR\ATmeg16_Drivers\MCAL\DIO\DIO_interface.h"
+
+#include"LCD_priv.h"
+#include"LCD_Cnfg.h"
+
+#include<util\delay.h>
+
+ES_t LCD_enuInit(void)
+{
+	ES_t Local_enuErrorState = ES_NOK;
+
+	
+	/***********************************************************/
+	/* Data Pins.                                              */
+	/***********************************************************/
+	DIO_enuSetPinDirection( D7_PORT , D7_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D6_PORT , D6_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D5_PORT , D5_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D4_PORT , D4_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D3_PORT , D3_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D2_PORT , D2_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D1_PORT , D1_PIN , DIO_OUTPUT_PIN );
+	DIO_enuSetPinDirection( D0_PORT , D0_PIN , DIO_OUTPUT_PIN );
+
+	DIO_enuSetPinValue( D7_PORT , D7_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D6_PORT , D6_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D5_PORT , D5_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D4_PORT , D4_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D3_PORT , D3_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D2_PORT , D2_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D1_PORT , D1_PIN , DIO_LOW );
+	DIO_enuSetPinValue( D0_PORT , D0_PIN , DIO_LOW );
+
+	//1_ Wait for 30 ms .
+	_delay_ms(35);
+
+	//2- Function set .
+	LCD_invidSendCommend(LCD_CLR);
+
+
+	//3- wait for 39 us.
+	_delay_us(50);
+
+	//4- Display on off Control
+	LCD_invidSendCommend(LCD_RETURNHOME);
+
+	//5- wait for 39 us.
+	_delay_us(50);
+
+	//6- Display Clear.
+	LCD_invidSendCommend(LCD_ENTRYMODE);
+
+	//7- Wait for 1.53 ms .
+	_delay_ms(2);
+
+	//8- Entry mode set.
+	LCD_invidSendCommend(LCD_DISPON_CURON   );
+
+
+
+	//7- Wait for 1.53 ms .
+	_delay_ms(2);
+
+	//8- Entry mode set.
+	LCD_invidSendCommend(LCD_SHIFTON );
+	//7- Wait for 1.53 ms .
+		_delay_ms(2);
+
+		//8- Entry mode set.
+		LCD_invidSendCommend(LCD_CGRAMADDRESS );
+
+
+
+	return Local_enuErrorState ;
+}
+/********************************************************************/
+/**********************************************************************/
+
+ES_t LCD_enuDisplayCharacter(u8 Copy_u8Data)
+{
+	ES_t Local_enuErrorState = ES_NOK;
+
+	DIO_enuSetPinValue(RS_PORT ,RS_PIN ,DIO_HIGH);
+
+	LCD_invidLatch(Copy_u8Data);
+
+	return Local_enuErrorState ;
+}
+
+
+
+
+ES_t LCD_enuSendCommand(u8 Copy_u8Command)
+{
+	ES_t Local_enuErrorState = ES_NOK;
+
+	LCD_invidSendCommend( Copy_u8Command);
+
+	return Local_enuErrorState ;
+}
+
+
+/********************************* inline ******************************/
+static inline void  LCD_invidSendCommend(u8 Copy_u8Command)
+{
+	// set rs as command
+
+	DIO_enuSetPinValue(RS_PORT ,RS_PIN ,DIO_LOW);
+
+	// set rw as write operation , EN is low
+		DIO_enuSetPinValue(RW_PORT ,RW_PIN ,DIO_LOW);
+
+		//ts = 50 ns .
+		_delay_ms(1);
+
+		//EN set.
+		DIO_enuSetPinValue(EN_PORT ,EN_PIN ,DIO_HIGH);
+
+		//tpw-Tdws  = 190 ns .
+		_delay_ms(1);
+
+
+		//write Data
+		DIO_enuSetPinValue( D7_PORT , D7_PIN , C_BIT_7 );
+		DIO_enuSetPinValue( D6_PORT , D6_PIN , C_BIT_6 );
+		DIO_enuSetPinValue( D5_PORT , D5_PIN , C_BIT_5 );
+		DIO_enuSetPinValue( D4_PORT , D4_PIN , C_BIT_4 );
+		DIO_enuSetPinValue( D3_PORT , D3_PIN , C_BIT_3 );
+		DIO_enuSetPinValue( D2_PORT , D2_PIN , C_BIT_2 );
+		DIO_enuSetPinValue( D1_PORT , D1_PIN , C_BIT_1 );
+		DIO_enuSetPinValue( D0_PORT , D0_PIN , C_BIT_0 );
+		//Tdsw  = 100 ns .
+		_delay_ms(1);
+
+		DIO_enuSetPinValue(EN_PORT ,EN_PIN ,DIO_LOW);
+
+
+
+}
+
+
+static inline void  LCD_invidLatch(u8 Copy_u8Data)
+{
+	// set rw as write operation , EN is low
+	DIO_enuSetPinValue(RW_PORT ,RW_PIN ,DIO_LOW);
+
+	//ts = 50 ns .
+	_delay_ms(1);
+
+	//EN set.
+	DIO_enuSetPinValue(EN_PORT ,EN_PIN ,DIO_HIGH);
+
+	//tpw-Tdws  = 190 ns .
+	_delay_ms(1);
+
+
+	//write Data
+	DIO_enuSetPinValue( D7_PORT , D7_PIN , BIT_7 );
+	DIO_enuSetPinValue( D6_PORT , D6_PIN , BIT_6 );
+	DIO_enuSetPinValue( D5_PORT , D5_PIN , BIT_5 );
+	DIO_enuSetPinValue( D4_PORT , D4_PIN , BIT_4 );
+	DIO_enuSetPinValue( D3_PORT , D3_PIN , BIT_3 );
+	DIO_enuSetPinValue( D2_PORT , D2_PIN , BIT_2 );
+	DIO_enuSetPinValue( D1_PORT , D1_PIN , BIT_1 );
+	DIO_enuSetPinValue( D0_PORT , D0_PIN , BIT_0 );
+	//Tdsw  = 100 ns .
+	_delay_ms(1);
+
+	DIO_enuSetPinValue(EN_PORT ,EN_PIN ,DIO_LOW);
+
+
+}
+
+
+////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+
+#define LCD_MODE   EIGHT_BIT
+
+/*CONFIGUER CONTROL PINS.*/
+
+#define RS_PORT   DIO_PORTD
+#define RS_PIN    DIO_PIN6
+
+#define RW_PORT   DIO_PORTD     // LCD_NOT_CONNECTED
+#define RW_PIN    DIO_PIN5
+
+#define EN_PORT   DIO_PORTD
+#define EN_PIN    DIO_PIN4
+
+/*CONFIGUER DATA PINS.*/
+
+#define D7_PORT    DIO_PORTC
+#define D7_PIN     DIO_PIN7
+
+#define D6_PORT    DIO_PORTC
+#define D6_PIN     DIO_PIN6
+
+#define D5_PORT    DIO_PORTC
+#define D5_PIN     DIO_PIN5
+
+#define D4_PORT    DIO_PORTC
+#define D4_PIN     DIO_PIN4
+
+
+
+#define D3_PORT    DIO_PORTC
+#define D3_PIN     DIO_PIN3
+
+#define D2_PORT    DIO_PORTC
+#define D2_PIN     DIO_PIN2
+
+#define D1_PORT    DIO_PORTC
+#define D1_PIN     DIO_PIN1
+
+#define D0_PORT    DIO_PORTC
+#define D0_PIN     DIO_PIN0
+
+
+/////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+
+
+
+
+
+				.LCD_u8RW_Port  =  DIO_PORTD    ,
+				.LCD_u8RW_Pin   =  DIO_PIN6     ,
+
+				.LCD_u8EN_Port  =  DIO_PORTD    ,
+				.LCD_u8EN_Pin   =  DIO_PIN6     ,
+
+
+				.LCD_u8D7_Port  =  DIO_PORTA    ,
+				.LCD_u8D7_Pin   =  DIO_PIN7     ,
+
+				.LCD_u8D6_Port  =  DIO_PORTA    ,
+				.LCD_u8D6_Pin   =  DIO_PIN6     ,
+
+				.LCD_u8D5_Port  =  DIO_PORTA    ,
+				.LCD_u8D5_Pin   =  DIO_PIN5     ,
+
+				.LCD_u8D4_Port  =  DIO_PORTA    ,
+				.LCD_u8D4_Pin   =  DIO_PIN4     ,
+
+				.LCD_u8D3_Port  =  DIO_PORTA    ,
+				.LCD_u8D3_Pin   =  DIO_PIN3     ,
+
+
+				.LCD_u8D2_Port  =  DIO_PORTA    ,
+				.LCD_u8D2_Pin   =  DIO_PIN2     ,
+
+
+				.LCD_u8D1_Port  =  DIO_PORTA    ,
+				.LCD_u8D1_Pin   =  DIO_PIN1     ,
+
+
+				.LCD_u8D0_Port  =  DIO_PORTA    ,
+				.LCD_u8D0_Pin   =  DIO_PIN0
+
+
+////////////////////////////////////////////////////////
+/*
+
+
+
+
+*/
+
+
+
+
+/*
+#define LCD_CLR            0x01
+#define LCD_RETURNHOME     0x02
+#define LCD_ENTRYMODE      0x02
+#define LCD_DISPON_CURON   0x0E
+#define LCD_SHIFTON        0x04
+
+#define LCD_CGRAMADDRESS   0x80
+
+
+
+
+#define LCD_FUNCSET_4BIT  0x28
+
+#define LCD_DISPON_CURON   0x0F
+
+#define LCD_ENTRYMODE    0x06
+
+
+
+
+
+
+
+
+
+
+
+#define BIT_7    ((Copy_u8Data>>7)&1)
+#define BIT_6    ((Copy_u8Data>>6)&1)
+#define BIT_5    ((Copy_u8Data>>5)&1)
+#define BIT_4    ((Copy_u8Data>>4)&1)
+#define BIT_3    ((Copy_u8Data>>3)&1)
+#define BIT_2    ((Copy_u8Data>>2)&1)
+#define BIT_1    ((Copy_u8Data>>1)&1)
+#define BIT_0    ((Copy_u8Data>>0)&1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+static inline void  LCD_invidLatch(u8 Copy_u8Data);
+
+
+
+*///////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+
+static inline void LCD_invidSendCommend(LCD_t* Cpy_pstrLcdCnfg , u8 Cpy_u8Command)
+{
+
+
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8RS_Port , Cpy_pstrLcdCnfg->LCD_u8RS_Pin   ,  DIO_LOW  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8RW_Port , Cpy_pstrLcdCnfg->LCD_u8RW_Pin   ,  DIO_LOW  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8EN_Port , Cpy_pstrLcdCnfg->LCD_u8EN_Pin   ,  DIO_LOW  );
+
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D7_Port , Cpy_pstrLcdCnfg->LCD_u8D7_Pin   ,  C_BIT_7  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D6_Port , Cpy_pstrLcdCnfg->LCD_u8D6_Pin   ,  C_BIT_6  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D5_Port , Cpy_pstrLcdCnfg->LCD_u8D5_Pin   ,  C_BIT_5  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D4_Port , Cpy_pstrLcdCnfg->LCD_u8D4_Pin   ,  C_BIT_4  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D3_Port , Cpy_pstrLcdCnfg->LCD_u8D3_Pin   ,  C_BIT_3  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D2_Port , Cpy_pstrLcdCnfg->LCD_u8D2_Pin   ,  C_BIT_2  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D1_Port , Cpy_pstrLcdCnfg->LCD_u8D1_Pin   ,  C_BIT_1  );
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8D0_Port , Cpy_pstrLcdCnfg->LCD_u8D0_Pin   ,  C_BIT_0  );
+
+
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8EN_Port , Cpy_pstrLcdCnfg->LCD_u8EN_Pin   ,  DIO_HIGH );
+
+	_delay_ms(10);
+
+	DIO_enuSetPinValue(  Cpy_pstrLcdCnfg->LCD_u8EN_Port , Cpy_pstrLcdCnfg->LCD_u8EN_Pin   ,  DIO_LOW  );
+
+
+}//End of LCD_invidSendCommend().
+
+
+
+
+

@@ -1,0 +1,34 @@
+/*
+ * GPS_Priv.h
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+#ifndef GPS_PRIV_H_
+#define GPS_PRIV_H_
+
+
+typedef union
+{
+	u8 FLAGS ;
+
+	struct
+	{
+		u8   GPGGA_LINE_FLAG:      1 ;
+		u8   LAT_COMMA_FLAG :      1 ;
+		u8   LONG_COMMA_FLAG:      1 ;
+		u8   FIRST_DIR_FLAG :      1 ;
+		u8   SECOND_DIR_FLAG:      1 ;
+		u8   DOT_FLAG       :      1 ;
+	}FLAG;
+
+}GPS_FLAGS_t;
+
+
+
+#define GPS_CLEAR_ALL_FLAGSE()          GPS_Flags.FLAGS=0
+
+
+
+#endif /* GPS_PRIV_H_ */

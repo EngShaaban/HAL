@@ -1,0 +1,43 @@
+/*
+ * GPS_Cnfg.h
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+#ifndef GPS_CNFG_H_
+#define GPS_CNFG_H_
+
+typedef enum
+{
+	gps_on   ,
+	gps_off  ,
+
+}GPS_SATE_t;
+
+
+
+typedef struct
+{
+	u16  _u16Lat  ;
+	u8   _u8LatDir;
+	u16  _u16Long ;
+	u8   _u8LongDir;
+
+}GPS_LOCATION_t;
+
+typedef struct
+{
+	u8   GPS_SATE_t ;
+	u8   GPS_VCC_PORT;
+	u8   GPS_VCC_PIN;
+
+	u8   GPS_GND_PORT;
+	u8   GPS_GND_PIN;
+
+}GPS_t;
+
+extern GPS_t  GPS;
+
+
+#endif /* GPS_CNFG_H_ */

@@ -1,0 +1,7 @@
+
+كود
+
+https://circuitdigest.com/microcontroller-projects/gps-module-interfacing-with-atmega16-32-avr-microcontroller
+
+
+$GPGGA,141848.00,2237.63306,N,08820.86316,E,1,03,2.56,1.9,M,-54.2, M,,*74

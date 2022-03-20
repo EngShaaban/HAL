@@ -1,0 +1,230 @@
+/*
+ * GPS_Prog.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+#include "LIB/STD_TYPES.h"
+#include "LIB/errorStates.h"
+
+#include "GPS_Priv.h"
+
+#include "MCAL/DIO/DIO_interface.h"
+#include "MCAL\USART\UART_Interface.h"
+
+
+
+#include "GPS_Cnfg.h"
+#include "GPS_Priv.h"
+
+
+static GPS_FLAGS_t  GPS_Flags ;
+
+//$GPGGA,120210.302,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7D [GPS1]
+//$GPGGA,120209.052,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*73 [GPS1]
+//$GPGGA,120210.302,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7D [GPS1]
+//$GPGGA,120155.290,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*75 [GPS1]
+
+const static u8 GPS_u8stLinePattern[6]={'$','G','P','G','G','A',','};
+
+static u8 GPS_u8Buffer[50]={'X'};
+
+
+/****************************************************************************
+ ****************************************************************************
+ * Function Name   : GPS_enuInit.                                           *
+ * Description     : Utility function to initialize the GPS module          *
+ *                   according to the PGS Configurable structure.           *
+ * Argument Type   : None .                                                 *
+ * Return Type     : Error state of type ES_t.                              *
+ **............................................******************************/
+ES_t GPS_enuInit(void)
+{
+
+	ES_t Local_enuErrorState = ES_NOK ;
+
+
+	/*********************************************************
+	 * Configure the GPS power Pins.                         *
+	 *********************************************************/
+	switch( GPS.GPS_STATE_t )
+	{
+	case gps_on :
+
+		DIO_enuSetPinDirection( GPS.GPS_VCC_PORT , GPS.GPS_VCC_PIN , DIO_OUTPUT_PIN );
+		DIO_enuSetPinValue( GPS.GPS_VCC_PORT , GPS.GPS_VCC_PIN , DIO_HIGH );
+
+		DIO_enuSetPinDirection( GPS.GPS_GND_PORT , GPS.GPS_GND_PIN , DIO_OUTPUT_PIN );
+		DIO_enuSetPinValue( GPS.GPS_GND_PORT , GPS.GPS_GND_PIN , DIO_LOW );
+
+		GPS_CLEAR_ALL_FLAGSE();
+
+		UART_enuInit();
+
+		Local_enuErrorState = ES_OK ;
+
+		break ;
+
+	case gps_off :
+		//Do nothing.
+		Local_enuErrorState = ES_OK ;
+		break ;
+
+	default:
+		Local_enuErrorState = ES_NOK ;
+		break;
+
+	}//End of switch.
+
+	return Local_enuErrorState ;
+
+}//End of GPS_enuInit(void).
+
+
+
+
+ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatDir , u8 Copy_pu8LongDir )
+{
+	ES_t Local_enuErrorState = ES_NOK ;
+
+
+	if( ( Copy_pf32Lat != NULL) && (Copy_pf32Long != NULL) && ( Copy_pu8LatDir!= NULL)&& ( Copy_pu8LongDir!= NULL) )
+	{
+
+		u8 Local_u8TempChar =  0 ;
+		u8 Local_u8Counter = 0 ;
+
+		u8  i = 0 ;
+
+		//u8 Local_u8CommaCounter = 0 ;
+
+		//GPS_u8stLinePattern[6]={'$','G','P','G','G','A' };
+		//$GPGGA,120210.302,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7D [GPS1]
+
+
+
+		//1. Need to catch line.
+		//                    S
+		//                 R  M  C
+		// patt = $  G  P  G  G  A  ,
+		// iter = 0  1  2  3  4  5  6  7  8  9  10  11  12 13  14  15 16 17 18
+		// temp = $  g  p  g  g  a  ,
+
+		UART_enuRecieveByte(&Local_u8TempChar);
+
+		do
+		{
+			if(Local_u8TempChar != '$')
+			{
+				do
+				{
+					UART_enuRecieveByte(&Local_u8TempChar);
+
+				}while( Local_u8TempChar!= '$' );
+			}
+
+			// Get $
+
+
+			UART_enuRecieveByte(&Local_u8TempChar);
+			UART_enuRecieveByte(&Local_u8TempChar);
+
+			// Get $GP
+
+			UART_enuRecieveByte(&Local_u8TempChar);
+
+			if(Local_u8TempChar == 'G')
+			{
+				// Get $GPG
+				UART_enuRecieveByte(&Local_u8TempChar);
+
+				if(Local_u8TempChar == 'G')
+				{
+					// Get $GPGG
+
+					UART_enuRecieveByte(&Local_u8TempChar);
+
+					if(Local_u8TempChar == 'A')
+					{
+						// Get $GPGGA
+
+						UART_enuRecieveByte(&Local_u8TempChar);
+
+						if( Local_u8TempChar == ',' )
+						{
+							// Get $GPGGA,
+
+							UART_enuSendByte('$');
+							UART_enuSendByte('G');
+							UART_enuSendByte('P');
+							UART_enuSendByte('G');
+							UART_enuSendByte('G');
+							UART_enuSendByte('A');
+							UART_enuSendByte(',');
+
+							GPS_SET_LINE_FLAG();
+
+
+
+
+						}
+						else
+						{
+
+						}
+
+
+
+
+					}
+					else
+					{
+
+					}
+
+				}
+				else
+				{
+
+				}
+
+			}
+			else
+			{
+
+			}
+
+
+		}while( !(GPS_Flags.FLAG.GPGGA_LINE_FLAG) );
+
+
+
+
+
+		Local_enuErrorState = ES_OK ;
+
+
+
+
+
+	}
+	else
+	{
+		Local_enuErrorState = ES_NULL_POINTER ;
+	}
+
+	return Local_enuErrorState ;
+
+}//End of GPS_enuGetLocation.
+
+
+//UART_enuSendByte('$');
+//						UART_enuSendByte('G');
+//						UART_enuSendByte('P');
+//						UART_enuSendByte('G');
+//						UART_enuSendByte('G');
+//						UART_enuSendByte('A');
+//
+//						GPS_SET_LINE_FLAG();
+//

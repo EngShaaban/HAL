@@ -1,0 +1,9 @@
+/*
+ * GPS_Priv.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+
+#define GPS_CLEAR_ALL_FLAGSE()          GPS_Flags.FLAGS = 0
