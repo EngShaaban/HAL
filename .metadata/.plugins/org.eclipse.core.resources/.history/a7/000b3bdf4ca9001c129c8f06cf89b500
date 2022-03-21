@@ -266,7 +266,6 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 		GPS_inlinevidAsciiToInt( GPS_u8Buffer , &Copy_pf32Lat , &Copy_pf32Long , &Copy_pu8LatDir , &Copy_pu8LongDir  );
 
 
-		GPS_CLEAR_ALL_FLAGSE();
 
 
 						//****************************************************************//

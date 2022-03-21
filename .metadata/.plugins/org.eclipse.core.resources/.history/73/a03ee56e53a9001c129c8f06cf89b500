@@ -30,6 +30,12 @@
 
 void GPS_inlinevidAsciiToInt(const u8* GPS_p2Constu8_DataBuffer , f32** Copy_pf32Lat , f32** Copy_pf32Long , u8** Copy_pu8LatDir , u8** Copy_pu8LongDir  )
 {
+	u8 Local_u8Counter ;
+
+	u8   Local_u8_Buffer_Iterator   = 0  ;
+	u8   Local_u8_Subs_Of_Second_Comma  = 0  ;
+	u8   Local_u8_Subs_Of_Third_Comma   = 0  ;
+	u8   Local_u8_Subs_Of_Fourth_Comma  = 0  ;
 
 
 	u16 Local_u16TempLat  = 0 ;

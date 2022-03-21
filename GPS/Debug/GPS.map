@@ -143,7 +143,7 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x150e
+.text           0x00000000     0x141e
  *(.vectors)
  .vectors       0x00000000       0x54 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
                 0x00000000                __vectors
@@ -281,30 +281,30 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x00000d72      0x13c ./MCAL/DIO/DIO_prog.o
                 0x00000d72                DIO_enuGetPinVlaue
  .text.GPS_inlinevidAsciiToInt
-                0x00000eae      0x35a ./GPS_Priv.o
+                0x00000eae      0x266 ./GPS_Priv.o
                 0x00000eae                GPS_inlinevidAsciiToInt
  .text.GPS_enuInit
-                0x00001208       0x8e ./GPS_Prog.o
-                0x00001208                GPS_enuInit
+                0x00001114       0x8e ./GPS_Prog.o
+                0x00001114                GPS_enuInit
  .text.GPS_enuGetLocation
-                0x00001296      0x160 ./GPS_Prog.o
-                0x00001296                GPS_enuGetLocation
- .text.main     0x000013f6       0x7e ./main.o
-                0x000013f6                main
- .text.libgcc   0x00001474       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
-                0x00001474                __udivmodhi4
- .text.libgcc   0x0000149c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x0000149c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x0000149c        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x0000149c       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
-                0x0000149c                __prologue_saves__
- .text.libgcc   0x000014d4       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
-                0x000014d4                __epilogue_restores__
-                0x0000150a                . = ALIGN (0x2)
+                0x000011a2      0x164 ./GPS_Prog.o
+                0x000011a2                GPS_enuGetLocation
+ .text.main     0x00001306       0x7e ./main.o
+                0x00001306                main
+ .text.libgcc   0x00001384       0x28 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_udivmodhi4.o)
+                0x00001384                __udivmodhi4
+ .text.libgcc   0x000013ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000013ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000013ac        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000013ac       0x38 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_prologue.o)
+                0x000013ac                __prologue_saves__
+ .text.libgcc   0x000013e4       0x36 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_epilogue.o)
+                0x000013e4                __epilogue_restores__
+                0x0000141a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000150a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
-                0x0000150a                exit
-                0x0000150a                _exit
+ .fini9         0x0000141a        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+                0x0000141a                exit
+                0x0000141a                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -323,11 +323,11 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000150a        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000141a        0x4 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000150e                _etext = .
+                0x0000141e                _etext = .
 
-.data           0x00800060      0x14c load address 0x0000150e
+.data           0x00800060      0x14c load address 0x0000141e
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr5/crtm32.o
@@ -391,8 +391,8 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
                 0x008001b2                var2
                 0x008001b6                lat
                 0x008001b7                PROVIDE (__bss_end, .)
-                0x0000150e                __data_load_start = LOADADDR (.data)
-                0x0000165a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000141e                __data_load_start = LOADADDR (.data)
+                0x0000156a                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001b7        0x0
                 0x008001b7                PROVIDE (__noinit_start, .)
@@ -417,23 +417,23 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x1b90
+.stab           0x00000000     0x1a34
  *(.stab)
  .stab          0x00000000      0x57c ./MCAL/USART/UART_Prog.o
  .stab          0x0000057c      0x96c ./MCAL/DIO/DIO_prog.o
                                 0x978 (size before relaxing)
  .stab          0x00000ee8      0x210 ./GPS_Cnfg.o
                                 0x21c (size before relaxing)
- .stab          0x000010f8      0x498 ./GPS_Priv.o
-                                0x5a0 (size before relaxing)
- .stab          0x00001590      0x3fc ./GPS_Prog.o
-                                0x504 (size before relaxing)
- .stab          0x0000198c      0x204 ./main.o
+ .stab          0x000010f8      0x330 ./GPS_Priv.o
+                                0x438 (size before relaxing)
+ .stab          0x00001428      0x408 ./GPS_Prog.o
+                                0x510 (size before relaxing)
+ .stab          0x00001830      0x204 ./main.o
                                 0x2f4 (size before relaxing)
 
-.stabstr        0x00000000      0xb88
+.stabstr        0x00000000      0xb04
  *(.stabstr)
- .stabstr       0x00000000      0xb88 ./MCAL/USART/UART_Prog.o
+ .stabstr       0x00000000      0xb04 ./MCAL/USART/UART_Prog.o
 
 .stab.excl
  *(.stab.excl)
