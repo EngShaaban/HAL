@@ -1,0 +1,20 @@
+/*
+ * GPS_Priv.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+
+#include "LIB/STD_TYPES.h"
+#include "LIB/errorStates.h"
+
+#include "GPS_Priv.h"
+#include "GPS_Cnfg.h"
+#include "GPS_Priv.h"
+inline void   GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32* Copy_pf32Lat , f32* Copy_pf32Long   )
+{
+
+}
+
+

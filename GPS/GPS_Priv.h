@@ -17,7 +17,7 @@
 #ifndef GPS_PRIV_H_
 #define GPS_PRIV_H_
 
-
+#define    GPS_LINE_LENGTH             70
 
 typedef union
 {
@@ -57,6 +57,14 @@ void fun(void);
 #define GPS_CLEAR_SEC_DIR_FLAG()        GPS_Flags.FLAG.SECOND_DIR_FLAG  = 0
 
 
+/*****************************************************************************/
+/********************* PRIVATE FUNCTIONS DECLARATIONS ************************/
+//  0.........  10  .........  20  .  22  .......... 33  .  35  .............................
+//  043338.100  ,   5404.2675  ,   N  ,   00159.7569  ,  W  ,   1,10,4.00,100.0,M,50.0,M,,*72
+
+inline void   GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32* Copy_pf32Lat , f32* Copy_pf32Long   );
+
+//inline void   GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32* Copy_pf32Lat , f32* Copy_pf32Long   );
 
 
 

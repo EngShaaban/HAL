@@ -3,15 +3,15 @@ GPS.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         00000dc8  00000000  00000000  00000094  2**1
+  0 .text         00000dd2  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000038  00800060  00000dc8  00000e5c  2**0
+  1 .data         0000004c  00800060  00000dd2  00000e66  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          0000000b  00800098  00800098  00000e94  2**0
+  2 .bss          0000000b  008000ac  008000ac  00000eb2  2**0
                   ALLOC
-  3 .stab         000017e8  00000000  00000000  00000e94  2**2
+  3 .stab         0000180c  00000000  00000000  00000eb4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000a05  00000000  00000000  0000267c  2**0
+  4 .stabstr      000009f9  00000000  00000000  000026c0  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -51,7 +51,7 @@ Disassembly of section .text:
   60:	10 e0       	ldi	r17, 0x00	; 0
   62:	a0 e6       	ldi	r26, 0x60	; 96
   64:	b0 e0       	ldi	r27, 0x00	; 0
-  66:	e8 ec       	ldi	r30, 0xC8	; 200
+  66:	e2 ed       	ldi	r30, 0xD2	; 210
   68:	fd e0       	ldi	r31, 0x0D	; 13
   6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
 
@@ -60,13 +60,13 @@ Disassembly of section .text:
   6e:	0d 92       	st	X+, r0
 
 00000070 <.do_copy_data_start>:
-  70:	a8 39       	cpi	r26, 0x98	; 152
+  70:	ac 3a       	cpi	r26, 0xAC	; 172
   72:	b1 07       	cpc	r27, r17
   74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
 
 00000076 <__do_clear_bss>:
   76:	10 e0       	ldi	r17, 0x00	; 0
-  78:	a8 e9       	ldi	r26, 0x98	; 152
+  78:	ac ea       	ldi	r26, 0xAC	; 172
   7a:	b0 e0       	ldi	r27, 0x00	; 0
   7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
 
@@ -74,11 +74,11 @@ Disassembly of section .text:
   7e:	1d 92       	st	X+, r1
 
 00000080 <.do_clear_bss_start>:
-  80:	a3 3a       	cpi	r26, 0xA3	; 163
+  80:	a7 3b       	cpi	r26, 0xB7	; 183
   82:	b1 07       	cpc	r27, r17
   84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
-  86:	0e 94 a3 06 	call	0xd46	; 0xd46 <main>
-  8a:	0c 94 e2 06 	jmp	0xdc4	; 0xdc4 <_exit>
+  86:	0e 94 a8 06 	call	0xd50	; 0xd50 <main>
+  8a:	0c 94 e7 06 	jmp	0xdce	; 0xdce <_exit>
 
 0000008e <__bad_interrupt>:
   8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -2056,468 +2056,470 @@ ES_t DIO_enuGetPinVlaue(u8 Copy_u8PortID , u8 Copy_u8PinID , u8* Copy_pu8PinVal)
  b70:	df 91       	pop	r29
  b72:	08 95       	ret
 
-00000b74 <fun>:
- *  Created on: Mar 15, 2022
- *      Author: SHAABAN
- */
-
-void fun(void)
-{
- b74:	df 93       	push	r29
- b76:	cf 93       	push	r28
- b78:	cd b7       	in	r28, 0x3d	; 61
- b7a:	de b7       	in	r29, 0x3e	; 62
-
-}
- b7c:	cf 91       	pop	r28
- b7e:	df 91       	pop	r29
- b80:	08 95       	ret
-
-00000b82 <GPS_enuInit>:
+00000b74 <GPS_enuInit>:
  *                   according to the PGS Configurable structure.           *
  * Argument Type   : None .                                                 *
  * Return Type     : Error state of type ES_t.                              *
  **....................*****************************************************/
 ES_t GPS_enuInit(void)
 {
- b82:	df 93       	push	r29
- b84:	cf 93       	push	r28
- b86:	00 d0       	rcall	.+0      	; 0xb88 <GPS_enuInit+0x6>
- b88:	0f 92       	push	r0
- b8a:	cd b7       	in	r28, 0x3d	; 61
- b8c:	de b7       	in	r29, 0x3e	; 62
+ b74:	df 93       	push	r29
+ b76:	cf 93       	push	r28
+ b78:	00 d0       	rcall	.+0      	; 0xb7a <GPS_enuInit+0x6>
+ b7a:	0f 92       	push	r0
+ b7c:	cd b7       	in	r28, 0x3d	; 61
+ b7e:	de b7       	in	r29, 0x3e	; 62
 
 	ES_t Local_enuErrorState = ES_NOK ;
- b8e:	19 82       	std	Y+1, r1	; 0x01
+ b80:	19 82       	std	Y+1, r1	; 0x01
 
 
 	//Read the Status of gps module and make the appropriate configuration.
 	switch( GPS.GPS_STATE_t )
- b90:	80 91 60 00 	lds	r24, 0x0060
- b94:	28 2f       	mov	r18, r24
- b96:	30 e0       	ldi	r19, 0x00	; 0
- b98:	3b 83       	std	Y+3, r19	; 0x03
- b9a:	2a 83       	std	Y+2, r18	; 0x02
- b9c:	8a 81       	ldd	r24, Y+2	; 0x02
- b9e:	9b 81       	ldd	r25, Y+3	; 0x03
- ba0:	00 97       	sbiw	r24, 0x00	; 0
- ba2:	31 f0       	breq	.+12     	; 0xbb0 <GPS_enuInit+0x2e>
- ba4:	2a 81       	ldd	r18, Y+2	; 0x02
- ba6:	3b 81       	ldd	r19, Y+3	; 0x03
- ba8:	21 30       	cpi	r18, 0x01	; 1
- baa:	31 05       	cpc	r19, r1
- bac:	41 f1       	breq	.+80     	; 0xbfe <GPS_enuInit+0x7c>
- bae:	29 c0       	rjmp	.+82     	; 0xc02 <GPS_enuInit+0x80>
+ b82:	80 91 60 00 	lds	r24, 0x0060
+ b86:	28 2f       	mov	r18, r24
+ b88:	30 e0       	ldi	r19, 0x00	; 0
+ b8a:	3b 83       	std	Y+3, r19	; 0x03
+ b8c:	2a 83       	std	Y+2, r18	; 0x02
+ b8e:	8a 81       	ldd	r24, Y+2	; 0x02
+ b90:	9b 81       	ldd	r25, Y+3	; 0x03
+ b92:	00 97       	sbiw	r24, 0x00	; 0
+ b94:	31 f0       	breq	.+12     	; 0xba2 <GPS_enuInit+0x2e>
+ b96:	2a 81       	ldd	r18, Y+2	; 0x02
+ b98:	3b 81       	ldd	r19, Y+3	; 0x03
+ b9a:	21 30       	cpi	r18, 0x01	; 1
+ b9c:	31 05       	cpc	r19, r1
+ b9e:	41 f1       	breq	.+80     	; 0xbf0 <GPS_enuInit+0x7c>
+ ba0:	29 c0       	rjmp	.+82     	; 0xbf4 <GPS_enuInit+0x80>
 
 		/****************************************************************************
 		 *-Initialize the Direction of pins that the gps module is connected on to  *
 		 * be an output pins and Set the suitable value for each.                                                       *
 		 ****************************************************************************/
 		DIO_enuSetPinDirection( GPS.GPS_VCC_PORT , GPS.GPS_VCC_PIN , DIO_OUTPUT_PIN );
- bb0:	80 91 61 00 	lds	r24, 0x0061
- bb4:	90 91 62 00 	lds	r25, 0x0062
- bb8:	69 2f       	mov	r22, r25
- bba:	41 e0       	ldi	r20, 0x01	; 1
- bbc:	0e 94 a0 02 	call	0x540	; 0x540 <DIO_enuSetPinDirection>
+ ba2:	80 91 61 00 	lds	r24, 0x0061
+ ba6:	90 91 62 00 	lds	r25, 0x0062
+ baa:	69 2f       	mov	r22, r25
+ bac:	41 e0       	ldi	r20, 0x01	; 1
+ bae:	0e 94 a0 02 	call	0x540	; 0x540 <DIO_enuSetPinDirection>
 		DIO_enuSetPinValue( GPS.GPS_VCC_PORT , GPS.GPS_VCC_PIN , DIO_HIGH );
- bc0:	80 91 61 00 	lds	r24, 0x0061
- bc4:	90 91 62 00 	lds	r25, 0x0062
- bc8:	69 2f       	mov	r22, r25
- bca:	41 e0       	ldi	r20, 0x01	; 1
- bcc:	0e 94 97 03 	call	0x72e	; 0x72e <DIO_enuSetPinValue>
+ bb2:	80 91 61 00 	lds	r24, 0x0061
+ bb6:	90 91 62 00 	lds	r25, 0x0062
+ bba:	69 2f       	mov	r22, r25
+ bbc:	41 e0       	ldi	r20, 0x01	; 1
+ bbe:	0e 94 97 03 	call	0x72e	; 0x72e <DIO_enuSetPinValue>
 
 		DIO_enuSetPinDirection( GPS.GPS_GND_PORT , GPS.GPS_GND_PIN , DIO_OUTPUT_PIN );
- bd0:	80 91 63 00 	lds	r24, 0x0063
- bd4:	90 91 64 00 	lds	r25, 0x0064
- bd8:	69 2f       	mov	r22, r25
- bda:	41 e0       	ldi	r20, 0x01	; 1
- bdc:	0e 94 a0 02 	call	0x540	; 0x540 <DIO_enuSetPinDirection>
+ bc2:	80 91 63 00 	lds	r24, 0x0063
+ bc6:	90 91 64 00 	lds	r25, 0x0064
+ bca:	69 2f       	mov	r22, r25
+ bcc:	41 e0       	ldi	r20, 0x01	; 1
+ bce:	0e 94 a0 02 	call	0x540	; 0x540 <DIO_enuSetPinDirection>
 		DIO_enuSetPinValue( GPS.GPS_GND_PORT , GPS.GPS_GND_PIN , DIO_LOW );
- be0:	80 91 63 00 	lds	r24, 0x0063
- be4:	90 91 64 00 	lds	r25, 0x0064
- be8:	69 2f       	mov	r22, r25
- bea:	40 e0       	ldi	r20, 0x00	; 0
- bec:	0e 94 97 03 	call	0x72e	; 0x72e <DIO_enuSetPinValue>
+ bd2:	80 91 63 00 	lds	r24, 0x0063
+ bd6:	90 91 64 00 	lds	r25, 0x0064
+ bda:	69 2f       	mov	r22, r25
+ bdc:	40 e0       	ldi	r20, 0x00	; 0
+ bde:	0e 94 97 03 	call	0x72e	; 0x72e <DIO_enuSetPinValue>
 
 		GPS_CLEAR_ALL_FLAGSE();
- bf0:	10 92 98 00 	sts	0x0098, r1
+ be2:	10 92 ac 00 	sts	0x00AC, r1
 
 		//Initiate the UART to receive read the gps output.
 		UART_enuInit();
- bf4:	0e 94 49 00 	call	0x92	; 0x92 <UART_enuInit>
+ be6:	0e 94 49 00 	call	0x92	; 0x92 <UART_enuInit>
 
 		Local_enuErrorState = ES_OK ;
- bf8:	81 e0       	ldi	r24, 0x01	; 1
- bfa:	89 83       	std	Y+1, r24	; 0x01
- bfc:	02 c0       	rjmp	.+4      	; 0xc02 <GPS_enuInit+0x80>
+ bea:	81 e0       	ldi	r24, 0x01	; 1
+ bec:	89 83       	std	Y+1, r24	; 0x01
+ bee:	02 c0       	rjmp	.+4      	; 0xbf4 <GPS_enuInit+0x80>
 
 		break ;
 
 	case gps_off :
 		//Do nothing.
 		Local_enuErrorState = ES_OK ;
- bfe:	81 e0       	ldi	r24, 0x01	; 1
- c00:	89 83       	std	Y+1, r24	; 0x01
+ bf0:	81 e0       	ldi	r24, 0x01	; 1
+ bf2:	89 83       	std	Y+1, r24	; 0x01
 	default:
 		break;
 
 	}//End of switch.
 
 	return Local_enuErrorState ;
- c02:	89 81       	ldd	r24, Y+1	; 0x01
+ bf4:	89 81       	ldd	r24, Y+1	; 0x01
 
 }//End of GPS_enuInit(void).
- c04:	0f 90       	pop	r0
- c06:	0f 90       	pop	r0
- c08:	0f 90       	pop	r0
- c0a:	cf 91       	pop	r28
- c0c:	df 91       	pop	r29
- c0e:	08 95       	ret
+ bf6:	0f 90       	pop	r0
+ bf8:	0f 90       	pop	r0
+ bfa:	0f 90       	pop	r0
+ bfc:	cf 91       	pop	r28
+ bfe:	df 91       	pop	r29
+ c00:	08 95       	ret
 
-00000c10 <GPS_enuGetLocation>:
+00000c02 <GPS_enuGetLocation>:
  *                   Argu.3:         Address of u8 variable  --->  ~  ~  Latitude Direction (E,w,N or S)           *
  *                   Argu.4:         Address of u8 variable  --->  ~  ~ Longitude  ~ (E,w,N or S)                  *
  * Return Type     : Error state of type ES_t.                                                                     *
  **.....................................................................................................************/
 ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatDir , u8 Copy_pu8LongDir )
 {
- c10:	df 93       	push	r29
- c12:	cf 93       	push	r28
- c14:	cd b7       	in	r28, 0x3d	; 61
- c16:	de b7       	in	r29, 0x3e	; 62
- c18:	29 97       	sbiw	r28, 0x09	; 9
- c1a:	0f b6       	in	r0, 0x3f	; 63
- c1c:	f8 94       	cli
- c1e:	de bf       	out	0x3e, r29	; 62
- c20:	0f be       	out	0x3f, r0	; 63
- c22:	cd bf       	out	0x3d, r28	; 61
- c24:	9d 83       	std	Y+5, r25	; 0x05
- c26:	8c 83       	std	Y+4, r24	; 0x04
- c28:	7f 83       	std	Y+7, r23	; 0x07
- c2a:	6e 83       	std	Y+6, r22	; 0x06
- c2c:	48 87       	std	Y+8, r20	; 0x08
- c2e:	29 87       	std	Y+9, r18	; 0x09
+ c02:	df 93       	push	r29
+ c04:	cf 93       	push	r28
+ c06:	cd b7       	in	r28, 0x3d	; 61
+ c08:	de b7       	in	r29, 0x3e	; 62
+ c0a:	29 97       	sbiw	r28, 0x09	; 9
+ c0c:	0f b6       	in	r0, 0x3f	; 63
+ c0e:	f8 94       	cli
+ c10:	de bf       	out	0x3e, r29	; 62
+ c12:	0f be       	out	0x3f, r0	; 63
+ c14:	cd bf       	out	0x3d, r28	; 61
+ c16:	9d 83       	std	Y+5, r25	; 0x05
+ c18:	8c 83       	std	Y+4, r24	; 0x04
+ c1a:	7f 83       	std	Y+7, r23	; 0x07
+ c1c:	6e 83       	std	Y+6, r22	; 0x06
+ c1e:	48 87       	std	Y+8, r20	; 0x08
+ c20:	29 87       	std	Y+9, r18	; 0x09
 
 	ES_t Local_enuErrorState = ES_NOK ;
- c30:	1a 82       	std	Y+2, r1	; 0x02
+ c22:	1a 82       	std	Y+2, r1	; 0x02
 
 
 	if(( Copy_pf32Lat != NULL) && (Copy_pf32Long != NULL) && ( Copy_pu8LatDir != NULL)&& ( Copy_pu8LongDir !=  NULL))
- c32:	8c 81       	ldd	r24, Y+4	; 0x04
- c34:	9d 81       	ldd	r25, Y+5	; 0x05
- c36:	00 97       	sbiw	r24, 0x00	; 0
- c38:	09 f4       	brne	.+2      	; 0xc3c <GPS_enuGetLocation+0x2c>
- c3a:	79 c0       	rjmp	.+242    	; 0xd2e <GPS_enuGetLocation+0x11e>
- c3c:	8e 81       	ldd	r24, Y+6	; 0x06
- c3e:	9f 81       	ldd	r25, Y+7	; 0x07
- c40:	00 97       	sbiw	r24, 0x00	; 0
- c42:	09 f4       	brne	.+2      	; 0xc46 <GPS_enuGetLocation+0x36>
- c44:	74 c0       	rjmp	.+232    	; 0xd2e <GPS_enuGetLocation+0x11e>
- c46:	88 85       	ldd	r24, Y+8	; 0x08
- c48:	88 2f       	mov	r24, r24
- c4a:	90 e0       	ldi	r25, 0x00	; 0
- c4c:	00 97       	sbiw	r24, 0x00	; 0
- c4e:	09 f4       	brne	.+2      	; 0xc52 <GPS_enuGetLocation+0x42>
- c50:	6e c0       	rjmp	.+220    	; 0xd2e <GPS_enuGetLocation+0x11e>
- c52:	89 85       	ldd	r24, Y+9	; 0x09
- c54:	88 2f       	mov	r24, r24
- c56:	90 e0       	ldi	r25, 0x00	; 0
- c58:	00 97       	sbiw	r24, 0x00	; 0
- c5a:	09 f4       	brne	.+2      	; 0xc5e <GPS_enuGetLocation+0x4e>
- c5c:	68 c0       	rjmp	.+208    	; 0xd2e <GPS_enuGetLocation+0x11e>
+ c24:	8c 81       	ldd	r24, Y+4	; 0x04
+ c26:	9d 81       	ldd	r25, Y+5	; 0x05
+ c28:	00 97       	sbiw	r24, 0x00	; 0
+ c2a:	09 f4       	brne	.+2      	; 0xc2e <GPS_enuGetLocation+0x2c>
+ c2c:	85 c0       	rjmp	.+266    	; 0xd38 <GPS_enuGetLocation+0x136>
+ c2e:	8e 81       	ldd	r24, Y+6	; 0x06
+ c30:	9f 81       	ldd	r25, Y+7	; 0x07
+ c32:	00 97       	sbiw	r24, 0x00	; 0
+ c34:	09 f4       	brne	.+2      	; 0xc38 <GPS_enuGetLocation+0x36>
+ c36:	80 c0       	rjmp	.+256    	; 0xd38 <GPS_enuGetLocation+0x136>
+ c38:	88 85       	ldd	r24, Y+8	; 0x08
+ c3a:	88 2f       	mov	r24, r24
+ c3c:	90 e0       	ldi	r25, 0x00	; 0
+ c3e:	00 97       	sbiw	r24, 0x00	; 0
+ c40:	09 f4       	brne	.+2      	; 0xc44 <GPS_enuGetLocation+0x42>
+ c42:	7a c0       	rjmp	.+244    	; 0xd38 <GPS_enuGetLocation+0x136>
+ c44:	89 85       	ldd	r24, Y+9	; 0x09
+ c46:	88 2f       	mov	r24, r24
+ c48:	90 e0       	ldi	r25, 0x00	; 0
+ c4a:	00 97       	sbiw	r24, 0x00	; 0
+ c4c:	09 f4       	brne	.+2      	; 0xc50 <GPS_enuGetLocation+0x4e>
+ c4e:	74 c0       	rjmp	.+232    	; 0xd38 <GPS_enuGetLocation+0x136>
 	{
 
 		u8 Local_u8TempChar =  0  ;
- c5e:	1b 82       	std	Y+3, r1	; 0x03
+ c50:	1b 82       	std	Y+3, r1	; 0x03
 		u8 Local_u8Counter  =  0  ;
- c60:	19 82       	std	Y+1, r1	; 0x01
+ c52:	19 82       	std	Y+1, r1	; 0x01
 
 
 		UART_enuRecieveByte(&Local_u8TempChar);
- c62:	ce 01       	movw	r24, r28
- c64:	03 96       	adiw	r24, 0x03	; 3
- c66:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c54:	ce 01       	movw	r24, r28
+ c56:	03 96       	adiw	r24, 0x03	; 3
+ c58:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 		do
 		{
 			/************************************************
 			 * 1.Catch the Start of line '$'.               *
 			 ************************************************/
 			if(Local_u8TempChar != '$')
- c6a:	8b 81       	ldd	r24, Y+3	; 0x03
- c6c:	84 32       	cpi	r24, 0x24	; 36
- c6e:	39 f0       	breq	.+14     	; 0xc7e <GPS_enuGetLocation+0x6e>
+ c5c:	8b 81       	ldd	r24, Y+3	; 0x03
+ c5e:	84 32       	cpi	r24, 0x24	; 36
+ c60:	39 f0       	breq	.+14     	; 0xc70 <GPS_enuGetLocation+0x6e>
 			{
 				do
 				{
 					UART_enuRecieveByte(&Local_u8TempChar);
- c70:	ce 01       	movw	r24, r28
- c72:	03 96       	adiw	r24, 0x03	; 3
- c74:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c62:	ce 01       	movw	r24, r28
+ c64:	03 96       	adiw	r24, 0x03	; 3
+ c66:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 
 				}while( Local_u8TempChar!= '$' );
- c78:	8b 81       	ldd	r24, Y+3	; 0x03
- c7a:	84 32       	cpi	r24, 0x24	; 36
- c7c:	c9 f7       	brne	.-14     	; 0xc70 <GPS_enuGetLocation+0x60>
+ c6a:	8b 81       	ldd	r24, Y+3	; 0x03
+ c6c:	84 32       	cpi	r24, 0x24	; 36
+ c6e:	c9 f7       	brne	.-14     	; 0xc62 <GPS_enuGetLocation+0x60>
 			 *                                      $GP  RMC, *
 			 *                                      $GP  GSA, *
 			 *                                      $GP  RMC, *
 			 *                                                *
 			 **************************************************/
 			UART_enuRecieveByte(&Local_u8TempChar);
- c7e:	ce 01       	movw	r24, r28
- c80:	03 96       	adiw	r24, 0x03	; 3
- c82:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c70:	ce 01       	movw	r24, r28
+ c72:	03 96       	adiw	r24, 0x03	; 3
+ c74:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 			UART_enuRecieveByte(&Local_u8TempChar);
- c86:	ce 01       	movw	r24, r28
- c88:	03 96       	adiw	r24, 0x03	; 3
- c8a:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c78:	ce 01       	movw	r24, r28
+ c7a:	03 96       	adiw	r24, 0x03	; 3
+ c7c:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 
 			/************************************************
 			 * 3.Read more one character and make sure it's *
 			 *   'G' Not 'R'.                              *
 			 ************************************************/
 			UART_enuRecieveByte(&Local_u8TempChar);
- c8e:	ce 01       	movw	r24, r28
- c90:	03 96       	adiw	r24, 0x03	; 3
- c92:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c80:	ce 01       	movw	r24, r28
+ c82:	03 96       	adiw	r24, 0x03	; 3
+ c84:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 
 			if(Local_u8TempChar == 'G')
- c96:	8b 81       	ldd	r24, Y+3	; 0x03
- c98:	87 34       	cpi	r24, 0x47	; 71
- c9a:	09 f0       	breq	.+2      	; 0xc9e <GPS_enuGetLocation+0x8e>
- c9c:	3f c0       	rjmp	.+126    	; 0xd1c <GPS_enuGetLocation+0x10c>
+ c88:	8b 81       	ldd	r24, Y+3	; 0x03
+ c8a:	87 34       	cpi	r24, 0x47	; 71
+ c8c:	09 f0       	breq	.+2      	; 0xc90 <GPS_enuGetLocation+0x8e>
+ c8e:	3f c0       	rjmp	.+126    	; 0xd0e <GPS_enuGetLocation+0x10c>
 
 				/************************************************
 				 * 4.Read more one character and make sure it's *
 				 *   'G' Not 'M'or 'S'.                         *
 				 ************************************************/
 				UART_enuRecieveByte(&Local_u8TempChar);
- c9e:	ce 01       	movw	r24, r28
- ca0:	03 96       	adiw	r24, 0x03	; 3
- ca2:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c90:	ce 01       	movw	r24, r28
+ c92:	03 96       	adiw	r24, 0x03	; 3
+ c94:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 
 				if(Local_u8TempChar == 'G')
- ca6:	8b 81       	ldd	r24, Y+3	; 0x03
- ca8:	87 34       	cpi	r24, 0x47	; 71
- caa:	c1 f5       	brne	.+112    	; 0xd1c <GPS_enuGetLocation+0x10c>
+ c98:	8b 81       	ldd	r24, Y+3	; 0x03
+ c9a:	87 34       	cpi	r24, 0x47	; 71
+ c9c:	c1 f5       	brne	.+112    	; 0xd0e <GPS_enuGetLocation+0x10c>
 
 					/************************************************
 					 * 5.Read more one character and make sure it's *
 					 *   'A' Not 'C'.                               *
 					 ************************************************/
 					UART_enuRecieveByte(&Local_u8TempChar);
- cac:	ce 01       	movw	r24, r28
- cae:	03 96       	adiw	r24, 0x03	; 3
- cb0:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ c9e:	ce 01       	movw	r24, r28
+ ca0:	03 96       	adiw	r24, 0x03	; 3
+ ca2:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 
 					if(Local_u8TempChar == 'A')
- cb4:	8b 81       	ldd	r24, Y+3	; 0x03
- cb6:	81 34       	cpi	r24, 0x41	; 65
- cb8:	89 f5       	brne	.+98     	; 0xd1c <GPS_enuGetLocation+0x10c>
+ ca6:	8b 81       	ldd	r24, Y+3	; 0x03
+ ca8:	81 34       	cpi	r24, 0x41	; 65
+ caa:	89 f5       	brne	.+98     	; 0xd0e <GPS_enuGetLocation+0x10c>
 
 						/************************************************
 						 * 6.Read more one character and make sure it's *
 						 *   ',' (Check is an Optional Step).           *
 						 ************************************************/
 						UART_enuRecieveByte(&Local_u8TempChar);
- cba:	ce 01       	movw	r24, r28
- cbc:	03 96       	adiw	r24, 0x03	; 3
- cbe:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ cac:	ce 01       	movw	r24, r28
+ cae:	03 96       	adiw	r24, 0x03	; 3
+ cb0:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 						if( Local_u8TempChar == ',' )
- cc2:	8b 81       	ldd	r24, Y+3	; 0x03
- cc4:	8c 32       	cpi	r24, 0x2C	; 44
- cc6:	51 f5       	brne	.+84     	; 0xd1c <GPS_enuGetLocation+0x10c>
+ cb4:	8b 81       	ldd	r24, Y+3	; 0x03
+ cb6:	8c 32       	cpi	r24, 0x2C	; 44
+ cb8:	51 f5       	brne	.+84     	; 0xd0e <GPS_enuGetLocation+0x10c>
 							 *    Hint:-                                    *
 							 *          lines always ends with \n character.*
 							 ************************************************/
 							do
 							{
 								UART_enuRecieveByte(&Local_u8TempChar);
- cc8:	ce 01       	movw	r24, r28
- cca:	03 96       	adiw	r24, 0x03	; 3
- ccc:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
+ cba:	ce 01       	movw	r24, r28
+ cbc:	03 96       	adiw	r24, 0x03	; 3
+ cbe:	0e 94 aa 00 	call	0x154	; 0x154 <UART_enuRecieveByte>
 
 								GPS_u8Buffer[Local_u8Counter++]=Local_u8TempChar;
- cd0:	89 81       	ldd	r24, Y+1	; 0x01
- cd2:	88 2f       	mov	r24, r24
- cd4:	90 e0       	ldi	r25, 0x00	; 0
- cd6:	2b 81       	ldd	r18, Y+3	; 0x03
- cd8:	fc 01       	movw	r30, r24
- cda:	eb 59       	subi	r30, 0x9B	; 155
- cdc:	ff 4f       	sbci	r31, 0xFF	; 255
- cde:	20 83       	st	Z, r18
- ce0:	89 81       	ldd	r24, Y+1	; 0x01
- ce2:	8f 5f       	subi	r24, 0xFF	; 255
- ce4:	89 83       	std	Y+1, r24	; 0x01
+ cc2:	89 81       	ldd	r24, Y+1	; 0x01
+ cc4:	88 2f       	mov	r24, r24
+ cc6:	90 e0       	ldi	r25, 0x00	; 0
+ cc8:	2b 81       	ldd	r18, Y+3	; 0x03
+ cca:	fc 01       	movw	r30, r24
+ ccc:	eb 59       	subi	r30, 0x9B	; 155
+ cce:	ff 4f       	sbci	r31, 0xFF	; 255
+ cd0:	20 83       	st	Z, r18
+ cd2:	89 81       	ldd	r24, Y+1	; 0x01
+ cd4:	8f 5f       	subi	r24, 0xFF	; 255
+ cd6:	89 83       	std	Y+1, r24	; 0x01
 
 							}while( Local_u8TempChar != '\n'  );
- ce6:	8b 81       	ldd	r24, Y+3	; 0x03
- ce8:	8a 30       	cpi	r24, 0x0A	; 10
- cea:	71 f7       	brne	.-36     	; 0xcc8 <GPS_enuGetLocation+0xb8>
+ cd8:	8b 81       	ldd	r24, Y+3	; 0x03
+ cda:	8a 30       	cpi	r24, 0x0A	; 10
+ cdc:	71 f7       	brne	.-36     	; 0xcba <GPS_enuGetLocation+0xb8>
 							 *                                                         *
 							 *         $GPGGA,143219.775,,,,,0,10,,,M,,M,,*70          *
 							 *         $GPGGA,181430.343,5404.2675,N,00159.7569,W...   *
 							 * index-->       012........[12].......                   *
 							 **********************************************************/
 							if(GPS_u8Buffer[12] != ',')
- cec:	80 91 71 00 	lds	r24, 0x0071
- cf0:	8c 32       	cpi	r24, 0x2C	; 44
- cf2:	31 f0       	breq	.+12     	; 0xd00 <GPS_enuGetLocation+0xf0>
+ cde:	80 91 71 00 	lds	r24, 0x0071
+ ce2:	8c 32       	cpi	r24, 0x2C	; 44
+ ce4:	31 f0       	breq	.+12     	; 0xcf2 <GPS_enuGetLocation+0xf0>
 							{
 
 								//Set flag to break the outer do while() loop.
 								GPS_SET_LINE_FLAG();
- cf4:	80 91 98 00 	lds	r24, 0x0098
- cf8:	81 60       	ori	r24, 0x01	; 1
- cfa:	80 93 98 00 	sts	0x0098, r24
- cfe:	0e c0       	rjmp	.+28     	; 0xd1c <GPS_enuGetLocation+0x10c>
+ ce6:	80 91 ac 00 	lds	r24, 0x00AC
+ cea:	81 60       	ori	r24, 0x01	; 1
+ cec:	80 93 ac 00 	sts	0x00AC, r24
+ cf0:	0e c0       	rjmp	.+28     	; 0xd0e <GPS_enuGetLocation+0x10c>
 								 * -Empty $GPGGA line. So, Reset the buffer and *
 								 *  read another $GPGGA line.                   *
 								 ************************************************/
 								do
 								{
 									GPS_u8Buffer[Local_u8Counter--]='X';
- d00:	89 81       	ldd	r24, Y+1	; 0x01
- d02:	88 2f       	mov	r24, r24
- d04:	90 e0       	ldi	r25, 0x00	; 0
- d06:	fc 01       	movw	r30, r24
- d08:	eb 59       	subi	r30, 0x9B	; 155
- d0a:	ff 4f       	sbci	r31, 0xFF	; 255
- d0c:	88 e5       	ldi	r24, 0x58	; 88
- d0e:	80 83       	st	Z, r24
- d10:	89 81       	ldd	r24, Y+1	; 0x01
- d12:	81 50       	subi	r24, 0x01	; 1
- d14:	89 83       	std	Y+1, r24	; 0x01
+ cf2:	89 81       	ldd	r24, Y+1	; 0x01
+ cf4:	88 2f       	mov	r24, r24
+ cf6:	90 e0       	ldi	r25, 0x00	; 0
+ cf8:	fc 01       	movw	r30, r24
+ cfa:	eb 59       	subi	r30, 0x9B	; 155
+ cfc:	ff 4f       	sbci	r31, 0xFF	; 255
+ cfe:	88 e5       	ldi	r24, 0x58	; 88
+ d00:	80 83       	st	Z, r24
+ d02:	89 81       	ldd	r24, Y+1	; 0x01
+ d04:	81 50       	subi	r24, 0x01	; 1
+ d06:	89 83       	std	Y+1, r24	; 0x01
 
 								}while( Local_u8Counter != 0 );
- d16:	89 81       	ldd	r24, Y+1	; 0x01
- d18:	88 23       	and	r24, r24
- d1a:	91 f7       	brne	.-28     	; 0xd00 <GPS_enuGetLocation+0xf0>
+ d08:	89 81       	ldd	r24, Y+1	; 0x01
+ d0a:	88 23       	and	r24, r24
+ d0c:	91 f7       	brne	.-28     	; 0xcf2 <GPS_enuGetLocation+0xf0>
 			else
 			{
 				//-Hit 'R' Instead of 'G'.
 			}
 
 		}while( !(GPS_Flags.FLAG.GPGGA_LINE_FLAG) );
- d1c:	80 91 98 00 	lds	r24, 0x0098
- d20:	81 70       	andi	r24, 0x01	; 1
- d22:	88 23       	and	r24, r24
- d24:	09 f4       	brne	.+2      	; 0xd28 <GPS_enuGetLocation+0x118>
- d26:	a1 cf       	rjmp	.-190    	; 0xc6a <GPS_enuGetLocation+0x5a>
+ d0e:	80 91 ac 00 	lds	r24, 0x00AC
+ d12:	81 70       	andi	r24, 0x01	; 1
+ d14:	88 23       	and	r24, r24
+ d16:	09 f4       	brne	.+2      	; 0xd1a <GPS_enuGetLocation+0x118>
+ d18:	a1 cf       	rjmp	.-190    	; 0xc5c <GPS_enuGetLocation+0x5a>
+		//****************************************************************//
+		//****************************************************************//
+
+		//GPS_inlinevidAsciiToInt( GPS_u8Buffer ,  Copy_pf32Lat , Copy_pf32Long   );
+
+		(*(u8*)0x33)=  (u8)(GPS_u8Buffer[14]-0x30) ;
+ d1a:	e3 e3       	ldi	r30, 0x33	; 51
+ d1c:	f0 e0       	ldi	r31, 0x00	; 0
+ d1e:	80 91 73 00 	lds	r24, 0x0073
+ d22:	80 53       	subi	r24, 0x30	; 48
+ d24:	80 83       	st	Z, r24
+	    (*(u8*)0x36)=  (u8)(GPS_u8Buffer[27]-0x30) ;
+ d26:	e6 e3       	ldi	r30, 0x36	; 54
+ d28:	f0 e0       	ldi	r31, 0x00	; 0
+ d2a:	80 91 80 00 	lds	r24, 0x0080
+ d2e:	80 53       	subi	r24, 0x30	; 48
+ d30:	80 83       	st	Z, r24
+						//****************************************************************//
 
 
 
-		Local_enuErrorState = ES_OK ;
- d28:	81 e0       	ldi	r24, 0x01	; 1
- d2a:	8a 83       	std	Y+2, r24	; 0x02
- d2c:	02 c0       	rjmp	.+4      	; 0xd32 <GPS_enuGetLocation+0x122>
+
+						Local_enuErrorState = ES_OK ;
+ d32:	81 e0       	ldi	r24, 0x01	; 1
+ d34:	8a 83       	std	Y+2, r24	; 0x02
+ d36:	02 c0       	rjmp	.+4      	; 0xd3c <GPS_enuGetLocation+0x13a>
 
 
 	}
 	else
 	{
 		Local_enuErrorState = ES_NULL_POINTER ;
- d2e:	82 e0       	ldi	r24, 0x02	; 2
- d30:	8a 83       	std	Y+2, r24	; 0x02
+ d38:	82 e0       	ldi	r24, 0x02	; 2
+ d3a:	8a 83       	std	Y+2, r24	; 0x02
 	}
 
 	return Local_enuErrorState ;
- d32:	8a 81       	ldd	r24, Y+2	; 0x02
+ d3c:	8a 81       	ldd	r24, Y+2	; 0x02
 
 }//End of GPS_enuGetLocation.
- d34:	29 96       	adiw	r28, 0x09	; 9
- d36:	0f b6       	in	r0, 0x3f	; 63
- d38:	f8 94       	cli
- d3a:	de bf       	out	0x3e, r29	; 62
- d3c:	0f be       	out	0x3f, r0	; 63
- d3e:	cd bf       	out	0x3d, r28	; 61
- d40:	cf 91       	pop	r28
- d42:	df 91       	pop	r29
- d44:	08 95       	ret
+ d3e:	29 96       	adiw	r28, 0x09	; 9
+ d40:	0f b6       	in	r0, 0x3f	; 63
+ d42:	f8 94       	cli
+ d44:	de bf       	out	0x3e, r29	; 62
+ d46:	0f be       	out	0x3f, r0	; 63
+ d48:	cd bf       	out	0x3d, r28	; 61
+ d4a:	cf 91       	pop	r28
+ d4c:	df 91       	pop	r29
+ d4e:	08 95       	ret
 
-00000d46 <main>:
+00000d50 <main>:
 
 u8 lat;
 u8 lon;
 
 int main(void)
 {
- d46:	df 93       	push	r29
- d48:	cf 93       	push	r28
- d4a:	cd b7       	in	r28, 0x3d	; 61
- d4c:	de b7       	in	r29, 0x3e	; 62
+ d50:	df 93       	push	r29
+ d52:	cf 93       	push	r28
+ d54:	cd b7       	in	r28, 0x3d	; 61
+ d56:	de b7       	in	r29, 0x3e	; 62
 
 	GPS_enuInit();
- d4e:	0e 94 c1 05 	call	0xb82	; 0xb82 <GPS_enuInit>
+ d58:	0e 94 ba 05 	call	0xb74	; 0xb74 <GPS_enuInit>
 
 	//int i = 3 ;
 
 	UART_enuSendByte('M');
- d52:	8d e4       	ldi	r24, 0x4D	; 77
- d54:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d5c:	8d e4       	ldi	r24, 0x4D	; 77
+ d5e:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 	UART_enuSendByte('a');
- d58:	81 e6       	ldi	r24, 0x61	; 97
- d5a:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d62:	81 e6       	ldi	r24, 0x61	; 97
+ d64:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 	UART_enuSendByte('i');
- d5e:	89 e6       	ldi	r24, 0x69	; 105
- d60:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d68:	89 e6       	ldi	r24, 0x69	; 105
+ d6a:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 	UART_enuSendByte('n');
- d64:	8e e6       	ldi	r24, 0x6E	; 110
- d66:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d6e:	8e e6       	ldi	r24, 0x6E	; 110
+ d70:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 
 	GPS_enuGetLocation(&var1 , &var2 , &lat , &lon );
- d6a:	82 ea       	ldi	r24, 0xA2	; 162
- d6c:	90 e0       	ldi	r25, 0x00	; 0
- d6e:	48 2f       	mov	r20, r24
- d70:	8d e9       	ldi	r24, 0x9D	; 157
- d72:	90 e0       	ldi	r25, 0x00	; 0
- d74:	58 2f       	mov	r21, r24
- d76:	89 e9       	ldi	r24, 0x99	; 153
- d78:	90 e0       	ldi	r25, 0x00	; 0
- d7a:	2e e9       	ldi	r18, 0x9E	; 158
- d7c:	30 e0       	ldi	r19, 0x00	; 0
- d7e:	b9 01       	movw	r22, r18
- d80:	25 2f       	mov	r18, r21
- d82:	0e 94 08 06 	call	0xc10	; 0xc10 <GPS_enuGetLocation>
+ d74:	86 eb       	ldi	r24, 0xB6	; 182
+ d76:	90 e0       	ldi	r25, 0x00	; 0
+ d78:	48 2f       	mov	r20, r24
+ d7a:	81 eb       	ldi	r24, 0xB1	; 177
+ d7c:	90 e0       	ldi	r25, 0x00	; 0
+ d7e:	58 2f       	mov	r21, r24
+ d80:	8d ea       	ldi	r24, 0xAD	; 173
+ d82:	90 e0       	ldi	r25, 0x00	; 0
+ d84:	22 eb       	ldi	r18, 0xB2	; 178
+ d86:	30 e0       	ldi	r19, 0x00	; 0
+ d88:	b9 01       	movw	r22, r18
+ d8a:	25 2f       	mov	r18, r21
+ d8c:	0e 94 01 06 	call	0xc02	; 0xc02 <GPS_enuGetLocation>
 	while(1)
 	{
 		//ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatDir , u8 Copy_pu8LongDir );
 
 		//GPS_enuGetLocation(&var1 , &var2 , &lat , &lon );
 		UART_enuSendByte(' ');
- d86:	80 e2       	ldi	r24, 0x20	; 32
- d88:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d90:	80 e2       	ldi	r24, 0x20	; 32
+ d92:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte(' ');
- d8c:	80 e2       	ldi	r24, 0x20	; 32
- d8e:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d96:	80 e2       	ldi	r24, 0x20	; 32
+ d98:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('w');
- d92:	87 e7       	ldi	r24, 0x77	; 119
- d94:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ d9c:	87 e7       	ldi	r24, 0x77	; 119
+ d9e:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('h');
- d98:	88 e6       	ldi	r24, 0x68	; 104
- d9a:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ da2:	88 e6       	ldi	r24, 0x68	; 104
+ da4:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('i');
- d9e:	89 e6       	ldi	r24, 0x69	; 105
- da0:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ da8:	89 e6       	ldi	r24, 0x69	; 105
+ daa:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('l');
- da4:	8c e6       	ldi	r24, 0x6C	; 108
- da6:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ dae:	8c e6       	ldi	r24, 0x6C	; 108
+ db0:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('e');
- daa:	85 e6       	ldi	r24, 0x65	; 101
- dac:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ db4:	85 e6       	ldi	r24, 0x65	; 101
+ db6:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('(');
- db0:	88 e2       	ldi	r24, 0x28	; 40
- db2:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ dba:	88 e2       	ldi	r24, 0x28	; 40
+ dbc:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte('1');
- db6:	81 e3       	ldi	r24, 0x31	; 49
- db8:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ dc0:	81 e3       	ldi	r24, 0x31	; 49
+ dc2:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
 		UART_enuSendByte(')');
- dbc:	89 e2       	ldi	r24, 0x29	; 41
- dbe:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
- dc2:	ff cf       	rjmp	.-2      	; 0xdc2 <main+0x7c>
+ dc6:	89 e2       	ldi	r24, 0x29	; 41
+ dc8:	0e 94 77 00 	call	0xee	; 0xee <UART_enuSendByte>
+ dcc:	ff cf       	rjmp	.-2      	; 0xdcc <main+0x7c>
 
-00000dc4 <_exit>:
- dc4:	f8 94       	cli
+00000dce <_exit>:
+ dce:	f8 94       	cli
 
-00000dc6 <__stop_program>:
- dc6:	ff cf       	rjmp	.-2      	; 0xdc6 <__stop_program>
+00000dd0 <__stop_program>:
+ dd0:	ff cf       	rjmp	.-2      	; 0xdd0 <__stop_program>

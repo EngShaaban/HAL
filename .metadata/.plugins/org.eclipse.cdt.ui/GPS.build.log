@@ -1,20 +1,38 @@
-18:00:53 **** Incremental Build of configuration Debug for project GPS ****
+11:10:10 **** Incremental Build of configuration Debug for project GPS ****
 make all 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 GPS.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3584 bytes (10.9% Full)
+Program:    3614 bytes (11.0% Full)
 (.text + .data + .bootloader)
 
-Data:         67 bytes (3.3% Full)
+Data:         87 bytes (4.2% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-18:00:57 Build Finished (took 3s.124ms)
+11:10:12 Build Finished (took 1s.582ms)
 

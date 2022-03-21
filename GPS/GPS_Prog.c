@@ -16,7 +16,7 @@
 #include "LIB/STD_TYPES.h"
 #include "LIB/errorStates.h"
 
-#include "GPS_Priv.h"
+
 
 #include "MCAL/DIO/DIO_interface.h"
 #include "MCAL\USART\UART_Interface.h"
@@ -27,7 +27,7 @@
 
 static GPS_FLAGS_t  GPS_Flags ;
 
-static u8 GPS_u8Buffer[50]={'X'};
+static u8 GPS_u8Buffer[GPS_LINE_LENGTH]={'X'};
 
 
 /****************************************************************************
@@ -81,7 +81,6 @@ ES_t GPS_enuInit(void)
 	return Local_enuErrorState ;
 
 }//End of GPS_enuInit(void).
-
 
 
 /******************************************************************************************************************
@@ -258,8 +257,23 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatD
 		}while( !(GPS_Flags.FLAG.GPGGA_LINE_FLAG) );
 
 
+		//****************************************************************//
+		//****************************************************************//
 
-		Local_enuErrorState = ES_OK ;
+		//GPS_inlinevidAsciiToInt( GPS_u8Buffer ,  Copy_pf32Lat , Copy_pf32Long   );
+
+		(*(u8*)0x33)=  (u8)(GPS_u8Buffer[14]-0x30) ;
+	    (*(u8*)0x36)=  (u8)(GPS_u8Buffer[27]-0x30) ;
+
+
+
+
+						//****************************************************************//
+
+
+
+
+						Local_enuErrorState = ES_OK ;
 
 
 
