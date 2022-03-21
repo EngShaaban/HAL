@@ -1,263 +1,24 @@
-18:00:53 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3584 bytes (10.9% Full)
-(.text + .data + .bootloader)
-
-Data:         67 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
+17:08:43 **** Clean-only build of configuration Debug for project GPS ****
+make clean 
+rm -rf  GPS.hex  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o  sizedummy  GPS.lss  ./MCAL/USART/UART_Prog.d  ./MCAL/DIO/DIO_prog.d  ./GPS_Cnfg.d ./GPS_Priv.d ./GPS_Prog.d ./main.d  GPS.elf
  
-06:16:22 **** Build of configuration Debug for project GPS ****
+17:09:32 **** Build of configuration Debug for project GPS ****
 make all 
+Building file: ../MCAL/USART/UART_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/USART/UART_Prog.d" -MT"MCAL/USART/UART_Prog.o" -c -o "MCAL/USART/UART_Prog.o" "../MCAL/USART/UART_Prog.c"
+Finished building: ../MCAL/USART/UART_Prog.c
+ 
+Building file: ../MCAL/DIO/DIO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/DIO/DIO_prog.d" -MT"MCAL/DIO/DIO_prog.o" -c -o "MCAL/DIO/DIO_prog.o" "../MCAL/DIO/DIO_prog.c"
+Finished building: ../MCAL/DIO/DIO_prog.c
+ 
 Building file: ../GPS_Cnfg.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
-Finished building: ../GPS_Cnfg.c
- 
-Building file: ../GPS_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-Finished building: ../GPS_Prog.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3584 bytes (10.9% Full)
-(.text + .data + .bootloader)
-
-Data:         67 bytes (3.3% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:27:47 **** Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Cnfg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
-Finished building: ../GPS_Cnfg.c
- 
-Building file: ../GPS_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-Finished building: ../GPS_Prog.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3604 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:50:50 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Cnfg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
-Finished building: ../GPS_Cnfg.c
- 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-../GPS_Priv.c:8: warning: type defaults to 'int' in declaration of 'u8'
-../GPS_Priv.c:8: error: expected ';', ',' or ')' before '*' token
-make: *** [GPS_Priv.o] Error 1
-06:51:48 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Cnfg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-Finished building: ../GPS_Cnfg.c
- 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-../GPS_Priv.c:8: warning: type defaults to 'int' in declaration of 'u8'
-../GPS_Priv.c:8: error: expected ';', ',' or ')' before '*' token
-make: *** [GPS_Priv.o] Error 1
-06:55:19 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building file: ../GPS_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-Finished building: ../GPS_Prog.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3590 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:55:30 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3590 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:55:42 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-Finished building: ../GPS_Prog.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3590 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:57:19 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Cnfg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Cnfg.c
  
 Building file: ../GPS_Priv.c
@@ -268,202 +29,186 @@ Finished building: ../GPS_Priv.c
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:35: warning: passing argument 3 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+../main.c:35: warning: passing argument 4 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+Finished building: ../main.c
+ 
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3590 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:59:10 **** Incremental Build of configuration Debug for project GPS ****
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+17:31:59 **** Incremental Build of configuration Debug for project GPS ****
 make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3590 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-06:59:43 **** Incremental Build of configuration Debug for project GPS ****
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+17:32:29 **** Incremental Build of configuration Debug for project GPS ****
 make all 
-Building file: ../GPS_Cnfg.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-Finished building: ../GPS_Cnfg.c
- 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building file: ../GPS_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-Finished building: ../GPS_Prog.c
- 
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3590 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-07:07:55 **** Incremental Build of configuration Debug for project GPS ****
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+17:34:02 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:265: warning: cast from pointer to integer of different size
-../GPS_Prog.c:266: warning: cast from pointer to integer of different size
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
 ./GPS_Prog.o: In function `GPS_enuInit':
-../GPS_Prog.c:83: undefined reference to `GPS_inlinevidAsciiToInt'
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
 make: *** [GPS.elf] Error 1
-07:08:42 **** Incremental Build of configuration Debug for project GPS ****
+17:34:48 **** Incremental Build of configuration Debug for project GPS ****
 make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Cnfg.c
+ 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:265: warning: cast from pointer to integer of different size
-../GPS_Prog.c:266: warning: cast from pointer to integer of different size
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
 ./GPS_Prog.o: In function `GPS_enuInit':
-../GPS_Prog.c:83: undefined reference to `GPS_inlinevidAsciiToInt'
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
 make: *** [GPS.elf] Error 1
-07:11:45 **** Incremental Build of configuration Debug for project GPS ****
+17:35:22 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
 ./GPS_Prog.o: In function `GPS_enuInit':
-../GPS_Prog.c:83: undefined reference to `GPS_inlinevidAsciiToInt'
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
 make: *** [GPS.elf] Error 1
-07:12:32 **** Incremental Build of configuration Debug for project GPS ****
+17:35:55 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+17:36:32 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    3644 bytes (11.1% Full)
+(.text + .data + .bootloader)
+
+Data:         87 bytes (4.2% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+17:36:54 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `func'
+make: *** [GPS.elf] Error 1
+17:37:15 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Cnfg.c
+ 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
@@ -494,127 +239,94 @@ Data:         87 bytes (4.2% Full)
 
 Finished building: sizedummy
  
-07:15:19 **** Incremental Build of configuration Debug for project GPS ****
+17:40:12 **** Incremental Build of configuration Debug for project GPS ****
 make all 
-Building file: ../GPS_Priv.c
+Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Prog.c: In function 'GPS_enuGetLocation':
+../GPS_Prog.c:265: error: expected expression before 'const'
+../GPS_Prog.c:265: error: too few arguments to function 'GPS_inlinevidAsciiToInt'
+../GPS_Prog.c: At top level:
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+make: *** [GPS_Prog.o] Error 1
+17:41:01 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:37: warning: passing argument 3 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+../main.c:37: warning: passing argument 4 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+../main.c: At top level:
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../main.c
  
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3614 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-07:15:42 **** Incremental Build of configuration Debug for project GPS ****
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+17:42:29 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Priv.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3614 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-07:17:36 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3614 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-07:21:34 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:67: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Priv.c
  
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+Finished building: ../GPS_Prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:37: warning: passing argument 3 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+../main.c:37: warning: passing argument 4 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+Finished building: ../main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+17:44:42 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
 ../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Prog.c:265: error: nested function 'GPS_inlinevidAsciiToInt' declared but never defined
+make: *** [GPS_Prog.o] Error 1
+17:45:17 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Prog.c: In function 'GPS_enuGetLocation':
+../GPS_Prog.c:265: error: nested function 'GPS_inlinevidAsciiToInt' declared but never defined
+make: *** [GPS_Prog.o] Error 1
+17:45:58 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Prog.c: In function 'GPS_enuGetLocation':
+../GPS_Prog.c:265: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
@@ -636,26 +348,22 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3614 bytes (11.0% Full)
+Program:    5722 bytes (17.5% Full)
 (.text + .data + .bootloader)
 
-Data:         87 bytes (4.2% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-07:23:09 **** Incremental Build of configuration Debug for project GPS ****
+20:47:38 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
 ../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Prog.c:265: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
@@ -677,46 +385,30 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3614 bytes (11.0% Full)
+Program:    5722 bytes (17.5% Full)
 (.text + .data + .bootloader)
 
-Data:         87 bytes (4.2% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-09:41:22 **** Incremental Build of configuration Debug for project GPS ****
+20:49:01 **** Incremental Build of configuration Debug for project GPS ****
 make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+Finished building: ../GPS_Cnfg.c
+ 
 Building file: ../GPS_Priv.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-../GPS_Priv.c: In function 'GPS_inlinevidAsciiToInt':
-../GPS_Priv.c:43: warning: 'GPS_Flags' is static but used in inline function 'GPS_inlinevidAsciiToInt' which is not static
-../GPS_Priv.c:51: warning: 'GPS_Flags' is static but used in inline function 'GPS_inlinevidAsciiToInt' which is not static
-../GPS_Priv.c:52: warning: statement with no effect
-../GPS_Priv.c:52: error: expected ';' before '}' token
-make: *** [GPS_Priv.o] Error 1
-10:22:52 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-../GPS_Priv.c: In function 'GPS_inlinevidAsciiToInt':
-../GPS_Priv.c:30: warning: unused variable 'Local_u8IntPortion'
-../GPS_Priv.c: At top level:
-../GPS_Priv.c:16: warning: 'GPS_Flags' defined but not used
 Finished building: ../GPS_Priv.c
  
 Building file: ../GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-../GPS_Prog.c: In function 'GPS_enuGetLocation':
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c:103: warning: comparison between pointer and integer
-../GPS_Prog.c: At top level:
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
-../GPS_Priv.h:65: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
 Finished building: ../GPS_Prog.c
  
 Building target: GPS.elf
@@ -738,24 +430,199 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3614 bytes (11.0% Full)
+Program:    5722 bytes (17.5% Full)
 (.text + .data + .bootloader)
 
-Data:         88 bytes (4.3% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:36:28 **** Incremental Build of configuration Debug for project GPS ****
+20:50:41 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+Finished building: ../GPS_Cnfg.c
+ 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+Finished building: ../GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5722 bytes (17.5% Full)
+(.text + .data + .bootloader)
+
+Data:        343 bytes (16.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:52:10 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+Finished building: ../GPS_Cnfg.c
+ 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+Finished building: ../GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5722 bytes (17.5% Full)
+(.text + .data + .bootloader)
+
+Data:        343 bytes (16.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:55:13 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Cnfg.c
+ 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+../GPS_Priv.h:66: warning: inline function 'GPS_inlinevidAsciiToInt' declared but never defined
+Finished building: ../GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+./GPS_Prog.o: In function `GPS_enuInit':
+../GPS_Prog.c:84: undefined reference to `GPS_inlinevidAsciiToInt'
+make: *** [GPS.elf] Error 1
+20:55:45 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Cnfg.d" -MT"GPS_Cnfg.o" -c -o "GPS_Cnfg.o" "../GPS_Cnfg.c"
+Finished building: ../GPS_Cnfg.c
+ 
+Building file: ../GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
+Finished building: ../GPS_Priv.c
+ 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+Finished building: ../GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5722 bytes (17.5% Full)
+(.text + .data + .bootloader)
+
+Data:        343 bytes (16.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+20:55:52 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5722 bytes (17.5% Full)
+(.text + .data + .bootloader)
+
+Data:        343 bytes (16.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+21:05:41 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Priv.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-../GPS_Priv.c: In function 'GPS_inlinevidAsciiToInt':
-../GPS_Priv.c:30: warning: unused variable 'Local_u8IntPortion'
-../GPS_Priv.c: At top level:
-../GPS_Priv.c:16: warning: 'GPS_Flags' defined but not used
 Finished building: ../GPS_Priv.c
  
 Building target: GPS.elf
@@ -777,16 +644,16 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3614 bytes (11.0% Full)
+Program:    5722 bytes (17.5% Full)
 (.text + .data + .bootloader)
 
-Data:         88 bytes (4.3% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:37:20 **** Incremental Build of configuration Debug for project GPS ****
+21:11:54 **** Incremental Build of configuration Debug for project GPS ****
 make all 
 Building file: ../GPS_Priv.c
 Invoking: AVR Compiler
@@ -812,150 +679,27 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3614 bytes (11.0% Full)
+Program:    5722 bytes (17.5% Full)
 (.text + .data + .bootloader)
 
-Data:         87 bytes (4.2% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
-10:40:02 **** Incremental Build of configuration Debug for project GPS ****
+21:15:18 **** Incremental Build of configuration Debug for project GPS ****
 make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
 Invoking: Print Size
 avr-size --format=avr --mcu=atmega32 GPS.elf
 AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    3614 bytes (11.0% Full)
+Program:    5722 bytes (17.5% Full)
 (.text + .data + .bootloader)
 
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-10:41:08 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3614 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-11:06:25 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3614 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-11:10:10 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    3614 bytes (11.0% Full)
-(.text + .data + .bootloader)
-
-Data:         87 bytes (4.2% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 

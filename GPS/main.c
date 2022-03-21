@@ -11,8 +11,10 @@
 #include "MCAL/DIO/DIO_interface.h"
 #include "MCAL\USART\UART_Interface.h"
 
+
 #include "GPS_Cnfg.h"
 #include "GPS_Interface.h"
+
 
 f32 var1 ;
 f32 var2 ;

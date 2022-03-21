@@ -21,8 +21,9 @@
 #include "MCAL/DIO/DIO_interface.h"
 #include "MCAL\USART\UART_Interface.h"
 
-#include "GPS_Cnfg.h"
 #include "GPS_Priv.h"
+#include "GPS_Cnfg.h"
+
 
 
 static GPS_FLAGS_t  GPS_Flags ;
@@ -94,7 +95,8 @@ ES_t GPS_enuInit(void)
  *                   Argu.4:         Address of u8 variable  --->  ~  ~ Longitude  ~ (E,w,N or S)                  *
  * Return Type     : Error state of type ES_t.                                                                     *
  **.....................................................................................................************/
-ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatDir , u8 Copy_pu8LongDir )
+//   GPS_inlinevidAsciiToInt( u8 const* GPS_constu8_Buffer , f32** Copy_pf32Lat , f32** Copy_pf32Long  , u8** Copy_pu8LatDir , u8** Copy_pu8LongDir  )
+ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8LatDir , u8* Copy_pu8LongDir )
 {
 
 	ES_t Local_enuErrorState = ES_NOK ;
@@ -260,10 +262,8 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatD
 		//****************************************************************//
 		//****************************************************************//
 
-		//GPS_inlinevidAsciiToInt( GPS_u8Buffer ,  Copy_pf32Lat , Copy_pf32Long   );
 
-		(*(u8*)0x33)=  (u8)(GPS_u8Buffer[14]-0x30) ;
-	    (*(u8*)0x36)=  (u8)(GPS_u8Buffer[27]-0x30) ;
+		GPS_inlinevidAsciiToInt( GPS_u8Buffer , &Copy_pf32Lat , &Copy_pf32Long , &Copy_pu8LatDir , &Copy_pu8LongDir  );
 
 
 
@@ -285,9 +285,15 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatD
 		Local_enuErrorState = ES_NULL_POINTER ;
 	}
 
+
+	//func();
 	return Local_enuErrorState ;
 
 }//End of GPS_enuGetLocation.
+
+
+
+
 
 /***************************** END OF FILE. **********************************/
 /*****************************************************************************/

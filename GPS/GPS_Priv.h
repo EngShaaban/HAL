@@ -53,7 +53,7 @@ void fun(void);
 #define GPS_CLEAR_LAT_FLAG()            GPS_Flags.FLAG.LAT_COMMA_FLAG   = 0
 #define GPS_CLEAR_LONG_FLAG()           GPS_Flags.FLAG.LONG_COMMA_FLAG  = 0
 #define GPS_CLEAR_DOT_FLAG()            GPS_Flags.FLAG.DOT_FLAG         = 0
-#define GPS_CLEAR_FIRST_DIR_FLAG()       GPS_Flags.FLAG.FIRST_DIR_FLAG   = 0
+#define GPS_CLEAR_FIRST_DIR_FLAG()      GPS_Flags.FLAG.FIRST_DIR_FLAG   = 0
 #define GPS_CLEAR_SEC_DIR_FLAG()        GPS_Flags.FLAG.SECOND_DIR_FLAG  = 0
 
 
@@ -62,11 +62,8 @@ void fun(void);
 //  0.........  10  .........  20  .  22  .......... 33  .  35  .............................
 //  043338.100  ,   5404.2675  ,   N  ,   00159.7569  ,  W  ,   1,10,4.00,100.0,M,50.0,M,,*72
 
-inline void   GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32* Copy_pf32Lat , f32* Copy_pf32Long   );
 
-//inline void   GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32* Copy_pf32Lat , f32* Copy_pf32Long   );
-
-
+void   GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32** Copy_pf32Lat , f32** Copy_pf32Long , u8** Copy_pu8LatDir , u8** Copy_pu8LongDir  );
 
 
 #endif /* GPS_PRIV_H_ */

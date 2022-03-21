@@ -1,0 +1,30 @@
+/*
+ * GPS_Priv.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+
+#include "LIB/STD_TYPES.h"
+#include "LIB/errorStates.h"
+
+
+#include "GPS_Cnfg.h"
+#include "GPS_Priv.h"
+
+
+//  0.........  10  ....  15 ....  20  .  22  .......... 33  .  35  .............................
+//  043338.100  ,   5404  .  2675  ,   N  ,   00159.7569  ,  W  ,   1,10,4.00,100.0,M,50.0,M,,*72
+//
+//inline void GPS_inlinevidAsciiToInt(const u8* GPS_constu8_Buffer , f32** Copy_pf32Lat , f32** Copy_pf32Long , u8** Copy_pu8LatDir , u8** Copy_pu8LongDir  );
+
+//void func(void)
+//{
+//	(*(u8*)0x33)=  0;
+//		    (*(u8*)0x36)=  0 ;
+//
+//
+//
+//}
+
