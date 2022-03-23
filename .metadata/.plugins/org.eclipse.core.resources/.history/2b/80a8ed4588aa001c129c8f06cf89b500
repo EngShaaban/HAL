@@ -16,11 +16,11 @@
 #include "GPS_Interface.h"
 
 
-f32 Lat ;
-f32 Long ;
+f32 var1 ;
+f32 var2 ;
 
-u8 latDir;
-u8 longDir;
+u8 lat;
+u8 lon;
 
 int main(void)
 {
@@ -34,7 +34,7 @@ int main(void)
 	UART_enuSendByte('i');
 	UART_enuSendByte('n');
 
-	GPS_enuGetLocation(&Lat , &Long , &latDir , &longDir );
+	GPS_enuGetLocation(&var1 , &var2 , &lat , &lon );
 
 
 	while(1)
@@ -53,6 +53,12 @@ int main(void)
 		UART_enuSendByte('1');
 		UART_enuSendByte(')');
 
+
+		(*(u8*)0x33)= lat;
+		(*(u8*)0x36)= lon;
+
+		(*(u8*)0x53)= (u8)var1;
+		(*(u8*)0x52)= (u8)var2;
 
 		while(1)
 		{

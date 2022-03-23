@@ -94,7 +94,7 @@ void GPS_inlinevidAsciiToInt(const u8* GPS_p2Constu8_DataBuffer , f32** Copy_pf3
 	{
 		// 5404.2675,
 		//      |
-		Local_u8Temp *= 10 ;
+         Local_u8Temp *= 10 ;
 
 		Local_u16TempLat += ((u16)(*(GPS_p2Constu8_DataBuffer)-0x30)/Local_u8Temp);
 
@@ -166,7 +166,7 @@ void GPS_inlinevidAsciiToInt(const u8* GPS_p2Constu8_DataBuffer , f32** Copy_pf3
 	// 00159.7569
 	//       |
 
-	Local_u8Temp = 1 ;
+	Local_u8Temp = 10 ;
 
 	do
 	{
@@ -174,11 +174,9 @@ void GPS_inlinevidAsciiToInt(const u8* GPS_p2Constu8_DataBuffer , f32** Copy_pf3
 		// 00159.7569,W
 		//       |
 
-		Local_u8Temp *= 10 ;
-
 		Local_u16TempLong += ((u16)((*GPS_p2Constu8_DataBuffer)-0x30)/Local_u8Temp);
 
-
+		Local_u8Temp *= 10 ;
 		//                                                          Local_u8Temp
 		//iter_#1  Local_u16TempLat=   159 + 0.7=  159.7            10
 		//iter_#2  Local_u16TempLat= 159.7+0.05 =  159.75           100

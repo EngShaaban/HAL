@@ -1,11 +1,13 @@
-08:16:21 **** Incremental Build of configuration Debug for project GPS ****
+11:06:38 **** Incremental Build of configuration Debug for project GPS ****
 make all 
+Building file: ../GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
+Finished building: ../GPS_Prog.c
+ 
 Building file: ../main.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
-../main.c: In function 'main':
-../main.c:37: warning: passing argument 3 of 'GPS_enuGetLocation' makes integer from pointer without a cast
-../main.c:37: warning: passing argument 4 of 'GPS_enuGetLocation' makes integer from pointer without a cast
 Finished building: ../main.c
  
 Building target: GPS.elf
@@ -27,15 +29,15 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:    7208 bytes (22.0% Full)
+Program:    5478 bytes (16.7% Full)
 (.text + .data + .bootloader)
 
-Data:        351 bytes (17.1% Full)
+Data:        343 bytes (16.7% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-08:16:22 Build Finished (took 1s.538ms)
+11:06:43 Build Finished (took 4s.403ms)
 
