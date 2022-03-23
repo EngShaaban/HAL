@@ -10367,3 +10367,57 @@ java.io.FileNotFoundException: jar:file:/C:/Users/Ahmed/Desktop/Desktop%20Q1/SDK
 
 !ENTRY org.eclipse.equinox.p2.metadata.repository 4 1000 2022-03-21 17:51:52.081
 !MESSAGE No repository found at https://mcuoneclipse.com/2014/05/29/how-to-add-register-details-view-in-eclipse/.
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-22 16:31:50.627
+!MESSAGE Indexed 'LCD' (4 sources, 11 headers) in 0.237 sec: 205 declarations; 823 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-22 16:44:18.800
+!MESSAGE Indexed 'C_Test' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.launchbar.core 2 0 2022-03-22 17:04:58.170
+!MESSAGE Enablement expression is missing for descriptor type org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.launchbar.core 2 0 2022-03-22 17:04:58.170
+!MESSAGE Enablement expression is missing for config provider for org.eclipse.cdt.debug.core.coreBuildDescriptorType
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.200
+!MESSAGE Resource '/GPS' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.410
+!MESSAGE Resource '/LCD' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.410
+!MESSAGE Resource '/Led' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.411
+!MESSAGE Resource '/RemoteSystemsTempFiles' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.412
+!MESSAGE Resource '/SEV_SEG' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.412
+!MESSAGE Resource '/Seven_Segment' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.412
+!MESSAGE Resource '/Switch' is not open.
+
+!ENTRY org.eclipse.core.resources 4 372 2022-03-22 17:04:58.413
+!MESSAGE Resource '/TestLcd' is not open.
+
+!ENTRY org.eclipse.cdt.launch 4 104 2022-03-22 17:04:58.530
+!MESSAGE Program file does not exist
+
+!ENTRY org.eclipse.cdt.launch 4 104 2022-03-22 17:05:15.231
+!MESSAGE Program file does not exist
+
+!ENTRY org.eclipse.cdt.launch 4 104 2022-03-22 17:09:57.902
+!MESSAGE Program file does not exist
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-22 17:12:44.425
+!MESSAGE Indexed 'C_Tst' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-22 17:17:22.625
+!MESSAGE Indexed 'GPS' (6 sources, 10 headers) in 0.176 sec: 176 declarations; 751 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-03-23 08:02:03.822
+!MESSAGE Indexed 'GPS' (6 sources, 10 headers) in 0.104 sec: 176 declarations; 751 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

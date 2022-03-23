@@ -4,7 +4,7 @@
 /* Filename              :   GPS_Prog.c                                     */
 /* Author                :   Shaban Abdullah Awad                            */
 /* Created on            :   Mar 15, 2022                                    */
-/* Version               :   0.1.0                                           */
+/* Version               :   0.0.0                                           */
 /* Toolchain             :   avr-gcc (4.3.3)                                 */
 /* Target                :   ATmega32                                        */
 /* Notes                 :   None                                            */

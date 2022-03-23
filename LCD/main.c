@@ -6,10 +6,10 @@
  */
 
 
-#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\STD_TYPES.h"
-#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\errorStates.h"
+#include "STD_TYPES.h"
+#include "errorStates.h"
 
-#include "E:\NTI\AVR\ATmeg16_Drivers\MCAL\DIO\DIO_interface.h"
+#include "MCAL\DIO_interface.h"
 
 #include "LCD_Cnfg.h"
 #include "LCD_interface.h"

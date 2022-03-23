@@ -1,91 +1,5 @@
-21:39:00 **** Incremental Build of configuration Debug for project GPS ****
+08:02:07 **** Incremental Build of configuration Debug for project GPS ****
 make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
-Building file: ../GPS_Prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Prog.d" -MT"GPS_Prog.o" -c -o "GPS_Prog.o" "../GPS_Prog.c"
-Finished building: ../GPS_Prog.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    5726 bytes (17.5% Full)
-(.text + .data + .bootloader)
-
-Data:        343 bytes (16.7% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:13:37 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-../GPS_Priv.c: In function 'GPS_inlinevidAsciiToInt':
-../GPS_Priv.c:38: warning: unused variable 'Local_u8_Subs_Of_Fourth_Comma'
-../GPS_Priv.c:37: warning: unused variable 'Local_u8_Subs_Of_Third_Comma'
-../GPS_Priv.c:36: warning: unused variable 'Local_u8_Subs_Of_Second_Comma'
-../GPS_Priv.c:35: warning: unused variable 'Local_u8_Buffer_Iterator'
-../GPS_Priv.c:33: warning: unused variable 'Local_u8Counter'
-Finished building: ../GPS_Priv.c
- 
-Building target: GPS.elf
-Invoking: AVR C Linker
-avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
-Finished building target: GPS.elf
- 
-Invoking: AVR Create Extended Listing
-avr-objdump -h -S GPS.elf  >"GPS.lss"
-Finished building: GPS.lss
- 
-Create Flash image (ihex format)
-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
-Finished building: GPS.hex
- 
-Invoking: Print Size
-avr-size --format=avr --mcu=atmega32 GPS.elf
-AVR Memory Usage
-----------------
-Device: atmega32
-
-Program:    5490 bytes (16.8% Full)
-(.text + .data + .bootloader)
-
-Data:        343 bytes (16.7% Full)
-(.data + .bss + .noinit)
-
-
-Finished building: sizedummy
- 
-22:13:55 **** Incremental Build of configuration Debug for project GPS ****
-make all 
-Building file: ../GPS_Priv.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"GPS_Priv.d" -MT"GPS_Priv.o" -c -o "GPS_Priv.o" "../GPS_Priv.c"
-Finished building: ../GPS_Priv.c
- 
 Building target: GPS.elf
 Invoking: AVR C Linker
 avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
@@ -109,6 +23,82 @@ Program:    5482 bytes (16.7% Full)
 (.text + .data + .bootloader)
 
 Data:        343 bytes (16.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:03:58 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:37: warning: passing argument 3 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+../main.c:37: warning: passing argument 4 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+Finished building: ../main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    5502 bytes (16.8% Full)
+(.text + .data + .bootloader)
+
+Data:        343 bytes (16.7% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+08:16:21 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'main':
+../main.c:37: warning: passing argument 3 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+../main.c:37: warning: passing argument 4 of 'GPS_enuGetLocation' makes integer from pointer without a cast
+Finished building: ../main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./GPS_Cnfg.o ./GPS_Priv.o ./GPS_Prog.o ./main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    7208 bytes (22.0% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
 (.data + .bss + .noinit)
 
 

@@ -408,19 +408,19 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x15b4
+.stab           0x00000000     0x1668
  *(.stab)
  .stab          0x00000000      0x978 ./MCAL/DIO_prog.o
- .stab          0x00000978      0x120 ./LCD_Cnfg.o
+ .stab          0x00000978      0x1d4 ./LCD_Cnfg.o
                                 0x1e0 (size before relaxing)
- .stab          0x00000a98      0x9fc ./LCD_prog.o
+ .stab          0x00000b4c      0x9fc ./LCD_prog.o
                                 0xad4 (size before relaxing)
- .stab          0x00001494      0x120 ./main.o
+ .stab          0x00001548      0x120 ./main.o
                                 0x1f8 (size before relaxing)
 
-.stabstr        0x00000000      0xcb7
+.stabstr        0x00000000      0xcaf
  *(.stabstr)
- .stabstr       0x00000000      0xcb7 ./MCAL/DIO_prog.o
+ .stabstr       0x00000000      0xcaf ./MCAL/DIO_prog.o
 
 .stab.excl
  *(.stab.excl)

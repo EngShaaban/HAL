@@ -1,19 +1,33 @@
-20:20:54 **** Incremental Build of configuration Debug for project LCD ****
+16:31:58 **** Incremental Build of configuration Debug for project LCD ****
 make all 
-Building file: ../MCAL/DIO_prog.c
-Invoking: AVR Compiler
-avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega16 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/DIO_prog.d" -MT"MCAL/DIO_prog.o" -c -o "MCAL/DIO_prog.o" "../MCAL/DIO_prog.c"
-../MCAL/DIO_prog.c:16:54: error: E:\NTI\AVR\ATmeg16_Drivers\LIB\STD_TYPES.h: No such file or directory
-../MCAL/DIO_prog.c:17:56: error: E:\NTI\AVR\ATmeg16_Drivers\LIB\errorStates.h: No such file or directory
-../MCAL/DIO_prog.c:33: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuSetPortDirection'
-../MCAL/DIO_prog.c:82: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuSetPortValue'
-../MCAL/DIO_prog.c:127: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuToggelPort'
-../MCAL/DIO_prog.c:176: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuGetPortVlaue'
-../MCAL/DIO_prog.c:250: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuSetPinDirection'
-../MCAL/DIO_prog.c:338: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuSetPinValue'
-../MCAL/DIO_prog.c:424: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuToggelPin'
-../MCAL/DIO_prog.c:481: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'DIO_enuGetPinVlaue'
-make: *** [MCAL/DIO_prog.o] Error 1
+Building target: LCD.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,LCD.map -mmcu=atmega16 -o "LCD.elf"  ./MCAL/DIO_prog.o  ./LCD_Cnfg.o ./LCD_prog.o ./main.o   
+Finished building target: LCD.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S LCD.elf  >"LCD.lss"
+Finished building: LCD.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD.elf  "LCD.hex"
+Finished building: LCD.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 LCD.elf
+AVR Memory Usage
+----------------
+Device: atmega16
 
-20:20:55 Build Finished (took 466ms)
+Program:    9522 bytes (58.1% Full)
+(.text + .data + .bootloader)
+
+Data:         32 bytes (3.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:32:00 Build Finished (took 1s.352ms)
 

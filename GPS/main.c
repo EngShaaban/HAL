@@ -52,6 +52,12 @@ int main(void)
 		UART_enuSendByte('(');
 		UART_enuSendByte('1');
 		UART_enuSendByte(')');
+		(*(u8*)0x33)= lat;
+		(*(u8*)0x36)= lon;
+
+		(*(u8*)0x53)= (u8)var1;
+		(*(u8*)0x52)= (u8)var2;
+
 		while(1)
 		{
 			//Stay here.

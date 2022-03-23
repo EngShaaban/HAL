@@ -9,11 +9,11 @@
 /****************************************************************************/
 /******************************  INCLUDES  **********************************/
 
-#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\STD_TYPES.h"
-#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\errorStates.h"
+#include "STD_TYPES.h"
+#include "errorStates.h"
 
 
-#include "E:\NTI\AVR\ATmeg16_Drivers\MCAL\DIO\DIO_interface.h"
+#include "MCAL\DIO_interface.h"
 
 #include "LCD_priv.h"
 #include "LCD_Cnfg.h"
@@ -29,50 +29,50 @@ LCD_t   LCD_AstrLcdCnfg[LCD_NUM]=
 		 * LCD Num_1
 		 ********************************************/
 		{
-				.LCD_u8Mode     =  LCD_8BIT     ,
+				.LCD_u8Mode     =  LCD_4BIT     ,
 
 
 				/**************************/
 				/* Control Pins .         */
 				/**************************/
-				.LCD_u8RS_Port  =  DIO_PORTA    ,
-				.LCD_u8RS_Pin   =  DIO_PIN4     ,
+				.LCD_u8RS_Port  =  DIO_PORTC    ,
+				.LCD_u8RS_Pin   =  DIO_PIN6     ,
 
 				.LCD_u8RW_Port  =  DIO_PORTD    ,
 				.LCD_u8RW_Pin   =  DIO_PIN6     ,
 
-				.LCD_u8EN_Port  =  DIO_PORTD    ,
-				.LCD_u8EN_Pin   =  DIO_PIN6     ,
+				.LCD_u8EN_Port  =  DIO_PORTC    ,
+				.LCD_u8EN_Pin   =  DIO_PIN7     ,
 
 
 				/**************************/
 				/* Data Pins .            */
 				/**************************/
-				.LCD_u8D7_Port  =  DIO_PORTA    ,
+				.LCD_u8D7_Port  =  DIO_PORTB ,
 				.LCD_u8D7_Pin   =  DIO_PIN7     ,
 
-				.LCD_u8D6_Port  =  DIO_PORTA    ,
+				.LCD_u8D6_Port  =  DIO_PORTB ,
 				.LCD_u8D6_Pin   =  DIO_PIN6     ,
 
-				.LCD_u8D5_Port  =  DIO_PORTA    ,
+				.LCD_u8D5_Port  =  DIO_PORTB ,
 				.LCD_u8D5_Pin   =  DIO_PIN5     ,
 
-				.LCD_u8D4_Port  =  DIO_PORTA    ,
+				.LCD_u8D4_Port  =  DIO_PORTB ,
 				.LCD_u8D4_Pin   =  DIO_PIN4     ,
 
-				.LCD_u8D3_Port  =  DIO_PORTA    ,
+				.LCD_u8D3_Port  =  DIO_PORTB ,
 				.LCD_u8D3_Pin   =  DIO_PIN3     ,
 
 
-				.LCD_u8D2_Port  =  DIO_PORTA    ,
+				.LCD_u8D2_Port  =  DIO_PORTB ,
 				.LCD_u8D2_Pin   =  DIO_PIN2     ,
 
 
-				.LCD_u8D1_Port  =  DIO_PORTA    ,
+				.LCD_u8D1_Port  =  DIO_PORTB ,
 				.LCD_u8D1_Pin   =  DIO_PIN1     ,
 
 
-				.LCD_u8D0_Port  =  DIO_PORTA    ,
+				.LCD_u8D0_Port  =  DIO_PORTB    ,
 				.LCD_u8D0_Pin   =  DIO_PIN0
 
 

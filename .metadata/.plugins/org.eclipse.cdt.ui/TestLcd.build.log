@@ -1,0 +1,20 @@
+16:33:46 **** Incremental Build of configuration Debug for project TestLcd ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega16 TestLcd.elf
+AVR Memory Usage
+----------------
+Device: atmega16
+
+Program:    8420 bytes (51.4% Full)
+(.text + .data + .bootloader)
+
+Data:          8 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+16:33:46 Build Finished (took 337ms)
+

@@ -13,8 +13,8 @@
 /****************************************************************************/
 /******************************  INCLUDES  **********************************/
 
-#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\STD_TYPES.h"
-#include "E:\NTI\AVR\ATmeg16_Drivers\LIB\errorStates.h"
+#include "../STD_TYPES.h"
+#include "../errorStates.h"
 
 #include"DIO_private.h"
 
