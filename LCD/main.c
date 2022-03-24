@@ -14,6 +14,10 @@
 #include "LCD_Cnfg.h"
 #include "LCD_interface.h"
 
+#ifndef F_CPU
+#define F-CPU  16000000UL
+#endif
+
 int main(void)
 {
 	LCD_enuInit( LCD_AstrLcdCnfg );

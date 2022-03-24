@@ -20,7 +20,9 @@ C_DEPS :=
 
 # Every subdirectory with source files must be described here
 SUBDIRS := \
-. \
+APP \
+HAL \
+HAL/LCD \
 MCAL/DIO \
 MCAL/USART \
 

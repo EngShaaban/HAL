@@ -1,0 +1,47 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 15, 2022
+ *      Author: SHAABAN
+ */
+
+#include "STD_TYPES.h"
+
+
+#ifndef   F_CPU
+#define   F_CPU (16000000UL)
+#endif
+
+#include "EF_LCD.h"
+
+
+
+f32 Lat ;
+f32 Long ;
+
+u8 latDir;
+u8 longDir;
+
+u8  var = 123 ;
+u8 name = 'S';
+
+int main(void)
+{
+
+	EF_void_LCD_init();
+	EF_void_LCD_Clear_Screen();
+	EF_void_LCD_goto(1,1);
+
+
+
+	while(1)
+	{
+		EF_void_LCD_print(&name);
+
+
+	}
+
+
+}
+
+

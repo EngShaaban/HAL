@@ -1,8 +1,35 @@
-16:31:58 **** Incremental Build of configuration Debug for project LCD ****
+06:47:23 **** Build of configuration Debug for project LCD ****
 make all 
+Building file: ../MCAL/DIO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"MCAL/DIO_prog.d" -MT"MCAL/DIO_prog.o" -c -o "MCAL/DIO_prog.o" "../MCAL/DIO_prog.c"
+Finished building: ../MCAL/DIO_prog.c
+ 
+Building file: ../LCD_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"LCD_Cnfg.d" -MT"LCD_Cnfg.o" -c -o "LCD_Cnfg.o" "../LCD_Cnfg.c"
+Finished building: ../LCD_Cnfg.c
+ 
+Building file: ../LCD_priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"LCD_priv.d" -MT"LCD_priv.o" -c -o "LCD_priv.o" "../LCD_priv.c"
+Finished building: ../LCD_priv.c
+ 
+Building file: ../LCD_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"LCD_prog.d" -MT"LCD_prog.o" -c -o "LCD_prog.o" "../LCD_prog.c"
+In file included from ../LCD_prog.c:20:
+c:/winavr-20100110/lib/gcc/../../avr/include/util\delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../LCD_prog.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
 Building target: LCD.elf
 Invoking: AVR C Linker
-avr-gcc -Wl,-Map,LCD.map -mmcu=atmega16 -o "LCD.elf"  ./MCAL/DIO_prog.o  ./LCD_Cnfg.o ./LCD_prog.o ./main.o   
+avr-gcc -Wl,-Map,LCD.map -mmcu=atmega32 -o "LCD.elf"  ./MCAL/DIO_prog.o  ./LCD_Cnfg.o ./LCD_priv.o ./LCD_prog.o ./main.o   
 Finished building target: LCD.elf
  
 Invoking: AVR Create Extended Listing
@@ -14,20 +41,20 @@ avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex LCD.elf  "LCD.hex
 Finished building: LCD.hex
  
 Invoking: Print Size
-avr-size --format=avr --mcu=atmega16 LCD.elf
+avr-size --format=avr --mcu=atmega32 LCD.elf
 AVR Memory Usage
 ----------------
-Device: atmega16
+Device: atmega32
 
-Program:    9522 bytes (58.1% Full)
+Program:    9522 bytes (29.1% Full)
 (.text + .data + .bootloader)
 
-Data:         32 bytes (3.1% Full)
+Data:         32 bytes (1.6% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-16:32:00 Build Finished (took 1s.352ms)
+06:47:25 Build Finished (took 2s.529ms)
 

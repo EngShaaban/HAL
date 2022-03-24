@@ -1,0 +1,50 @@
+08:59:30 **** Incremental Build of configuration Debug for project Module_Test ****
+make all 
+Building file: ../EF_DIO.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"EF_DIO.d" -MT"EF_DIO.o" -c -o "EF_DIO.o" "../EF_DIO.c"
+Finished building: ../EF_DIO.c
+ 
+Building file: ../EF_LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"EF_LCD.d" -MT"EF_LCD.o" -c -o "EF_LCD.o" "../EF_LCD.c"
+In file included from ../EF_LCD.c:38:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../EF_LCD.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: Module_Test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Module_Test.map -mmcu=atmega32 -o "Module_Test.elf"  ./EF_DIO.o ./EF_LCD.o ./main.o   
+Finished building target: Module_Test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Module_Test.elf  >"Module_Test.lss"
+Finished building: Module_Test.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Module_Test.elf  "Module_Test.hex"
+Finished building: Module_Test.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Module_Test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11972 bytes (36.5% Full)
+(.text + .data + .bootloader)
+
+Data:         20 bytes (1.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+08:59:32 Build Finished (took 1s.993ms)
+

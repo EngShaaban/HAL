@@ -47,7 +47,7 @@ all: LCD.elf secondary-outputs
 LCD.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,LCD.map -mmcu=atmega16 -o "LCD.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	avr-gcc -Wl,-Map,LCD.map -mmcu=atmega32 -o "LCD.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -65,7 +65,7 @@ LCD.hex: LCD.elf
 
 sizedummy: LCD.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=atmega16 LCD.elf
+	-avr-size --format=avr --mcu=atmega32 LCD.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
