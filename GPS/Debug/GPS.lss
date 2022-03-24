@@ -3,33 +3,33 @@ GPS.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000040ae  00000000  00000000  00000094  2**1
+  0 .text         000040d0  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000154  00800060  000040ae  00004142  2**0
+  1 .data         00000144  00800060  000040d0  00004164  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .bss          0000000b  008001b4  008001b4  00004296  2**0
+  2 .bss          0000000b  008001a4  008001a4  000042a8  2**0
                   ALLOC
-  3 .stab         00003bd0  00000000  00000000  00004298  2**2
+  3 .stab         00003c00  00000000  00000000  000042a8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      0000164b  00000000  00000000  00007e68  2**0
+  4 .stabstr      00001661  00000000  00000000  00007ea8  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_aranges 000001a0  00000000  00000000  000094b3  2**0
+  5 .debug_aranges 000001a0  00000000  00000000  00009509  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_pubnames 000001f2  00000000  00000000  00009653  2**0
+  6 .debug_pubnames 000001f2  00000000  00000000  000096a9  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_info   0000240b  00000000  00000000  00009845  2**0
+  7 .debug_info   0000240b  00000000  00000000  0000989b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 00001386  00000000  00000000  0000bc50  2**0
+  8 .debug_abbrev 00001386  00000000  00000000  0000bca6  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   000011d6  00000000  00000000  0000cfd6  2**0
+  9 .debug_line   000011d6  00000000  00000000  0000d02c  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_frame  000001c0  00000000  00000000  0000e1ac  2**2
+ 10 .debug_frame  000001c0  00000000  00000000  0000e204  2**2
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    000002f6  00000000  00000000  0000e36c  2**0
+ 11 .debug_str    000002f6  00000000  00000000  0000e3c4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_loc    0000096e  00000000  00000000  0000e662  2**0
+ 12 .debug_loc    0000096e  00000000  00000000  0000e6ba  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 00000050  00000000  00000000  0000efd0  2**0
+ 13 .debug_ranges 00000050  00000000  00000000  0000f028  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -69,7 +69,7 @@ Disassembly of section .text:
       60:	11 e0       	ldi	r17, 0x01	; 1
       62:	a0 e6       	ldi	r26, 0x60	; 96
       64:	b0 e0       	ldi	r27, 0x00	; 0
-      66:	ee ea       	ldi	r30, 0xAE	; 174
+      66:	e0 ed       	ldi	r30, 0xD0	; 208
       68:	f0 e4       	ldi	r31, 0x40	; 64
       6a:	02 c0       	rjmp	.+4      	; 0x70 <.do_copy_data_start>
 
@@ -78,13 +78,13 @@ Disassembly of section .text:
       6e:	0d 92       	st	X+, r0
 
 00000070 <.do_copy_data_start>:
-      70:	a4 3b       	cpi	r26, 0xB4	; 180
+      70:	a4 3a       	cpi	r26, 0xA4	; 164
       72:	b1 07       	cpc	r27, r17
       74:	d9 f7       	brne	.-10     	; 0x6c <.do_copy_data_loop>
 
 00000076 <__do_clear_bss>:
       76:	11 e0       	ldi	r17, 0x01	; 1
-      78:	a4 eb       	ldi	r26, 0xB4	; 180
+      78:	a4 ea       	ldi	r26, 0xA4	; 164
       7a:	b1 e0       	ldi	r27, 0x01	; 1
       7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
 
@@ -92,11 +92,11 @@ Disassembly of section .text:
       7e:	1d 92       	st	X+, r1
 
 00000080 <.do_clear_bss_start>:
-      80:	af 3b       	cpi	r26, 0xBF	; 191
+      80:	af 3a       	cpi	r26, 0xAF	; 175
       82:	b1 07       	cpc	r27, r17
       84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
-      86:	0e 94 84 1f 	call	0x3f08	; 0x3f08 <main>
-      8a:	0c 94 55 20 	jmp	0x40aa	; 0x40aa <_exit>
+      86:	0e 94 95 1f 	call	0x3f2a	; 0x3f2a <main>
+      8a:	0c 94 66 20 	jmp	0x40cc	; 0x40cc <_exit>
 
 0000008e <__bad_interrupt>:
       8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -148,7 +148,7 @@ Disassembly of section .text:
       ec:	b0 e0       	ldi	r27, 0x00	; 0
       ee:	eb e7       	ldi	r30, 0x7B	; 123
       f0:	f0 e0       	ldi	r31, 0x00	; 0
-      f2:	0c 94 ed 1f 	jmp	0x3fda	; 0x3fda <__prologue_saves__>
+      f2:	0c 94 fe 1f 	jmp	0x3ffc	; 0x3ffc <__prologue_saves__>
       f6:	dc 01       	movw	r26, r24
       f8:	2b 01       	movw	r4, r22
       fa:	fa 01       	movw	r30, r20
@@ -473,14 +473,14 @@ Disassembly of section .text:
      378:	cd b7       	in	r28, 0x3d	; 61
      37a:	de b7       	in	r29, 0x3e	; 62
      37c:	e2 e1       	ldi	r30, 0x12	; 18
-     37e:	0c 94 09 20 	jmp	0x4012	; 0x4012 <__epilogue_restores__>
+     37e:	0c 94 1a 20 	jmp	0x4034	; 0x4034 <__epilogue_restores__>
 
 00000382 <__subsf3>:
      382:	a0 e2       	ldi	r26, 0x20	; 32
      384:	b0 e0       	ldi	r27, 0x00	; 0
      386:	e7 ec       	ldi	r30, 0xC7	; 199
      388:	f1 e0       	ldi	r31, 0x01	; 1
-     38a:	0c 94 f9 1f 	jmp	0x3ff2	; 0x3ff2 <__prologue_saves__+0x18>
+     38a:	0c 94 0a 20 	jmp	0x4014	; 0x4014 <__prologue_saves__+0x18>
      38e:	69 83       	std	Y+1, r22	; 0x01
      390:	7a 83       	std	Y+2, r23	; 0x02
      392:	8b 83       	std	Y+3, r24	; 0x03
@@ -518,14 +518,14 @@ Disassembly of section .text:
      3d8:	0e 94 71 05 	call	0xae2	; 0xae2 <__pack_f>
      3dc:	a0 96       	adiw	r28, 0x20	; 32
      3de:	e6 e0       	ldi	r30, 0x06	; 6
-     3e0:	0c 94 15 20 	jmp	0x402a	; 0x402a <__epilogue_restores__+0x18>
+     3e0:	0c 94 26 20 	jmp	0x404c	; 0x404c <__epilogue_restores__+0x18>
 
 000003e4 <__addsf3>:
      3e4:	a0 e2       	ldi	r26, 0x20	; 32
      3e6:	b0 e0       	ldi	r27, 0x00	; 0
      3e8:	e8 ef       	ldi	r30, 0xF8	; 248
      3ea:	f1 e0       	ldi	r31, 0x01	; 1
-     3ec:	0c 94 f9 1f 	jmp	0x3ff2	; 0x3ff2 <__prologue_saves__+0x18>
+     3ec:	0c 94 0a 20 	jmp	0x4014	; 0x4014 <__prologue_saves__+0x18>
      3f0:	69 83       	std	Y+1, r22	; 0x01
      3f2:	7a 83       	std	Y+2, r23	; 0x02
      3f4:	8b 83       	std	Y+3, r24	; 0x03
@@ -559,14 +559,14 @@ Disassembly of section .text:
      432:	0e 94 71 05 	call	0xae2	; 0xae2 <__pack_f>
      436:	a0 96       	adiw	r28, 0x20	; 32
      438:	e6 e0       	ldi	r30, 0x06	; 6
-     43a:	0c 94 15 20 	jmp	0x402a	; 0x402a <__epilogue_restores__+0x18>
+     43a:	0c 94 26 20 	jmp	0x404c	; 0x404c <__epilogue_restores__+0x18>
 
 0000043e <__mulsf3>:
      43e:	a0 e2       	ldi	r26, 0x20	; 32
      440:	b0 e0       	ldi	r27, 0x00	; 0
      442:	e5 e2       	ldi	r30, 0x25	; 37
      444:	f2 e0       	ldi	r31, 0x02	; 2
-     446:	0c 94 ed 1f 	jmp	0x3fda	; 0x3fda <__prologue_saves__>
+     446:	0c 94 fe 1f 	jmp	0x3ffc	; 0x3ffc <__prologue_saves__>
      44a:	69 83       	std	Y+1, r22	; 0x01
      44c:	7a 83       	std	Y+2, r23	; 0x02
      44e:	8b 83       	std	Y+3, r24	; 0x03
@@ -806,14 +806,14 @@ Disassembly of section .text:
      626:	0e 94 71 05 	call	0xae2	; 0xae2 <__pack_f>
      62a:	a0 96       	adiw	r28, 0x20	; 32
      62c:	e2 e1       	ldi	r30, 0x12	; 18
-     62e:	0c 94 09 20 	jmp	0x4012	; 0x4012 <__epilogue_restores__>
+     62e:	0c 94 1a 20 	jmp	0x4034	; 0x4034 <__epilogue_restores__>
 
 00000632 <__divsf3>:
      632:	a8 e1       	ldi	r26, 0x18	; 24
      634:	b0 e0       	ldi	r27, 0x00	; 0
      636:	ef e1       	ldi	r30, 0x1F	; 31
      638:	f3 e0       	ldi	r31, 0x03	; 3
-     63a:	0c 94 f5 1f 	jmp	0x3fea	; 0x3fea <__prologue_saves__+0x10>
+     63a:	0c 94 06 20 	jmp	0x400c	; 0x400c <__prologue_saves__+0x10>
      63e:	69 83       	std	Y+1, r22	; 0x01
      640:	7a 83       	std	Y+2, r23	; 0x02
      642:	8b 83       	std	Y+3, r24	; 0x03
@@ -975,14 +975,14 @@ Disassembly of section .text:
      77e:	0e 94 71 05 	call	0xae2	; 0xae2 <__pack_f>
      782:	68 96       	adiw	r28, 0x18	; 24
      784:	ea e0       	ldi	r30, 0x0A	; 10
-     786:	0c 94 11 20 	jmp	0x4022	; 0x4022 <__epilogue_restores__+0x10>
+     786:	0c 94 22 20 	jmp	0x4044	; 0x4044 <__epilogue_restores__+0x10>
 
 0000078a <__gtsf2>:
      78a:	a8 e1       	ldi	r26, 0x18	; 24
      78c:	b0 e0       	ldi	r27, 0x00	; 0
      78e:	eb ec       	ldi	r30, 0xCB	; 203
      790:	f3 e0       	ldi	r31, 0x03	; 3
-     792:	0c 94 f9 1f 	jmp	0x3ff2	; 0x3ff2 <__prologue_saves__+0x18>
+     792:	0c 94 0a 20 	jmp	0x4014	; 0x4014 <__prologue_saves__+0x18>
      796:	69 83       	std	Y+1, r22	; 0x01
      798:	7a 83       	std	Y+2, r23	; 0x02
      79a:	8b 83       	std	Y+3, r24	; 0x03
@@ -1020,14 +1020,14 @@ Disassembly of section .text:
      7e0:	8f ef       	ldi	r24, 0xFF	; 255
      7e2:	68 96       	adiw	r28, 0x18	; 24
      7e4:	e6 e0       	ldi	r30, 0x06	; 6
-     7e6:	0c 94 15 20 	jmp	0x402a	; 0x402a <__epilogue_restores__+0x18>
+     7e6:	0c 94 26 20 	jmp	0x404c	; 0x404c <__epilogue_restores__+0x18>
 
 000007ea <__gesf2>:
      7ea:	a8 e1       	ldi	r26, 0x18	; 24
      7ec:	b0 e0       	ldi	r27, 0x00	; 0
      7ee:	eb ef       	ldi	r30, 0xFB	; 251
      7f0:	f3 e0       	ldi	r31, 0x03	; 3
-     7f2:	0c 94 f9 1f 	jmp	0x3ff2	; 0x3ff2 <__prologue_saves__+0x18>
+     7f2:	0c 94 0a 20 	jmp	0x4014	; 0x4014 <__prologue_saves__+0x18>
      7f6:	69 83       	std	Y+1, r22	; 0x01
      7f8:	7a 83       	std	Y+2, r23	; 0x02
      7fa:	8b 83       	std	Y+3, r24	; 0x03
@@ -1065,14 +1065,14 @@ Disassembly of section .text:
      840:	8f ef       	ldi	r24, 0xFF	; 255
      842:	68 96       	adiw	r28, 0x18	; 24
      844:	e6 e0       	ldi	r30, 0x06	; 6
-     846:	0c 94 15 20 	jmp	0x402a	; 0x402a <__epilogue_restores__+0x18>
+     846:	0c 94 26 20 	jmp	0x404c	; 0x404c <__epilogue_restores__+0x18>
 
 0000084a <__ltsf2>:
      84a:	a8 e1       	ldi	r26, 0x18	; 24
      84c:	b0 e0       	ldi	r27, 0x00	; 0
      84e:	eb e2       	ldi	r30, 0x2B	; 43
      850:	f4 e0       	ldi	r31, 0x04	; 4
-     852:	0c 94 f9 1f 	jmp	0x3ff2	; 0x3ff2 <__prologue_saves__+0x18>
+     852:	0c 94 0a 20 	jmp	0x4014	; 0x4014 <__prologue_saves__+0x18>
      856:	69 83       	std	Y+1, r22	; 0x01
      858:	7a 83       	std	Y+2, r23	; 0x02
      85a:	8b 83       	std	Y+3, r24	; 0x03
@@ -1110,14 +1110,14 @@ Disassembly of section .text:
      8a0:	81 e0       	ldi	r24, 0x01	; 1
      8a2:	68 96       	adiw	r28, 0x18	; 24
      8a4:	e6 e0       	ldi	r30, 0x06	; 6
-     8a6:	0c 94 15 20 	jmp	0x402a	; 0x402a <__epilogue_restores__+0x18>
+     8a6:	0c 94 26 20 	jmp	0x404c	; 0x404c <__epilogue_restores__+0x18>
 
 000008aa <__fixsfsi>:
      8aa:	ac e0       	ldi	r26, 0x0C	; 12
      8ac:	b0 e0       	ldi	r27, 0x00	; 0
      8ae:	eb e5       	ldi	r30, 0x5B	; 91
      8b0:	f4 e0       	ldi	r31, 0x04	; 4
-     8b2:	0c 94 fd 1f 	jmp	0x3ffa	; 0x3ffa <__prologue_saves__+0x20>
+     8b2:	0c 94 0e 20 	jmp	0x401c	; 0x401c <__prologue_saves__+0x20>
      8b6:	69 83       	std	Y+1, r22	; 0x01
      8b8:	7a 83       	std	Y+2, r23	; 0x02
      8ba:	8b 83       	std	Y+3, r24	; 0x03
@@ -1193,14 +1193,14 @@ Disassembly of section .text:
      948:	ca 01       	movw	r24, r20
      94a:	2c 96       	adiw	r28, 0x0c	; 12
      94c:	e2 e0       	ldi	r30, 0x02	; 2
-     94e:	0c 94 19 20 	jmp	0x4032	; 0x4032 <__epilogue_restores__+0x20>
+     94e:	0c 94 2a 20 	jmp	0x4054	; 0x4054 <__epilogue_restores__+0x20>
 
 00000952 <__floatunsisf>:
      952:	a8 e0       	ldi	r26, 0x08	; 8
      954:	b0 e0       	ldi	r27, 0x00	; 0
      956:	ef ea       	ldi	r30, 0xAF	; 175
      958:	f4 e0       	ldi	r31, 0x04	; 4
-     95a:	0c 94 f5 1f 	jmp	0x3fea	; 0x3fea <__prologue_saves__+0x10>
+     95a:	0c 94 06 20 	jmp	0x400c	; 0x400c <__prologue_saves__+0x10>
      95e:	7b 01       	movw	r14, r22
      960:	8c 01       	movw	r16, r24
      962:	61 15       	cp	r22, r1
@@ -1312,7 +1312,7 @@ Disassembly of section .text:
      a38:	0e 94 71 05 	call	0xae2	; 0xae2 <__pack_f>
      a3c:	28 96       	adiw	r28, 0x08	; 8
      a3e:	ea e0       	ldi	r30, 0x0A	; 10
-     a40:	0c 94 11 20 	jmp	0x4022	; 0x4022 <__epilogue_restores__+0x10>
+     a40:	0c 94 22 20 	jmp	0x4044	; 0x4044 <__epilogue_restores__+0x10>
 
 00000a44 <__clzsi2>:
      a44:	ef 92       	push	r14
@@ -8410,7 +8410,7 @@ void EF_void_LCD_print_NUM(s32 s16Numberstring,u8 u8RowNumber)
     35b0:	b9 01       	movw	r22, r18
     35b2:	4a e0       	ldi	r20, 0x0A	; 10
     35b4:	50 e0       	ldi	r21, 0x00	; 0
-    35b6:	0e 94 24 20 	call	0x4048	; 0x4048 <itoa>
+    35b6:	0e 94 35 20 	call	0x406a	; 0x406a <itoa>
 	for(ArrayIndex = 0; s8DisplayStr[ArrayIndex] != 0; ArrayIndex++)
     35ba:	19 82       	std	Y+1, r1	; 0x01
     35bc:	15 c0       	rjmp	.+42     	; 0x35e8 <EF_void_LCD_print_NUM+0x6e>
@@ -9342,7 +9342,7 @@ void GPS_inlinevidAsciiToInt(const u8* GPS_p2Constu8_DataBuffer , f32** Copy_pf3
     3ae4:	30 e0       	ldi	r19, 0x00	; 0
     3ae6:	ca 01       	movw	r24, r20
     3ae8:	b9 01       	movw	r22, r18
-    3aea:	0e 94 d9 1f 	call	0x3fb2	; 0x3fb2 <__udivmodhi4>
+    3aea:	0e 94 ea 1f 	call	0x3fd4	; 0x3fd4 <__udivmodhi4>
     3aee:	cb 01       	movw	r24, r22
     3af0:	9c 01       	movw	r18, r24
     3af2:	8c 81       	ldd	r24, Y+4	; 0x04
@@ -9517,7 +9517,7 @@ void GPS_inlinevidAsciiToInt(const u8* GPS_p2Constu8_DataBuffer , f32** Copy_pf3
     3bc4:	30 e0       	ldi	r19, 0x00	; 0
     3bc6:	ca 01       	movw	r24, r20
     3bc8:	b9 01       	movw	r22, r18
-    3bca:	0e 94 d9 1f 	call	0x3fb2	; 0x3fb2 <__udivmodhi4>
+    3bca:	0e 94 ea 1f 	call	0x3fd4	; 0x3fd4 <__udivmodhi4>
     3bce:	cb 01       	movw	r24, r22
     3bd0:	9c 01       	movw	r18, r24
     3bd2:	8a 81       	ldd	r24, Y+2	; 0x02
@@ -9690,7 +9690,7 @@ ES_t GPS_enuInit(void)
     3cdc:	0e 94 65 0a 	call	0x14ca	; 0x14ca <DIO_enuSetPinValue>
 
 		GPS_CLEAR_ALL_FLAGSE();
-    3ce0:	10 92 b4 01 	sts	0x01B4, r1
+    3ce0:	10 92 a4 01 	sts	0x01A4, r1
 
 		//Initiate the UART to receive read the gps output.
 		UART_enuInit();
@@ -9735,20 +9735,20 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
     3d02:	cf 93       	push	r28
     3d04:	cd b7       	in	r28, 0x3d	; 61
     3d06:	de b7       	in	r29, 0x3e	; 62
-    3d08:	2c 97       	sbiw	r28, 0x0c	; 12
+    3d08:	2d 97       	sbiw	r28, 0x0d	; 13
     3d0a:	0f b6       	in	r0, 0x3f	; 63
     3d0c:	f8 94       	cli
     3d0e:	de bf       	out	0x3e, r29	; 62
     3d10:	0f be       	out	0x3f, r0	; 63
     3d12:	cd bf       	out	0x3d, r28	; 61
-    3d14:	9e 83       	std	Y+6, r25	; 0x06
-    3d16:	8d 83       	std	Y+5, r24	; 0x05
-    3d18:	78 87       	std	Y+8, r23	; 0x08
-    3d1a:	6f 83       	std	Y+7, r22	; 0x07
-    3d1c:	5a 87       	std	Y+10, r21	; 0x0a
-    3d1e:	49 87       	std	Y+9, r20	; 0x09
-    3d20:	3c 87       	std	Y+12, r19	; 0x0c
-    3d22:	2b 87       	std	Y+11, r18	; 0x0b
+    3d14:	9f 83       	std	Y+7, r25	; 0x07
+    3d16:	8e 83       	std	Y+6, r24	; 0x06
+    3d18:	79 87       	std	Y+9, r23	; 0x09
+    3d1a:	68 87       	std	Y+8, r22	; 0x08
+    3d1c:	5b 87       	std	Y+11, r21	; 0x0b
+    3d1e:	4a 87       	std	Y+10, r20	; 0x0a
+    3d20:	3d 87       	std	Y+13, r19	; 0x0d
+    3d22:	2c 87       	std	Y+12, r18	; 0x0c
 
 	UART_enuSendByte(' ');
     3d24:	80 e2       	ldi	r24, 0x20	; 32
@@ -9778,592 +9778,612 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 
 
 	ES_t Local_enuErrorState = ES_NOK ;
-    3d54:	1b 82       	std	Y+3, r1	; 0x03
+    3d54:	1c 82       	std	Y+4, r1	; 0x04
 
 
 	if(( Copy_pf32Lat != NULL) && (Copy_pf32Long != NULL) && ( Copy_pu8LatDir != NULL)&& ( Copy_pu8LongDir !=  NULL))
-    3d56:	8d 81       	ldd	r24, Y+5	; 0x05
-    3d58:	9e 81       	ldd	r25, Y+6	; 0x06
+    3d56:	8e 81       	ldd	r24, Y+6	; 0x06
+    3d58:	9f 81       	ldd	r25, Y+7	; 0x07
     3d5a:	00 97       	sbiw	r24, 0x00	; 0
     3d5c:	09 f4       	brne	.+2      	; 0x3d60 <GPS_enuGetLocation+0x60>
-    3d5e:	c8 c0       	rjmp	.+400    	; 0x3ef0 <GPS_enuGetLocation+0x1f0>
-    3d60:	8f 81       	ldd	r24, Y+7	; 0x07
-    3d62:	98 85       	ldd	r25, Y+8	; 0x08
+    3d5e:	d9 c0       	rjmp	.+434    	; 0x3f12 <GPS_enuGetLocation+0x212>
+    3d60:	88 85       	ldd	r24, Y+8	; 0x08
+    3d62:	99 85       	ldd	r25, Y+9	; 0x09
     3d64:	00 97       	sbiw	r24, 0x00	; 0
     3d66:	09 f4       	brne	.+2      	; 0x3d6a <GPS_enuGetLocation+0x6a>
-    3d68:	c3 c0       	rjmp	.+390    	; 0x3ef0 <GPS_enuGetLocation+0x1f0>
-    3d6a:	89 85       	ldd	r24, Y+9	; 0x09
-    3d6c:	9a 85       	ldd	r25, Y+10	; 0x0a
+    3d68:	d4 c0       	rjmp	.+424    	; 0x3f12 <GPS_enuGetLocation+0x212>
+    3d6a:	8a 85       	ldd	r24, Y+10	; 0x0a
+    3d6c:	9b 85       	ldd	r25, Y+11	; 0x0b
     3d6e:	00 97       	sbiw	r24, 0x00	; 0
     3d70:	09 f4       	brne	.+2      	; 0x3d74 <GPS_enuGetLocation+0x74>
-    3d72:	be c0       	rjmp	.+380    	; 0x3ef0 <GPS_enuGetLocation+0x1f0>
-    3d74:	8b 85       	ldd	r24, Y+11	; 0x0b
-    3d76:	9c 85       	ldd	r25, Y+12	; 0x0c
+    3d72:	cf c0       	rjmp	.+414    	; 0x3f12 <GPS_enuGetLocation+0x212>
+    3d74:	8c 85       	ldd	r24, Y+12	; 0x0c
+    3d76:	9d 85       	ldd	r25, Y+13	; 0x0d
     3d78:	00 97       	sbiw	r24, 0x00	; 0
     3d7a:	09 f4       	brne	.+2      	; 0x3d7e <GPS_enuGetLocation+0x7e>
-    3d7c:	b9 c0       	rjmp	.+370    	; 0x3ef0 <GPS_enuGetLocation+0x1f0>
+    3d7c:	ca c0       	rjmp	.+404    	; 0x3f12 <GPS_enuGetLocation+0x212>
 	{
 
 		u8 Local_u8TempChar =  0  ;
-    3d7e:	1c 82       	std	Y+4, r1	; 0x04
-		//u8 Local_u8Counter  =  0  ;
+    3d7e:	1d 82       	std	Y+5, r1	; 0x05
+		u8 Local_u8Counter  =  0  ;
+    3d80:	1b 82       	std	Y+3, r1	; 0x03
 
 
 		UART_enuRecieveByte(&Local_u8TempChar);
-    3d80:	ce 01       	movw	r24, r28
-    3d82:	04 96       	adiw	r24, 0x04	; 4
-    3d84:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3d82:	ce 01       	movw	r24, r28
+    3d84:	05 96       	adiw	r24, 0x05	; 5
+    3d86:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 		do
 		{
 			/************************************************
 			 * 1.Catch the Start of line '$'.               *
 			 ************************************************/
 			if(Local_u8TempChar != '$')
-    3d88:	8c 81       	ldd	r24, Y+4	; 0x04
-    3d8a:	84 32       	cpi	r24, 0x24	; 36
-    3d8c:	39 f0       	breq	.+14     	; 0x3d9c <GPS_enuGetLocation+0x9c>
+    3d8a:	8d 81       	ldd	r24, Y+5	; 0x05
+    3d8c:	84 32       	cpi	r24, 0x24	; 36
+    3d8e:	39 f0       	breq	.+14     	; 0x3d9e <GPS_enuGetLocation+0x9e>
 			{
 				do
 				{
 					UART_enuRecieveByte(&Local_u8TempChar);
-    3d8e:	ce 01       	movw	r24, r28
-    3d90:	04 96       	adiw	r24, 0x04	; 4
-    3d92:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3d90:	ce 01       	movw	r24, r28
+    3d92:	05 96       	adiw	r24, 0x05	; 5
+    3d94:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 
 				}while( Local_u8TempChar!= '$' );
-    3d96:	8c 81       	ldd	r24, Y+4	; 0x04
-    3d98:	84 32       	cpi	r24, 0x24	; 36
-    3d9a:	c9 f7       	brne	.-14     	; 0x3d8e <GPS_enuGetLocation+0x8e>
+    3d98:	8d 81       	ldd	r24, Y+5	; 0x05
+    3d9a:	84 32       	cpi	r24, 0x24	; 36
+    3d9c:	c9 f7       	brne	.-14     	; 0x3d90 <GPS_enuGetLocation+0x90>
 			 *                                      $GP  RMC, *
 			 *                                      $GP  GSA, *
 			 *                                      $GP  RMC, *
 			 *                                                *
 			 **************************************************/
 			UART_enuRecieveByte(&Local_u8TempChar);
-    3d9c:	ce 01       	movw	r24, r28
-    3d9e:	04 96       	adiw	r24, 0x04	; 4
-    3da0:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3d9e:	ce 01       	movw	r24, r28
+    3da0:	05 96       	adiw	r24, 0x05	; 5
+    3da2:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 			UART_enuRecieveByte(&Local_u8TempChar);
-    3da4:	ce 01       	movw	r24, r28
-    3da6:	04 96       	adiw	r24, 0x04	; 4
-    3da8:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3da6:	ce 01       	movw	r24, r28
+    3da8:	05 96       	adiw	r24, 0x05	; 5
+    3daa:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 
 			/************************************************
 			 * 3.Read more one character and make sure it's *
 			 *   'G' Not 'R'.                              *
 			 ************************************************/
 			UART_enuRecieveByte(&Local_u8TempChar);
-    3dac:	ce 01       	movw	r24, r28
-    3dae:	04 96       	adiw	r24, 0x04	; 4
-    3db0:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3dae:	ce 01       	movw	r24, r28
+    3db0:	05 96       	adiw	r24, 0x05	; 5
+    3db2:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 
 			if(Local_u8TempChar == 'G')
-    3db4:	8c 81       	ldd	r24, Y+4	; 0x04
-    3db6:	87 34       	cpi	r24, 0x47	; 71
-    3db8:	09 f0       	breq	.+2      	; 0x3dbc <GPS_enuGetLocation+0xbc>
-    3dba:	5d c0       	rjmp	.+186    	; 0x3e76 <GPS_enuGetLocation+0x176>
+    3db6:	8d 81       	ldd	r24, Y+5	; 0x05
+    3db8:	87 34       	cpi	r24, 0x47	; 71
+    3dba:	09 f0       	breq	.+2      	; 0x3dbe <GPS_enuGetLocation+0xbe>
+    3dbc:	6d c0       	rjmp	.+218    	; 0x3e98 <GPS_enuGetLocation+0x198>
 
 				/************************************************
 				 * 4.Read more one character and make sure it's *
 				 *   'G' Not 'M'or 'S'.                         *
 				 ************************************************/
 				UART_enuRecieveByte(&Local_u8TempChar);
-    3dbc:	ce 01       	movw	r24, r28
-    3dbe:	04 96       	adiw	r24, 0x04	; 4
-    3dc0:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3dbe:	ce 01       	movw	r24, r28
+    3dc0:	05 96       	adiw	r24, 0x05	; 5
+    3dc2:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 
 				if(Local_u8TempChar == 'G')
-    3dc4:	8c 81       	ldd	r24, Y+4	; 0x04
-    3dc6:	87 34       	cpi	r24, 0x47	; 71
-    3dc8:	09 f0       	breq	.+2      	; 0x3dcc <GPS_enuGetLocation+0xcc>
-    3dca:	55 c0       	rjmp	.+170    	; 0x3e76 <GPS_enuGetLocation+0x176>
+    3dc6:	8d 81       	ldd	r24, Y+5	; 0x05
+    3dc8:	87 34       	cpi	r24, 0x47	; 71
+    3dca:	09 f0       	breq	.+2      	; 0x3dce <GPS_enuGetLocation+0xce>
+    3dcc:	65 c0       	rjmp	.+202    	; 0x3e98 <GPS_enuGetLocation+0x198>
 
 					/************************************************
 					 * 5.Read more one character and make sure it's *
 					 *   'A' Not 'C'.                               *
 					 ************************************************/
 					UART_enuRecieveByte(&Local_u8TempChar);
-    3dcc:	ce 01       	movw	r24, r28
-    3dce:	04 96       	adiw	r24, 0x04	; 4
-    3dd0:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3dce:	ce 01       	movw	r24, r28
+    3dd0:	05 96       	adiw	r24, 0x05	; 5
+    3dd2:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 
 					if(Local_u8TempChar == 'A')
-    3dd4:	8c 81       	ldd	r24, Y+4	; 0x04
-    3dd6:	81 34       	cpi	r24, 0x41	; 65
-    3dd8:	09 f0       	breq	.+2      	; 0x3ddc <GPS_enuGetLocation+0xdc>
-    3dda:	4d c0       	rjmp	.+154    	; 0x3e76 <GPS_enuGetLocation+0x176>
+    3dd6:	8d 81       	ldd	r24, Y+5	; 0x05
+    3dd8:	81 34       	cpi	r24, 0x41	; 65
+    3dda:	09 f0       	breq	.+2      	; 0x3dde <GPS_enuGetLocation+0xde>
+    3ddc:	5d c0       	rjmp	.+186    	; 0x3e98 <GPS_enuGetLocation+0x198>
 						//UART_enuSendByte('A');
 						/************************************************
 						 * 6.Read more one character and make sure it's *
 						 *   ',' (Check is an Optional Step).           *
 						 ************************************************/
 						UART_enuRecieveByte(&Local_u8TempChar);
-    3ddc:	ce 01       	movw	r24, r28
-    3dde:	04 96       	adiw	r24, 0x04	; 4
-    3de0:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3dde:	ce 01       	movw	r24, r28
+    3de0:	05 96       	adiw	r24, 0x05	; 5
+    3de2:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 						if( Local_u8TempChar == ',' )
-    3de4:	8c 81       	ldd	r24, Y+4	; 0x04
-    3de6:	8c 32       	cpi	r24, 0x2C	; 44
-    3de8:	09 f0       	breq	.+2      	; 0x3dec <GPS_enuGetLocation+0xec>
-    3dea:	45 c0       	rjmp	.+138    	; 0x3e76 <GPS_enuGetLocation+0x176>
+    3de6:	8d 81       	ldd	r24, Y+5	; 0x05
+    3de8:	8c 32       	cpi	r24, 0x2C	; 44
+    3dea:	09 f0       	breq	.+2      	; 0x3dee <GPS_enuGetLocation+0xee>
+    3dec:	55 c0       	rjmp	.+170    	; 0x3e98 <GPS_enuGetLocation+0x198>
 							 *    Hint:-                                    *
 							 *          lines always ends with \n character.*
 							 ************************************************/
 
 							/*=================================================*/
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3dec:	ce 01       	movw	r24, r28
-    3dee:	04 96       	adiw	r24, 0x04	; 4
-    3df0:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3dee:	ce 01       	movw	r24, r28
+    3df0:	05 96       	adiw	r24, 0x05	; 5
+    3df2:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3df4:	ce 01       	movw	r24, r28
-    3df6:	04 96       	adiw	r24, 0x04	; 4
-    3df8:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3df6:	ce 01       	movw	r24, r28
+    3df8:	05 96       	adiw	r24, 0x05	; 5
+    3dfa:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3dfc:	ce 01       	movw	r24, r28
-    3dfe:	04 96       	adiw	r24, 0x04	; 4
-    3e00:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3dfe:	ce 01       	movw	r24, r28
+    3e00:	05 96       	adiw	r24, 0x05	; 5
+    3e02:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e04:	ce 01       	movw	r24, r28
-    3e06:	04 96       	adiw	r24, 0x04	; 4
-    3e08:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e06:	ce 01       	movw	r24, r28
+    3e08:	05 96       	adiw	r24, 0x05	; 5
+    3e0a:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e0c:	ce 01       	movw	r24, r28
-    3e0e:	04 96       	adiw	r24, 0x04	; 4
-    3e10:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e0e:	ce 01       	movw	r24, r28
+    3e10:	05 96       	adiw	r24, 0x05	; 5
+    3e12:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e14:	ce 01       	movw	r24, r28
-    3e16:	04 96       	adiw	r24, 0x04	; 4
-    3e18:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e16:	ce 01       	movw	r24, r28
+    3e18:	05 96       	adiw	r24, 0x05	; 5
+    3e1a:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e1c:	ce 01       	movw	r24, r28
-    3e1e:	04 96       	adiw	r24, 0x04	; 4
-    3e20:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e1e:	ce 01       	movw	r24, r28
+    3e20:	05 96       	adiw	r24, 0x05	; 5
+    3e22:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e24:	ce 01       	movw	r24, r28
-    3e26:	04 96       	adiw	r24, 0x04	; 4
-    3e28:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e26:	ce 01       	movw	r24, r28
+    3e28:	05 96       	adiw	r24, 0x05	; 5
+    3e2a:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e2c:	ce 01       	movw	r24, r28
-    3e2e:	04 96       	adiw	r24, 0x04	; 4
-    3e30:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e2e:	ce 01       	movw	r24, r28
+    3e30:	05 96       	adiw	r24, 0x05	; 5
+    3e32:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e34:	ce 01       	movw	r24, r28
-    3e36:	04 96       	adiw	r24, 0x04	; 4
-    3e38:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e36:	ce 01       	movw	r24, r28
+    3e38:	05 96       	adiw	r24, 0x05	; 5
+    3e3a:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e3c:	ce 01       	movw	r24, r28
-    3e3e:	04 96       	adiw	r24, 0x04	; 4
-    3e40:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e3e:	ce 01       	movw	r24, r28
+    3e40:	05 96       	adiw	r24, 0x05	; 5
+    3e42:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 							UART_enuRecieveByte(&Local_u8TempChar);
-    3e44:	ce 01       	movw	r24, r28
-    3e46:	04 96       	adiw	r24, 0x04	; 4
-    3e48:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+    3e46:	ce 01       	movw	r24, r28
+    3e48:	05 96       	adiw	r24, 0x05	; 5
+    3e4a:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
 
 							if( Local_u8TempChar == ',')
-    3e4c:	8c 81       	ldd	r24, Y+4	; 0x04
-    3e4e:	8c 32       	cpi	r24, 0x2C	; 44
-    3e50:	91 f0       	breq	.+36     	; 0x3e76 <GPS_enuGetLocation+0x176>
-							{
+    3e4e:	8d 81       	ldd	r24, Y+5	; 0x05
+    3e50:	8c 32       	cpi	r24, 0x2C	; 44
+    3e52:	11 f1       	breq	.+68     	; 0x3e98 <GPS_enuGetLocation+0x198>
 								continue;
 							}
 
+							//UART_enuSendByte(Local_u8TempChar);
 
-							UART_enuSendByte(Local_u8TempChar);
-    3e52:	8c 81       	ldd	r24, Y+4	; 0x04
-    3e54:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+							GPS_u8Buffer[Local_u8Counter] = Local_u8TempChar ;
+    3e54:	8b 81       	ldd	r24, Y+3	; 0x03
+    3e56:	88 2f       	mov	r24, r24
+    3e58:	90 e0       	ldi	r25, 0x00	; 0
+    3e5a:	2d 81       	ldd	r18, Y+5	; 0x05
+    3e5c:	fc 01       	movw	r30, r24
+    3e5e:	e3 59       	subi	r30, 0x93	; 147
+    3e60:	fe 4f       	sbci	r31, 0xFE	; 254
+    3e62:	20 83       	st	Z, r18
+
+							Local_u8Counter++;
+    3e64:	8b 81       	ldd	r24, Y+3	; 0x03
+    3e66:	8f 5f       	subi	r24, 0xFF	; 255
+    3e68:	8b 83       	std	Y+3, r24	; 0x03
 									//5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*
 							//[NMEA] $GPGGA,123534.742,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7F [GPS1]
 							do
 							{
 
 								UART_enuRecieveByte(&Local_u8TempChar);
-    3e58:	ce 01       	movw	r24, r28
-    3e5a:	04 96       	adiw	r24, 0x04	; 4
-    3e5c:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
-								UART_enuSendByte(Local_u8TempChar);
-    3e60:	8c 81       	ldd	r24, Y+4	; 0x04
-    3e62:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3e6a:	ce 01       	movw	r24, r28
+    3e6c:	05 96       	adiw	r24, 0x05	; 5
+    3e6e:	0e 94 78 07 	call	0xef0	; 0xef0 <UART_enuRecieveByte>
+								GPS_u8Buffer[Local_u8Counter] = Local_u8TempChar ;
+    3e72:	8b 81       	ldd	r24, Y+3	; 0x03
+    3e74:	88 2f       	mov	r24, r24
+    3e76:	90 e0       	ldi	r25, 0x00	; 0
+    3e78:	2d 81       	ldd	r18, Y+5	; 0x05
+    3e7a:	fc 01       	movw	r30, r24
+    3e7c:	e3 59       	subi	r30, 0x93	; 147
+    3e7e:	fe 4f       	sbci	r31, 0xFE	; 254
+    3e80:	20 83       	st	Z, r18
 
-								//GPS_u8Buffer[Local_u8Counter]=(Local_u8TempChar);
-
-								//Local_u8Counter++;
+								Local_u8Counter++;
+    3e82:	8b 81       	ldd	r24, Y+3	; 0x03
+    3e84:	8f 5f       	subi	r24, 0xFF	; 255
+    3e86:	8b 83       	std	Y+3, r24	; 0x03
 
 							}while( Local_u8TempChar != '\n' );
-    3e66:	8c 81       	ldd	r24, Y+4	; 0x04
-    3e68:	8a 30       	cpi	r24, 0x0A	; 10
-    3e6a:	b1 f7       	brne	.-20     	; 0x3e58 <GPS_enuGetLocation+0x158>
+    3e88:	8d 81       	ldd	r24, Y+5	; 0x05
+    3e8a:	8a 30       	cpi	r24, 0x0A	; 10
+    3e8c:	71 f7       	brne	.-36     	; 0x3e6a <GPS_enuGetLocation+0x16a>
 
 							GPS_SET_LINE_FLAG();
-    3e6c:	80 91 b4 01 	lds	r24, 0x01B4
-    3e70:	81 60       	ori	r24, 0x01	; 1
-    3e72:	80 93 b4 01 	sts	0x01B4, r24
+    3e8e:	80 91 a4 01 	lds	r24, 0x01A4
+    3e92:	81 60       	ori	r24, 0x01	; 1
+    3e94:	80 93 a4 01 	sts	0x01A4, r24
 			{
 				//-Hit 'R' Instead of 'G'.
 
 			}
 
 		}while( !(GPS_Flags.FLAG.GPGGA_LINE_FLAG) );
-    3e76:	80 91 b4 01 	lds	r24, 0x01B4
-    3e7a:	81 70       	andi	r24, 0x01	; 1
-    3e7c:	88 23       	and	r24, r24
-    3e7e:	09 f4       	brne	.+2      	; 0x3e82 <GPS_enuGetLocation+0x182>
-    3e80:	83 cf       	rjmp	.-250    	; 0x3d88 <GPS_enuGetLocation+0x88>
+    3e98:	80 91 a4 01 	lds	r24, 0x01A4
+    3e9c:	81 70       	andi	r24, 0x01	; 1
+    3e9e:	88 23       	and	r24, r24
+    3ea0:	09 f4       	brne	.+2      	; 0x3ea4 <GPS_enuGetLocation+0x1a4>
+    3ea2:	73 cf       	rjmp	.-282    	; 0x3d8a <GPS_enuGetLocation+0x8a>
 
 
 		//****************************************************************//
 		//****************************************************************//
 
 		UART_enuSendByte(' ');
-    3e82:	80 e2       	ldi	r24, 0x20	; 32
-    3e84:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ea4:	80 e2       	ldi	r24, 0x20	; 32
+    3ea6:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('G');
-    3e88:	87 e4       	ldi	r24, 0x47	; 71
-    3e8a:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3eaa:	87 e4       	ldi	r24, 0x47	; 71
+    3eac:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('o');
-    3e8e:	8f e6       	ldi	r24, 0x6F	; 111
-    3e90:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3eb0:	8f e6       	ldi	r24, 0x6F	; 111
+    3eb2:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('t');
-    3e94:	84 e7       	ldi	r24, 0x74	; 116
-    3e96:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3eb6:	84 e7       	ldi	r24, 0x74	; 116
+    3eb8:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(' ');
-    3e9a:	80 e2       	ldi	r24, 0x20	; 32
-    3e9c:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ebc:	80 e2       	ldi	r24, 0x20	; 32
+    3ebe:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('L');
-    3ea0:	8c e4       	ldi	r24, 0x4C	; 76
-    3ea2:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ec2:	8c e4       	ldi	r24, 0x4C	; 76
+    3ec4:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('i');
-    3ea6:	89 e6       	ldi	r24, 0x69	; 105
-    3ea8:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ec8:	89 e6       	ldi	r24, 0x69	; 105
+    3eca:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('n');
-    3eac:	8e e6       	ldi	r24, 0x6E	; 110
-    3eae:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ece:	8e e6       	ldi	r24, 0x6E	; 110
+    3ed0:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('e');
-    3eb2:	85 e6       	ldi	r24, 0x65	; 101
-    3eb4:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ed4:	85 e6       	ldi	r24, 0x65	; 101
+    3ed6:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(' ');
-    3eb8:	80 e2       	ldi	r24, 0x20	; 32
-    3eba:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3eda:	80 e2       	ldi	r24, 0x20	; 32
+    3edc:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		//5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7B
 		//[NMEA] $GPGGA,113055.824, ,,,,0,10,,,M,,M,,*74 [GPS1]
 
 
 
 		int i = 0 ;
-    3ebe:	1a 82       	std	Y+2, r1	; 0x02
-    3ec0:	19 82       	std	Y+1, r1	; 0x01
+    3ee0:	1a 82       	std	Y+2, r1	; 0x02
+    3ee2:	19 82       	std	Y+1, r1	; 0x01
 		do
 		{
+
 			UART_enuSendByte(GPS_u8Buffer[i]);
-    3ec2:	89 81       	ldd	r24, Y+1	; 0x01
-    3ec4:	9a 81       	ldd	r25, Y+2	; 0x02
-    3ec6:	fc 01       	movw	r30, r24
-    3ec8:	e3 59       	subi	r30, 0x93	; 147
-    3eca:	fe 4f       	sbci	r31, 0xFE	; 254
-    3ecc:	80 81       	ld	r24, Z
-    3ece:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3ee4:	89 81       	ldd	r24, Y+1	; 0x01
+    3ee6:	9a 81       	ldd	r25, Y+2	; 0x02
+    3ee8:	fc 01       	movw	r30, r24
+    3eea:	e3 59       	subi	r30, 0x93	; 147
+    3eec:	fe 4f       	sbci	r31, 0xFE	; 254
+    3eee:	80 81       	ld	r24, Z
+    3ef0:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 			i++ ;
-    3ed2:	89 81       	ldd	r24, Y+1	; 0x01
-    3ed4:	9a 81       	ldd	r25, Y+2	; 0x02
-    3ed6:	01 96       	adiw	r24, 0x01	; 1
-    3ed8:	9a 83       	std	Y+2, r25	; 0x02
-    3eda:	89 83       	std	Y+1, r24	; 0x01
+    3ef4:	89 81       	ldd	r24, Y+1	; 0x01
+    3ef6:	9a 81       	ldd	r25, Y+2	; 0x02
+    3ef8:	01 96       	adiw	r24, 0x01	; 1
+    3efa:	9a 83       	std	Y+2, r25	; 0x02
+    3efc:	89 83       	std	Y+1, r24	; 0x01
 
 
 
-		}while(i  < 10  );
-    3edc:	89 81       	ldd	r24, Y+1	; 0x01
-    3ede:	9a 81       	ldd	r25, Y+2	; 0x02
-    3ee0:	8a 30       	cpi	r24, 0x0A	; 10
-    3ee2:	91 05       	cpc	r25, r1
-    3ee4:	74 f3       	brlt	.-36     	; 0x3ec2 <GPS_enuGetLocation+0x1c2>
+		}while( i <= GPS_LINE_LENGTH );
+    3efe:	89 81       	ldd	r24, Y+1	; 0x01
+    3f00:	9a 81       	ldd	r25, Y+2	; 0x02
+    3f02:	88 33       	cpi	r24, 0x38	; 56
+    3f04:	91 05       	cpc	r25, r1
+    3f06:	74 f3       	brlt	.-36     	; 0x3ee4 <GPS_enuGetLocation+0x1e4>
 
 
 		//GPS_inlinevidAsciiToInt( GPS_u8Buffer , &Copy_pf32Lat , &Copy_pf32Long , &Copy_pu8LatDir , &Copy_pu8LongDir  );
 
 
 		GPS_CLEAR_ALL_FLAGSE();
-    3ee6:	10 92 b4 01 	sts	0x01B4, r1
+    3f08:	10 92 a4 01 	sts	0x01A4, r1
 		//****************************************************************//
 
 
 
 
 		Local_enuErrorState = ES_OK ;
-    3eea:	81 e0       	ldi	r24, 0x01	; 1
-    3eec:	8b 83       	std	Y+3, r24	; 0x03
-    3eee:	02 c0       	rjmp	.+4      	; 0x3ef4 <GPS_enuGetLocation+0x1f4>
+    3f0c:	81 e0       	ldi	r24, 0x01	; 1
+    3f0e:	8c 83       	std	Y+4, r24	; 0x04
+    3f10:	02 c0       	rjmp	.+4      	; 0x3f16 <GPS_enuGetLocation+0x216>
 
 
 	}
 	else
 	{
 		Local_enuErrorState = ES_NULL_POINTER ;
-    3ef0:	82 e0       	ldi	r24, 0x02	; 2
-    3ef2:	8b 83       	std	Y+3, r24	; 0x03
+    3f12:	82 e0       	ldi	r24, 0x02	; 2
+    3f14:	8c 83       	std	Y+4, r24	; 0x04
 	}
 
 
 
 	return Local_enuErrorState ;
-    3ef4:	8b 81       	ldd	r24, Y+3	; 0x03
+    3f16:	8c 81       	ldd	r24, Y+4	; 0x04
 
 }//End of GPS_enuGetLocation.
-    3ef6:	2c 96       	adiw	r28, 0x0c	; 12
-    3ef8:	0f b6       	in	r0, 0x3f	; 63
-    3efa:	f8 94       	cli
-    3efc:	de bf       	out	0x3e, r29	; 62
-    3efe:	0f be       	out	0x3f, r0	; 63
-    3f00:	cd bf       	out	0x3d, r28	; 61
-    3f02:	cf 91       	pop	r28
-    3f04:	df 91       	pop	r29
-    3f06:	08 95       	ret
+    3f18:	2d 96       	adiw	r28, 0x0d	; 13
+    3f1a:	0f b6       	in	r0, 0x3f	; 63
+    3f1c:	f8 94       	cli
+    3f1e:	de bf       	out	0x3e, r29	; 62
+    3f20:	0f be       	out	0x3f, r0	; 63
+    3f22:	cd bf       	out	0x3d, r28	; 61
+    3f24:	cf 91       	pop	r28
+    3f26:	df 91       	pop	r29
+    3f28:	08 95       	ret
 
-00003f08 <main>:
+00003f2a <main>:
 
 
 
 
 int main(void)
 {
-    3f08:	df 93       	push	r29
-    3f0a:	cf 93       	push	r28
-    3f0c:	cd b7       	in	r28, 0x3d	; 61
-    3f0e:	de b7       	in	r29, 0x3e	; 62
+    3f2a:	df 93       	push	r29
+    3f2c:	cf 93       	push	r28
+    3f2e:	cd b7       	in	r28, 0x3d	; 61
+    3f30:	de b7       	in	r29, 0x3e	; 62
 
 
 	GPS_enuInit();
-    3f10:	0e 94 39 1e 	call	0x3c72	; 0x3c72 <GPS_enuInit>
+    3f32:	0e 94 39 1e 	call	0x3c72	; 0x3c72 <GPS_enuInit>
 
 
 
 	UART_enuSendByte('M');
-    3f14:	8d e4       	ldi	r24, 0x4D	; 77
-    3f16:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f36:	8d e4       	ldi	r24, 0x4D	; 77
+    3f38:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 	UART_enuSendByte('a');
-    3f1a:	81 e6       	ldi	r24, 0x61	; 97
-    3f1c:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f3c:	81 e6       	ldi	r24, 0x61	; 97
+    3f3e:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 	UART_enuSendByte('i');
-    3f20:	89 e6       	ldi	r24, 0x69	; 105
-    3f22:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f42:	89 e6       	ldi	r24, 0x69	; 105
+    3f44:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 	UART_enuSendByte('n');
-    3f26:	8e e6       	ldi	r24, 0x6E	; 110
-    3f28:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f48:	8e e6       	ldi	r24, 0x6E	; 110
+    3f4a:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 
 
 
 
 	GPS_enuGetLocation(&Lat , &Long , &latDir , &longDir );
-    3f2c:	89 eb       	ldi	r24, 0xB9	; 185
-    3f2e:	91 e0       	ldi	r25, 0x01	; 1
-    3f30:	25 eb       	ldi	r18, 0xB5	; 181
-    3f32:	31 e0       	ldi	r19, 0x01	; 1
-    3f34:	4e eb       	ldi	r20, 0xBE	; 190
-    3f36:	51 e0       	ldi	r21, 0x01	; 1
-    3f38:	ed eb       	ldi	r30, 0xBD	; 189
-    3f3a:	f1 e0       	ldi	r31, 0x01	; 1
-    3f3c:	b9 01       	movw	r22, r18
-    3f3e:	9f 01       	movw	r18, r30
-    3f40:	0e 94 80 1e 	call	0x3d00	; 0x3d00 <GPS_enuGetLocation>
+    3f4e:	89 ea       	ldi	r24, 0xA9	; 169
+    3f50:	91 e0       	ldi	r25, 0x01	; 1
+    3f52:	25 ea       	ldi	r18, 0xA5	; 165
+    3f54:	31 e0       	ldi	r19, 0x01	; 1
+    3f56:	4e ea       	ldi	r20, 0xAE	; 174
+    3f58:	51 e0       	ldi	r21, 0x01	; 1
+    3f5a:	ed ea       	ldi	r30, 0xAD	; 173
+    3f5c:	f1 e0       	ldi	r31, 0x01	; 1
+    3f5e:	b9 01       	movw	r22, r18
+    3f60:	9f 01       	movw	r18, r30
+    3f62:	0e 94 80 1e 	call	0x3d00	; 0x3d00 <GPS_enuGetLocation>
 	while(1)
 	{
 		//ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatDir , u8 Copy_pu8LongDir );
 
 		//GPS_enuGetLocation(&var1 , &var2 , &lat , &lon );
 		UART_enuSendByte(' ');
-    3f44:	80 e2       	ldi	r24, 0x20	; 32
-    3f46:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f66:	80 e2       	ldi	r24, 0x20	; 32
+    3f68:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(' ');
-    3f4a:	80 e2       	ldi	r24, 0x20	; 32
-    3f4c:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f6c:	80 e2       	ldi	r24, 0x20	; 32
+    3f6e:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('I');
-    3f50:	89 e4       	ldi	r24, 0x49	; 73
-    3f52:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f72:	89 e4       	ldi	r24, 0x49	; 73
+    3f74:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(' ');
-    3f56:	80 e2       	ldi	r24, 0x20	; 32
-    3f58:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f78:	80 e2       	ldi	r24, 0x20	; 32
+    3f7a:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('a');
-    3f5c:	81 e6       	ldi	r24, 0x61	; 97
-    3f5e:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f7e:	81 e6       	ldi	r24, 0x61	; 97
+    3f80:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('m');
-    3f62:	8d e6       	ldi	r24, 0x6D	; 109
-    3f64:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f84:	8d e6       	ldi	r24, 0x6D	; 109
+    3f86:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(' ');
-    3f68:	80 e2       	ldi	r24, 0x20	; 32
-    3f6a:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f8a:	80 e2       	ldi	r24, 0x20	; 32
+    3f8c:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('i');
-    3f6e:	89 e6       	ldi	r24, 0x69	; 105
-    3f70:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f90:	89 e6       	ldi	r24, 0x69	; 105
+    3f92:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('n');
-    3f74:	8e e6       	ldi	r24, 0x6E	; 110
-    3f76:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f96:	8e e6       	ldi	r24, 0x6E	; 110
+    3f98:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(' ');
-    3f7a:	80 e2       	ldi	r24, 0x20	; 32
-    3f7c:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3f9c:	80 e2       	ldi	r24, 0x20	; 32
+    3f9e:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('w');
-    3f80:	87 e7       	ldi	r24, 0x77	; 119
-    3f82:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fa2:	87 e7       	ldi	r24, 0x77	; 119
+    3fa4:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('h');
-    3f86:	88 e6       	ldi	r24, 0x68	; 104
-    3f88:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fa8:	88 e6       	ldi	r24, 0x68	; 104
+    3faa:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('i');
-    3f8c:	89 e6       	ldi	r24, 0x69	; 105
-    3f8e:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fae:	89 e6       	ldi	r24, 0x69	; 105
+    3fb0:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('l');
-    3f92:	8c e6       	ldi	r24, 0x6C	; 108
-    3f94:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fb4:	8c e6       	ldi	r24, 0x6C	; 108
+    3fb6:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('e');
-    3f98:	85 e6       	ldi	r24, 0x65	; 101
-    3f9a:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fba:	85 e6       	ldi	r24, 0x65	; 101
+    3fbc:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('(');
-    3f9e:	88 e2       	ldi	r24, 0x28	; 40
-    3fa0:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fc0:	88 e2       	ldi	r24, 0x28	; 40
+    3fc2:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte('1');
-    3fa4:	81 e3       	ldi	r24, 0x31	; 49
-    3fa6:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fc6:	81 e3       	ldi	r24, 0x31	; 49
+    3fc8:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
 		UART_enuSendByte(')');
-    3faa:	89 e2       	ldi	r24, 0x29	; 41
-    3fac:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
-    3fb0:	ff cf       	rjmp	.-2      	; 0x3fb0 <main+0xa8>
+    3fcc:	89 e2       	ldi	r24, 0x29	; 41
+    3fce:	0e 94 45 07 	call	0xe8a	; 0xe8a <UART_enuSendByte>
+    3fd2:	ff cf       	rjmp	.-2      	; 0x3fd2 <main+0xa8>
 
-00003fb2 <__udivmodhi4>:
-    3fb2:	aa 1b       	sub	r26, r26
-    3fb4:	bb 1b       	sub	r27, r27
-    3fb6:	51 e1       	ldi	r21, 0x11	; 17
-    3fb8:	07 c0       	rjmp	.+14     	; 0x3fc8 <__udivmodhi4_ep>
+00003fd4 <__udivmodhi4>:
+    3fd4:	aa 1b       	sub	r26, r26
+    3fd6:	bb 1b       	sub	r27, r27
+    3fd8:	51 e1       	ldi	r21, 0x11	; 17
+    3fda:	07 c0       	rjmp	.+14     	; 0x3fea <__udivmodhi4_ep>
 
-00003fba <__udivmodhi4_loop>:
-    3fba:	aa 1f       	adc	r26, r26
-    3fbc:	bb 1f       	adc	r27, r27
-    3fbe:	a6 17       	cp	r26, r22
-    3fc0:	b7 07       	cpc	r27, r23
-    3fc2:	10 f0       	brcs	.+4      	; 0x3fc8 <__udivmodhi4_ep>
-    3fc4:	a6 1b       	sub	r26, r22
-    3fc6:	b7 0b       	sbc	r27, r23
+00003fdc <__udivmodhi4_loop>:
+    3fdc:	aa 1f       	adc	r26, r26
+    3fde:	bb 1f       	adc	r27, r27
+    3fe0:	a6 17       	cp	r26, r22
+    3fe2:	b7 07       	cpc	r27, r23
+    3fe4:	10 f0       	brcs	.+4      	; 0x3fea <__udivmodhi4_ep>
+    3fe6:	a6 1b       	sub	r26, r22
+    3fe8:	b7 0b       	sbc	r27, r23
 
-00003fc8 <__udivmodhi4_ep>:
-    3fc8:	88 1f       	adc	r24, r24
-    3fca:	99 1f       	adc	r25, r25
-    3fcc:	5a 95       	dec	r21
-    3fce:	a9 f7       	brne	.-22     	; 0x3fba <__udivmodhi4_loop>
-    3fd0:	80 95       	com	r24
-    3fd2:	90 95       	com	r25
-    3fd4:	bc 01       	movw	r22, r24
-    3fd6:	cd 01       	movw	r24, r26
-    3fd8:	08 95       	ret
+00003fea <__udivmodhi4_ep>:
+    3fea:	88 1f       	adc	r24, r24
+    3fec:	99 1f       	adc	r25, r25
+    3fee:	5a 95       	dec	r21
+    3ff0:	a9 f7       	brne	.-22     	; 0x3fdc <__udivmodhi4_loop>
+    3ff2:	80 95       	com	r24
+    3ff4:	90 95       	com	r25
+    3ff6:	bc 01       	movw	r22, r24
+    3ff8:	cd 01       	movw	r24, r26
+    3ffa:	08 95       	ret
 
-00003fda <__prologue_saves__>:
-    3fda:	2f 92       	push	r2
-    3fdc:	3f 92       	push	r3
-    3fde:	4f 92       	push	r4
-    3fe0:	5f 92       	push	r5
-    3fe2:	6f 92       	push	r6
-    3fe4:	7f 92       	push	r7
-    3fe6:	8f 92       	push	r8
-    3fe8:	9f 92       	push	r9
-    3fea:	af 92       	push	r10
-    3fec:	bf 92       	push	r11
-    3fee:	cf 92       	push	r12
-    3ff0:	df 92       	push	r13
-    3ff2:	ef 92       	push	r14
-    3ff4:	ff 92       	push	r15
-    3ff6:	0f 93       	push	r16
-    3ff8:	1f 93       	push	r17
-    3ffa:	cf 93       	push	r28
-    3ffc:	df 93       	push	r29
-    3ffe:	cd b7       	in	r28, 0x3d	; 61
-    4000:	de b7       	in	r29, 0x3e	; 62
-    4002:	ca 1b       	sub	r28, r26
-    4004:	db 0b       	sbc	r29, r27
-    4006:	0f b6       	in	r0, 0x3f	; 63
-    4008:	f8 94       	cli
-    400a:	de bf       	out	0x3e, r29	; 62
-    400c:	0f be       	out	0x3f, r0	; 63
-    400e:	cd bf       	out	0x3d, r28	; 61
-    4010:	09 94       	ijmp
+00003ffc <__prologue_saves__>:
+    3ffc:	2f 92       	push	r2
+    3ffe:	3f 92       	push	r3
+    4000:	4f 92       	push	r4
+    4002:	5f 92       	push	r5
+    4004:	6f 92       	push	r6
+    4006:	7f 92       	push	r7
+    4008:	8f 92       	push	r8
+    400a:	9f 92       	push	r9
+    400c:	af 92       	push	r10
+    400e:	bf 92       	push	r11
+    4010:	cf 92       	push	r12
+    4012:	df 92       	push	r13
+    4014:	ef 92       	push	r14
+    4016:	ff 92       	push	r15
+    4018:	0f 93       	push	r16
+    401a:	1f 93       	push	r17
+    401c:	cf 93       	push	r28
+    401e:	df 93       	push	r29
+    4020:	cd b7       	in	r28, 0x3d	; 61
+    4022:	de b7       	in	r29, 0x3e	; 62
+    4024:	ca 1b       	sub	r28, r26
+    4026:	db 0b       	sbc	r29, r27
+    4028:	0f b6       	in	r0, 0x3f	; 63
+    402a:	f8 94       	cli
+    402c:	de bf       	out	0x3e, r29	; 62
+    402e:	0f be       	out	0x3f, r0	; 63
+    4030:	cd bf       	out	0x3d, r28	; 61
+    4032:	09 94       	ijmp
 
-00004012 <__epilogue_restores__>:
-    4012:	2a 88       	ldd	r2, Y+18	; 0x12
-    4014:	39 88       	ldd	r3, Y+17	; 0x11
-    4016:	48 88       	ldd	r4, Y+16	; 0x10
-    4018:	5f 84       	ldd	r5, Y+15	; 0x0f
-    401a:	6e 84       	ldd	r6, Y+14	; 0x0e
-    401c:	7d 84       	ldd	r7, Y+13	; 0x0d
-    401e:	8c 84       	ldd	r8, Y+12	; 0x0c
-    4020:	9b 84       	ldd	r9, Y+11	; 0x0b
-    4022:	aa 84       	ldd	r10, Y+10	; 0x0a
-    4024:	b9 84       	ldd	r11, Y+9	; 0x09
-    4026:	c8 84       	ldd	r12, Y+8	; 0x08
-    4028:	df 80       	ldd	r13, Y+7	; 0x07
-    402a:	ee 80       	ldd	r14, Y+6	; 0x06
-    402c:	fd 80       	ldd	r15, Y+5	; 0x05
-    402e:	0c 81       	ldd	r16, Y+4	; 0x04
-    4030:	1b 81       	ldd	r17, Y+3	; 0x03
-    4032:	aa 81       	ldd	r26, Y+2	; 0x02
-    4034:	b9 81       	ldd	r27, Y+1	; 0x01
-    4036:	ce 0f       	add	r28, r30
-    4038:	d1 1d       	adc	r29, r1
-    403a:	0f b6       	in	r0, 0x3f	; 63
-    403c:	f8 94       	cli
-    403e:	de bf       	out	0x3e, r29	; 62
-    4040:	0f be       	out	0x3f, r0	; 63
-    4042:	cd bf       	out	0x3d, r28	; 61
-    4044:	ed 01       	movw	r28, r26
-    4046:	08 95       	ret
+00004034 <__epilogue_restores__>:
+    4034:	2a 88       	ldd	r2, Y+18	; 0x12
+    4036:	39 88       	ldd	r3, Y+17	; 0x11
+    4038:	48 88       	ldd	r4, Y+16	; 0x10
+    403a:	5f 84       	ldd	r5, Y+15	; 0x0f
+    403c:	6e 84       	ldd	r6, Y+14	; 0x0e
+    403e:	7d 84       	ldd	r7, Y+13	; 0x0d
+    4040:	8c 84       	ldd	r8, Y+12	; 0x0c
+    4042:	9b 84       	ldd	r9, Y+11	; 0x0b
+    4044:	aa 84       	ldd	r10, Y+10	; 0x0a
+    4046:	b9 84       	ldd	r11, Y+9	; 0x09
+    4048:	c8 84       	ldd	r12, Y+8	; 0x08
+    404a:	df 80       	ldd	r13, Y+7	; 0x07
+    404c:	ee 80       	ldd	r14, Y+6	; 0x06
+    404e:	fd 80       	ldd	r15, Y+5	; 0x05
+    4050:	0c 81       	ldd	r16, Y+4	; 0x04
+    4052:	1b 81       	ldd	r17, Y+3	; 0x03
+    4054:	aa 81       	ldd	r26, Y+2	; 0x02
+    4056:	b9 81       	ldd	r27, Y+1	; 0x01
+    4058:	ce 0f       	add	r28, r30
+    405a:	d1 1d       	adc	r29, r1
+    405c:	0f b6       	in	r0, 0x3f	; 63
+    405e:	f8 94       	cli
+    4060:	de bf       	out	0x3e, r29	; 62
+    4062:	0f be       	out	0x3f, r0	; 63
+    4064:	cd bf       	out	0x3d, r28	; 61
+    4066:	ed 01       	movw	r28, r26
+    4068:	08 95       	ret
 
-00004048 <itoa>:
-    4048:	fb 01       	movw	r30, r22
-    404a:	9f 01       	movw	r18, r30
-    404c:	e8 94       	clt
-    404e:	42 30       	cpi	r20, 0x02	; 2
-    4050:	c4 f0       	brlt	.+48     	; 0x4082 <itoa+0x3a>
-    4052:	45 32       	cpi	r20, 0x25	; 37
-    4054:	b4 f4       	brge	.+44     	; 0x4082 <itoa+0x3a>
-    4056:	4a 30       	cpi	r20, 0x0A	; 10
-    4058:	29 f4       	brne	.+10     	; 0x4064 <itoa+0x1c>
-    405a:	97 fb       	bst	r25, 7
-    405c:	1e f4       	brtc	.+6      	; 0x4064 <itoa+0x1c>
-    405e:	90 95       	com	r25
-    4060:	81 95       	neg	r24
-    4062:	9f 4f       	sbci	r25, 0xFF	; 255
-    4064:	64 2f       	mov	r22, r20
-    4066:	77 27       	eor	r23, r23
-    4068:	0e 94 d9 1f 	call	0x3fb2	; 0x3fb2 <__udivmodhi4>
-    406c:	80 5d       	subi	r24, 0xD0	; 208
-    406e:	8a 33       	cpi	r24, 0x3A	; 58
-    4070:	0c f0       	brlt	.+2      	; 0x4074 <itoa+0x2c>
-    4072:	89 5d       	subi	r24, 0xD9	; 217
-    4074:	81 93       	st	Z+, r24
-    4076:	cb 01       	movw	r24, r22
-    4078:	00 97       	sbiw	r24, 0x00	; 0
-    407a:	a1 f7       	brne	.-24     	; 0x4064 <itoa+0x1c>
-    407c:	16 f4       	brtc	.+4      	; 0x4082 <itoa+0x3a>
-    407e:	5d e2       	ldi	r21, 0x2D	; 45
-    4080:	51 93       	st	Z+, r21
-    4082:	10 82       	st	Z, r1
-    4084:	c9 01       	movw	r24, r18
-    4086:	0c 94 45 20 	jmp	0x408a	; 0x408a <strrev>
+0000406a <itoa>:
+    406a:	fb 01       	movw	r30, r22
+    406c:	9f 01       	movw	r18, r30
+    406e:	e8 94       	clt
+    4070:	42 30       	cpi	r20, 0x02	; 2
+    4072:	c4 f0       	brlt	.+48     	; 0x40a4 <itoa+0x3a>
+    4074:	45 32       	cpi	r20, 0x25	; 37
+    4076:	b4 f4       	brge	.+44     	; 0x40a4 <itoa+0x3a>
+    4078:	4a 30       	cpi	r20, 0x0A	; 10
+    407a:	29 f4       	brne	.+10     	; 0x4086 <itoa+0x1c>
+    407c:	97 fb       	bst	r25, 7
+    407e:	1e f4       	brtc	.+6      	; 0x4086 <itoa+0x1c>
+    4080:	90 95       	com	r25
+    4082:	81 95       	neg	r24
+    4084:	9f 4f       	sbci	r25, 0xFF	; 255
+    4086:	64 2f       	mov	r22, r20
+    4088:	77 27       	eor	r23, r23
+    408a:	0e 94 ea 1f 	call	0x3fd4	; 0x3fd4 <__udivmodhi4>
+    408e:	80 5d       	subi	r24, 0xD0	; 208
+    4090:	8a 33       	cpi	r24, 0x3A	; 58
+    4092:	0c f0       	brlt	.+2      	; 0x4096 <itoa+0x2c>
+    4094:	89 5d       	subi	r24, 0xD9	; 217
+    4096:	81 93       	st	Z+, r24
+    4098:	cb 01       	movw	r24, r22
+    409a:	00 97       	sbiw	r24, 0x00	; 0
+    409c:	a1 f7       	brne	.-24     	; 0x4086 <itoa+0x1c>
+    409e:	16 f4       	brtc	.+4      	; 0x40a4 <itoa+0x3a>
+    40a0:	5d e2       	ldi	r21, 0x2D	; 45
+    40a2:	51 93       	st	Z+, r21
+    40a4:	10 82       	st	Z, r1
+    40a6:	c9 01       	movw	r24, r18
+    40a8:	0c 94 56 20 	jmp	0x40ac	; 0x40ac <strrev>
 
-0000408a <strrev>:
-    408a:	dc 01       	movw	r26, r24
-    408c:	fc 01       	movw	r30, r24
-    408e:	67 2f       	mov	r22, r23
-    4090:	71 91       	ld	r23, Z+
-    4092:	77 23       	and	r23, r23
-    4094:	e1 f7       	brne	.-8      	; 0x408e <strrev+0x4>
-    4096:	32 97       	sbiw	r30, 0x02	; 2
-    4098:	04 c0       	rjmp	.+8      	; 0x40a2 <strrev+0x18>
-    409a:	7c 91       	ld	r23, X
-    409c:	6d 93       	st	X+, r22
-    409e:	70 83       	st	Z, r23
-    40a0:	62 91       	ld	r22, -Z
-    40a2:	ae 17       	cp	r26, r30
-    40a4:	bf 07       	cpc	r27, r31
-    40a6:	c8 f3       	brcs	.-14     	; 0x409a <strrev+0x10>
-    40a8:	08 95       	ret
+000040ac <strrev>:
+    40ac:	dc 01       	movw	r26, r24
+    40ae:	fc 01       	movw	r30, r24
+    40b0:	67 2f       	mov	r22, r23
+    40b2:	71 91       	ld	r23, Z+
+    40b4:	77 23       	and	r23, r23
+    40b6:	e1 f7       	brne	.-8      	; 0x40b0 <strrev+0x4>
+    40b8:	32 97       	sbiw	r30, 0x02	; 2
+    40ba:	04 c0       	rjmp	.+8      	; 0x40c4 <strrev+0x18>
+    40bc:	7c 91       	ld	r23, X
+    40be:	6d 93       	st	X+, r22
+    40c0:	70 83       	st	Z, r23
+    40c2:	62 91       	ld	r22, -Z
+    40c4:	ae 17       	cp	r26, r30
+    40c6:	bf 07       	cpc	r27, r31
+    40c8:	c8 f3       	brcs	.-14     	; 0x40bc <strrev+0x10>
+    40ca:	08 95       	ret
 
-000040aa <_exit>:
-    40aa:	f8 94       	cli
+000040cc <_exit>:
+    40cc:	f8 94       	cli
 
-000040ac <__stop_program>:
-    40ac:	ff cf       	rjmp	.-2      	; 0x40ac <__stop_program>
+000040ce <__stop_program>:
+    40ce:	ff cf       	rjmp	.-2      	; 0x40ce <__stop_program>

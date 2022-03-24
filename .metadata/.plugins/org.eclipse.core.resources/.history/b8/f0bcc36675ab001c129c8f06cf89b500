@@ -303,9 +303,7 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 
 
 
-		}while( i <= GPS_LINE_LENGTH );
-
-
+		}while(GPS_u8Buffer[i+1] != 'X'  );
 
 
 

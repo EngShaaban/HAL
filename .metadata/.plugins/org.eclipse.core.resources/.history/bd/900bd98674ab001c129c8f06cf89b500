@@ -29,7 +29,7 @@
 static GPS_FLAGS_t  GPS_Flags ;
 
 //u8 Buffer[5]={'1','2','3','4','2'};
-static u8 GPS_u8Buffer[GPS_LINE_LENGTH]={'X'};
+u8 GPS_u8Buffer[GPS_LINE_LENGTH]={};
 
 
 /****************************************************************************
@@ -303,9 +303,7 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 
 
 
-		}while( i <= GPS_LINE_LENGTH );
-
-
+		}while(i  <= 30  );
 
 
 

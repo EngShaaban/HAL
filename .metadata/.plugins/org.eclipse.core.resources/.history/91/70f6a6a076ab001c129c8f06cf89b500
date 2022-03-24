@@ -17,7 +17,7 @@
 #ifndef GPS_PRIV_H_
 #define GPS_PRIV_H_
 
-#define    GPS_LINE_LENGTH             55
+#define    GPS_LINE_LENGTH             70
 
 typedef union
 {

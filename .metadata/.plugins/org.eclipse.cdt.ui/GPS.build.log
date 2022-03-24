@@ -1,5 +1,15 @@
-15:00:11 **** Incremental Build of configuration Debug for project GPS ****
+15:31:27 **** Incremental Build of configuration Debug for project GPS ****
 make all 
+Building file: ../HAL/GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Cnfg.d" -MT"HAL/GPS_Cnfg.o" -c -o "HAL/GPS_Cnfg.o" "../HAL/GPS_Cnfg.c"
+Finished building: ../HAL/GPS_Cnfg.c
+ 
+Building file: ../HAL/GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Priv.d" -MT"HAL/GPS_Priv.o" -c -o "HAL/GPS_Priv.o" "../HAL/GPS_Priv.c"
+Finished building: ../HAL/GPS_Priv.c
+ 
 Building file: ../HAL/GPS_Prog.c
 Invoking: AVR Compiler
 avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
@@ -26,15 +36,15 @@ AVR Memory Usage
 ----------------
 Device: atmega32
 
-Program:   16898 bytes (51.6% Full)
+Program:   16916 bytes (51.6% Full)
 (.text + .data + .bootloader)
 
-Data:        351 bytes (17.1% Full)
+Data:        335 bytes (16.4% Full)
 (.data + .bss + .noinit)
 
 
 Finished building: sizedummy
  
 
-15:00:12 Build Finished (took 1s.162ms)
+15:31:29 Build Finished (took 1s.517ms)
 

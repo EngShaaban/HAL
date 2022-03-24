@@ -840,3 +840,643 @@ Data:        351 bytes (17.1% Full)
 
 Finished building: sizedummy
  
+15:05:16 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16918 bytes (51.6% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:06:31 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/GPS_Prog.c: In function 'GPS_enuGetLocation':
+../HAL/GPS_Prog.c:121: warning: unused variable 'Local_u8Counter'
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16894 bytes (51.6% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:07:35 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../HAL/GPS_Prog.c: In function 'GPS_enuGetLocation':
+../HAL/GPS_Prog.c:121: warning: unused variable 'Local_u8Counter'
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16900 bytes (51.6% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:12:26 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16862 bytes (51.5% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:14:43 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16862 bytes (51.5% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:15:51 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16862 bytes (51.5% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:16:04 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16862 bytes (51.5% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:17:19 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16862 bytes (51.5% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:20:49 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16940 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:23:42 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:24:43 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16938 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:26:25 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:26:35 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:27:46 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:28:27 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:29:30 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:30:09 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16932 bytes (51.7% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:31:27 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Cnfg.d" -MT"HAL/GPS_Cnfg.o" -c -o "HAL/GPS_Cnfg.o" "../HAL/GPS_Cnfg.c"
+Finished building: ../HAL/GPS_Cnfg.c
+ 
+Building file: ../HAL/GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Priv.d" -MT"HAL/GPS_Priv.o" -c -o "HAL/GPS_Priv.o" "../HAL/GPS_Priv.c"
+Finished building: ../HAL/GPS_Priv.c
+ 
+Building file: ../HAL/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS_Prog.d" -MT"HAL/GPS_Prog.o" -c -o "HAL/GPS_Prog.o" "../HAL/GPS_Prog.c"
+In file included from ../HAL/GPS_Prog.c:19:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/GPS_Prog.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS_Cnfg.o ./HAL/GPS_Priv.o ./HAL/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   16916 bytes (51.6% Full)
+(.text + .data + .bootloader)
+
+Data:        335 bytes (16.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
