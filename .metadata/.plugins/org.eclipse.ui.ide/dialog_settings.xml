@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="E:\Data\EmbeddedSystem\NTI\07 - LCD\LCD"/>
+		<item value="C:\Users\SHAABAN\Desktop\Liquid_Crystal_Display-master"/>
+		<item value="C:\Users\SHAABAN\Desktop\LED_DRIVER-master"/>
 		<item value="E:\Data\EmbeddedSystem\Drivers\Atmega32\HAL"/>
 	</list>
 </section>

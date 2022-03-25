@@ -8,6 +8,34 @@
 int main(void)
 {
 
-	printf("Hi\n");
+
+	for (int i = 0 ; i <= 50 ; i++)
+	{
+		//printf("%-4.0d",50-i);
+
+		for (int j = 0 ; j < 50 ; j++)
+		{
+
+
+			if(i != 25)
+			{
+				if(j != 25){ printf(" . ");}
+			else{printf("%-4.0d|",50-i);}
+			}
+			else
+			{
+				printf("___");
+			}
+
+		}
+
+
+
+		printf("\n");
+
+
+	}
+
+
 	return 0 ;
 }

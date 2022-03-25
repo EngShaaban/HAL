@@ -9,7 +9,7 @@
 #include "../LIB/errorStates.h"
 
 
-//#include "../HAL/LCD/EF_LCD.h"
+#include "../HAL/LCD/EF_LCD.h"
 #include "../HAL/GPS_Cnfg.h"
 #include "../HAL/GPS_Interface.h"
 
@@ -24,14 +24,21 @@ f32 Long ;
 u8 latDir;
 u8 longDir;
 
-
+s32   ch  = 'H';
 
 
 int main(void)
 {
 
 
+	EF_void_LCD_init();
+
 	GPS_enuInit();
+
+	EF_void_LCD_goto(1 , 1);
+
+
+
 
 
 
@@ -41,9 +48,16 @@ int main(void)
 	UART_enuSendByte('n');
 
 
-
+//EF_void_LCD_print_NUM(s32 s16Numberstring,u8 u8RowNumber);
+	EF_void_LCD_print_NUM( ch , 1 );
 
 	GPS_enuGetLocation(&Lat , &Long , &latDir , &longDir );
+
+
+	//f32 Lat ;
+
+	EF_void_LCD_print_NUM( Lat , 1 );
+
 
 
 	while(1)

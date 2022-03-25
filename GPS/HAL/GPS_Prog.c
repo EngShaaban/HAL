@@ -16,10 +16,8 @@
 #include "../LIB/STD_TYPES.h"
 #include "../LIB/errorStates.h"
 
-#include<util/delay.h>
-
 #include "../MCAL/DIO/DIO_interface.h"
-#include "../MCAL\USART\UART_Interface.h"
+#include "../MCAL/USART\UART_Interface.h"
 
 #include "GPS_Priv.h"
 #include "GPS_Cnfg.h"
@@ -28,7 +26,6 @@
 
 static GPS_FLAGS_t  GPS_Flags ;
 
-//u8 Buffer[5]={'1','2','3','4','2'};
 static u8 GPS_u8Buffer[GPS_LINE_LENGTH]={'X'};
 
 
@@ -152,9 +149,6 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 			UART_enuRecieveByte(&Local_u8TempChar);
 			UART_enuRecieveByte(&Local_u8TempChar);
 			// Now you Get '$GP'
-//			UART_enuSendByte('G');
-//			UART_enuSendByte('P');
-//
 
 			/************************************************
 			 * 3.Read more one character and make sure it's *
@@ -206,7 +200,6 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 							 *          lines always ends with \n character.*
 							 ************************************************/
 
-							/*=================================================*/
 							UART_enuRecieveByte(&Local_u8TempChar);
 							UART_enuRecieveByte(&Local_u8TempChar);
 							UART_enuRecieveByte(&Local_u8TempChar);
@@ -230,10 +223,7 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 							GPS_u8Buffer[Local_u8Counter] = Local_u8TempChar ;
 
 							Local_u8Counter++;
-							/*=================================================*/
 
-									//5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*
-							//[NMEA] $GPGGA,123534.742,5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7F [GPS1]
 							do
 							{
 
@@ -275,42 +265,8 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 		}while( !(GPS_Flags.FLAG.GPGGA_LINE_FLAG) );
 
 
-		//****************************************************************//
-		//****************************************************************//
 
-		UART_enuSendByte(' ');
-		UART_enuSendByte('G');
-		UART_enuSendByte('o');
-		UART_enuSendByte('t');
-		UART_enuSendByte(' ');
-		UART_enuSendByte('L');
-		UART_enuSendByte('i');
-		UART_enuSendByte('n');
-		UART_enuSendByte('e');
-		UART_enuSendByte(' ');
-
-		//5404.2675,N,00159.7569,W,1,10,4.00,100.0,M,50.0,M,,*7B
-		//[NMEA] $GPGGA,113055.824, ,,,,0,10,,,M,,M,,*74 [GPS1]
-
-
-
-		int i = 0 ;
-		do
-		{
-
-			UART_enuSendByte(GPS_u8Buffer[i]);
-			i++ ;
-
-
-
-		}while( i <= GPS_LINE_LENGTH );
-
-
-
-
-
-
-		//GPS_inlinevidAsciiToInt( GPS_u8Buffer , &Copy_pf32Lat , &Copy_pf32Long , &Copy_pu8LatDir , &Copy_pu8LongDir  );
+		GPS_inlinevidAsciiToInt( GPS_u8Buffer , &Copy_pf32Lat , &Copy_pf32Long , &Copy_pu8LatDir , &Copy_pu8LongDir  );
 
 
 		GPS_CLEAR_ALL_FLAGSE();
