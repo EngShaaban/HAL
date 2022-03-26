@@ -85,8 +85,6 @@ int main(void)
 		while(1)
 		{
 			//Stay here.
-			LED_enuLedToggle(&LED_AstrLedConfig[0]);
-
 
 
 		}

@@ -36,10 +36,6 @@ u8 longDir;
 int main(void)
 {
 
-	LED_enuInit( LED_AstrLedConfig );
-
-	LED_enuLedON(&LED_AstrLedConfig[0]);
-
 	GPS_enuInit();
 
 	UART_enuSendByte('M');
@@ -85,8 +81,6 @@ int main(void)
 		while(1)
 		{
 			//Stay here.
-			LED_enuLedToggle(&LED_AstrLedConfig[0]);
-
 
 
 		}

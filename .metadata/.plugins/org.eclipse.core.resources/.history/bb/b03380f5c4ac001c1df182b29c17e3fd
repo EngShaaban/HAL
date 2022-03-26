@@ -10,14 +10,8 @@
 
 
 #include "../HAL/LCD/EF_LCD.h"
-#include "../HAL/GPS/GPS_Cnfg.h"
-#include "../HAL/GPS/GPS_Interface.h"
-
-/*===================================*/
-#include "../HAL/LED/Led_config.h"
-#include "../HAL/LED/Led_interface.h"
-/*===================================*/
-
+#include "../HAL/GPS_Cnfg.h"
+#include "../HAL/GPS_Interface.h"
 
 #include "../MCAL/DIO/DIO_interface.h"
 #include "../MCAL/USART\UART_Interface.h"
@@ -30,17 +24,23 @@ f32 Long ;
 u8 latDir;
 u8 longDir;
 
-
+s32   ch  = 'H';
 
 
 int main(void)
 {
 
-	LED_enuInit( LED_AstrLedConfig );
 
-	LED_enuLedON(&LED_AstrLedConfig[0]);
+	EF_void_LCD_init();
 
 	GPS_enuInit();
+
+	EF_void_LCD_goto(1 , 1);
+
+
+
+
+
 
 	UART_enuSendByte('M');
 	UART_enuSendByte('a');
@@ -48,11 +48,15 @@ int main(void)
 	UART_enuSendByte('n');
 
 
+//EF_void_LCD_print_NUM(s32 s16Numberstring,u8 u8RowNumber);
+	EF_void_LCD_print_NUM( ch , 1 );
 
 	GPS_enuGetLocation(&Lat , &Long , &latDir , &longDir );
 
 
+	//f32 Lat ;
 
+	EF_void_LCD_print_NUM( Lat , 1 );
 
 
 
@@ -85,8 +89,6 @@ int main(void)
 		while(1)
 		{
 			//Stay here.
-			LED_enuLedToggle(&LED_AstrLedConfig[0]);
-
 
 
 		}
