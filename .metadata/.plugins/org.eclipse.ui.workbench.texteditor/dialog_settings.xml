@@ -6,21 +6,25 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="Local_f32TempLong" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Local_u16TempLong"/>
+			<item value="Local_u32TempLat"/>
+			<item value="Local_u16TempLat"/>
 			<item value="BOOLEAN"/>
 			<item value="S16_t"/>
 			<item value="U8_t"/>
 			<item value="S8_t"/>
 			<item value="DIO_PORTA   "/>
-			<item value="Local_u8_Subs_Of_First_Comma"/>
-			<item value="G"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Local_f32TempLong"/>
+			<item value="Local_f32TempLat"/>
+			<item value="Local_u32TempLat"/>
 			<item value="u8"/>
 			<item value="s32"/>
 			<item value="s8"/>
