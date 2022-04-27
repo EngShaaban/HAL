@@ -130,3 +130,232 @@ Data:        351 bytes (17.1% Full)
 
 Finished building: sizedummy
  
+18:49:46 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../HAL/GPS/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS/GPS_Prog.d" -MT"HAL/GPS/GPS_Prog.o" -c -o "HAL/GPS/GPS_Prog.o" "../HAL/GPS/GPS_Prog.c"
+Finished building: ../HAL/GPS/GPS_Prog.c
+ 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+../APP/main.c: In function 'main':
+../APP/main.c:45: error: too many arguments to function 'DIO_enuSetPortDirection'
+make: *** [APP/main.o] Error 1
+18:51:58 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+../APP/main.c: In function 'main':
+../APP/main.c:45: error: too many arguments to function 'DIO_enuSetPortDirection'
+make: *** [APP/main.o] Error 1
+18:52:14 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+Finished building: ../APP/main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LED/Led_config.o ./HAL/LED/Led_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS/GPS_Cnfg.o ./HAL/GPS/GPS_Priv.o ./HAL/GPS/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18400 bytes (56.2% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:53:05 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+Finished building: ../APP/main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LED/Led_config.o ./HAL/LED/Led_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS/GPS_Cnfg.o ./HAL/GPS/GPS_Priv.o ./HAL/GPS/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18410 bytes (56.2% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+18:55:32 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+Finished building: ../APP/main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LED/Led_config.o ./HAL/LED/Led_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS/GPS_Cnfg.o ./HAL/GPS/GPS_Priv.o ./HAL/GPS/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18390 bytes (56.1% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:22:30 **** Clean-only build of configuration Debug for project GPS ****
+make clean 
+rm -rf  GPS.hex  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LED/Led_config.o ./HAL/LED/Led_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS/GPS_Cnfg.o ./HAL/GPS/GPS_Priv.o ./HAL/GPS/GPS_Prog.o  ./APP/main.o  sizedummy  GPS.lss  ./MCAL/USART/UART_Prog.d  ./MCAL/DIO/DIO_prog.d  ./HAL/LED/Led_config.d ./HAL/LED/Led_prog.d  ./HAL/LCD/EF_DIO.d ./HAL/LCD/EF_LCD.d  ./HAL/GPS/GPS_Cnfg.d ./HAL/GPS/GPS_Priv.d ./HAL/GPS/GPS_Prog.d  ./APP/main.d  GPS.elf
+ 
+19:22:31 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Building file: ../MCAL/USART/UART_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/USART/UART_Prog.d" -MT"MCAL/USART/UART_Prog.o" -c -o "MCAL/USART/UART_Prog.o" "../MCAL/USART/UART_Prog.c"
+Finished building: ../MCAL/USART/UART_Prog.c
+ 
+Building file: ../MCAL/DIO/DIO_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"MCAL/DIO/DIO_prog.d" -MT"MCAL/DIO/DIO_prog.o" -c -o "MCAL/DIO/DIO_prog.o" "../MCAL/DIO/DIO_prog.c"
+Finished building: ../MCAL/DIO/DIO_prog.c
+ 
+Building file: ../HAL/LED/Led_config.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/LED/Led_config.d" -MT"HAL/LED/Led_config.o" -c -o "HAL/LED/Led_config.o" "../HAL/LED/Led_config.c"
+Finished building: ../HAL/LED/Led_config.c
+ 
+Building file: ../HAL/LED/Led_prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/LED/Led_prog.d" -MT"HAL/LED/Led_prog.o" -c -o "HAL/LED/Led_prog.o" "../HAL/LED/Led_prog.c"
+Finished building: ../HAL/LED/Led_prog.c
+ 
+Building file: ../HAL/LCD/EF_DIO.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/LCD/EF_DIO.d" -MT"HAL/LCD/EF_DIO.o" -c -o "HAL/LCD/EF_DIO.o" "../HAL/LCD/EF_DIO.c"
+Finished building: ../HAL/LCD/EF_DIO.c
+ 
+Building file: ../HAL/LCD/EF_LCD.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/LCD/EF_LCD.d" -MT"HAL/LCD/EF_LCD.o" -c -o "HAL/LCD/EF_LCD.o" "../HAL/LCD/EF_LCD.c"
+In file included from ../HAL/LCD/EF_LCD.c:38:
+c:/winavr-20100110/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../HAL/LCD/EF_LCD.c
+ 
+Building file: ../HAL/GPS/GPS_Cnfg.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS/GPS_Cnfg.d" -MT"HAL/GPS/GPS_Cnfg.o" -c -o "HAL/GPS/GPS_Cnfg.o" "../HAL/GPS/GPS_Cnfg.c"
+Finished building: ../HAL/GPS/GPS_Cnfg.c
+ 
+Building file: ../HAL/GPS/GPS_Priv.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS/GPS_Priv.d" -MT"HAL/GPS/GPS_Priv.o" -c -o "HAL/GPS/GPS_Priv.o" "../HAL/GPS/GPS_Priv.c"
+Finished building: ../HAL/GPS/GPS_Priv.c
+ 
+Building file: ../HAL/GPS/GPS_Prog.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"HAL/GPS/GPS_Prog.d" -MT"HAL/GPS/GPS_Prog.o" -c -o "HAL/GPS/GPS_Prog.o" "../HAL/GPS/GPS_Prog.c"
+Finished building: ../HAL/GPS/GPS_Prog.c
+ 
+Building file: ../APP/main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=1000000UL -MMD -MP -MF"APP/main.d" -MT"APP/main.o" -c -o "APP/main.o" "../APP/main.c"
+Finished building: ../APP/main.c
+ 
+Building target: GPS.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,GPS.map -mmcu=atmega32 -o "GPS.elf"  ./MCAL/USART/UART_Prog.o  ./MCAL/DIO/DIO_prog.o  ./HAL/LED/Led_config.o ./HAL/LED/Led_prog.o  ./HAL/LCD/EF_DIO.o ./HAL/LCD/EF_LCD.o  ./HAL/GPS/GPS_Cnfg.o ./HAL/GPS/GPS_Priv.o ./HAL/GPS/GPS_Prog.o  ./APP/main.o   
+Finished building target: GPS.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S GPS.elf  >"GPS.lss"
+Finished building: GPS.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex GPS.elf  "GPS.hex"
+Finished building: GPS.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18390 bytes (56.1% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+19:24:09 **** Incremental Build of configuration Debug for project GPS ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 GPS.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   18390 bytes (56.1% Full)
+(.text + .data + .bootloader)
+
+Data:        351 bytes (17.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

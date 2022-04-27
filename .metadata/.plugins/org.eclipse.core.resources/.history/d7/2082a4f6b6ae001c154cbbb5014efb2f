@@ -40,13 +40,6 @@ int main(void)
 
 	LED_enuLedON(&LED_AstrLedConfig[0]);
 
-
-	/*=============================================*/
-	DIO_enuSetPinDirection( DIO_PORTD , DIO_PIN4 , DIO_OUTPUT_PIN);
-	//DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);
-	/*=============================================*/
-
-
 	GPS_enuInit();
 
 	UART_enuSendByte('M');
@@ -93,7 +86,7 @@ int main(void)
 		{
 			//Stay here.
 			LED_enuLedToggle(&LED_AstrLedConfig[0]);
-			//DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);
+
 
 
 		}

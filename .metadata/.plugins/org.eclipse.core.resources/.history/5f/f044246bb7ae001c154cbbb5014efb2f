@@ -42,8 +42,8 @@ int main(void)
 
 
 	/*=============================================*/
-	DIO_enuSetPinDirection( DIO_PORTD , DIO_PIN4 , DIO_OUTPUT_PIN);
-	//DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);
+	DIO_enuSetPortDirection( DIO_PORTD , DIO_PIN4 , DIO_OUTPUT_PIN);
+	DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);
 	/*=============================================*/
 
 
@@ -93,7 +93,6 @@ int main(void)
 		{
 			//Stay here.
 			LED_enuLedToggle(&LED_AstrLedConfig[0]);
-			//DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);DIO_enuSetPinValue(DIO_PORTD,DIO_PIN4, DIO_HIGH);
 
 
 		}

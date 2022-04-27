@@ -93,7 +93,7 @@ ES_t GPS_enuInit(void)
  *                   Argu.4:         Address of u8 variable  --->  ~  ~ Longitude  ~ (E,w,N or S)                  *
  * Return Type     : Error state of type ES_t.                                                                     *
  **.....................................................................................................************/
-
+//   GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8 Copy_pu8LatDir , u8 Copy_pu8LongDir );
 ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8LatDir , u8* Copy_pu8LongDir )
 {
 
@@ -294,6 +294,10 @@ ES_t GPS_enuGetLocation(f32* Copy_pf32Lat , f32* Copy_pf32Long , u8* Copy_pu8Lat
 	return Local_enuErrorState ;
 
 }//End of GPS_enuGetLocation.
+
+
+
+
 
 /***************************** END OF FILE. **********************************/
 /*****************************************************************************/
